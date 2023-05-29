@@ -47,23 +47,10 @@ bash run_eval_fast_slow.sh
 The logs will be saved and the scripts for showing results and doing analysis are in the `analysis` folder.
 
 ## Evaluation  
-### ReAct baseline
 
-```bash 
-bash run_eval_react.sh
-```
+### SayCan, ReAct, Reflexion 
 
-### reflecxion baseline
-
-```bash 
-bash run_eval_reflexion.sh
-```
-
-### SayCan baseline
-
-```bash 
-bash run_eval_saycan.sh
-```
+Please check the `baselines` folder for the scripts and code.
 
 ### Other baseline methods
 
