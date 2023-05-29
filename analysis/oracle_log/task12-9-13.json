@@ -1,0 +1,1677 @@
+{
+  "9": {
+    "episodeIdx": 9,
+    "history": {
+      "variationIdx": 9,
+      "fold": "test",
+      "taskDescription": "Your task is to focus on the 4 life stages of the giant tortoise, starting from earliest to latest.",
+      "taskName": "identify-life-stages-1",
+      "task_id": 12,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to hallway",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to hallway",
+          "observation": "You move to the hallway.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to kitchen",
+          "observation": "The door is already open.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta picture\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to kitchen",
+          "observation": "You move to the kitchen.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta picture\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on egg giant tortoise in outside",
+          "observation": "You focus on the giant tortoise egg.",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.37",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.37",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.41000000000000003",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.41000000000000003",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on hatchling giant tortoise in outside",
+          "observation": "You focus on the hatchling giant tortoise.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on juvenile giant tortoise in outside",
+          "observation": "You focus on the juvenile giant tortoise.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on adult giant tortoise in outside",
+          "observation": "You focus on the adult giant tortoise.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult crocodile\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta adult giant tortoise\n\tthe ground\n\ta adult butterfly\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult crocodile\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta adult giant tortoise\n\tthe ground\n\ta adult butterfly\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult crocodile\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta adult giant tortoise\n\tthe ground\n\ta adult butterfly\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult crocodile\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\ta adult giant tortoise\n\tthe ground\n\ta adult butterfly\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "10": {
+    "episodeIdx": 10,
+    "history": {
+      "variationIdx": 10,
+      "fold": "test",
+      "taskDescription": "Your task is to focus on the 4 life stages of the dove, starting from earliest to latest.",
+      "taskName": "identify-life-stages-1",
+      "task_id": 12,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the art studio. In it, you see: \n\tthe agent\n\ta substance called air\n\ta large cupboard. The large cupboard door is closed. \n\ta table. On the table is: a bowl (containing nothing).\n\ta wood cup (containing yellow paint)\n\ta wood cup (containing blue paint)\n\ta wood cup (containing red paint)\nYou also see:\n\tA door to the hallway (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the art studio. In it, you see: \n\tthe agent\n\ta substance called air\n\ta large cupboard. The large cupboard door is closed. \n\ta table. On the table is: a bowl (containing nothing).\n\ta wood cup (containing yellow paint)\n\ta wood cup (containing blue paint)\n\ta wood cup (containing red paint)\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to hallway",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the art studio. In it, you see: \n\tthe agent\n\ta substance called air\n\ta large cupboard. The large cupboard door is closed. \n\ta table. On the table is: a bowl (containing nothing).\n\ta wood cup (containing yellow paint)\n\ta wood cup (containing blue paint)\n\ta wood cup (containing red paint)\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to hallway",
+          "observation": "You move to the hallway.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the art studio. In it, you see: \n\tthe agent\n\ta substance called air\n\ta large cupboard. The large cupboard door is closed. \n\ta table. On the table is: a bowl (containing nothing).\n\ta wood cup (containing yellow paint)\n\ta wood cup (containing blue paint)\n\ta wood cup (containing red paint)\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to greenhouse",
+          "observation": "The door is already open.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta finger painting\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to greenhouse",
+          "observation": "You move to the greenhouse.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta finger painting\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on egg dove in outside",
+          "observation": "You focus on the dove egg.",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.37",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.37",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.41000000000000003",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.41000000000000003",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta butterfly egg\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta butterfly egg\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on hatchling dove in outside",
+          "observation": "You focus on the hatchling dove.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta caterpillar\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta caterpillar\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on juvenile dove in outside",
+          "observation": "You focus on the juvenile dove.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta butterfly pupa\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta butterfly pupa\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on adult dove in outside",
+          "observation": "You focus on the adult dove.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta adult butterfly\n\ta adult frog\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult giant tortoise\n\tthe ground\n\ta adult butterfly\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta adult butterfly\n\ta adult frog\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult giant tortoise\n\tthe ground\n\ta adult butterfly\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta adult butterfly\n\ta adult frog\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult giant tortoise\n\tthe ground\n\ta adult butterfly\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta adult butterfly\n\ta adult frog\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult giant tortoise\n\tthe ground\n\ta adult butterfly\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "11": {
+    "episodeIdx": 11,
+    "history": {
+      "variationIdx": 11,
+      "fold": "test",
+      "taskDescription": "Your task is to focus on the 4 life stages of the parrot, starting from earliest to latest.",
+      "taskName": "identify-life-stages-1",
+      "task_id": 12,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on egg parrot in outside",
+          "observation": "You focus on the parrot egg.",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.37",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.37",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.41000000000000003",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.41000000000000003",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta frog egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta parrot egg\n\ta turtle egg\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on hatchling parrot in outside",
+          "observation": "You focus on the hatchling parrot.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta tadpole\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta hatchling giant tortoise\n\tthe ground\n\ta hatchling parrot\n\ta hatchling turtle\n\ta juvenile wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on juvenile parrot in outside",
+          "observation": "You focus on the juvenile parrot.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\tthe ground\n\ta juvenile parrot\n\ta juvenile turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on adult parrot in outside",
+          "observation": "You focus on the adult parrot.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult giant tortoise\n\tthe ground\n\ta adult parrot\n\ta adult turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult giant tortoise\n\tthe ground\n\ta adult parrot\n\ta adult turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult giant tortoise\n\tthe ground\n\ta adult parrot\n\ta adult turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult frog\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult giant tortoise\n\tthe ground\n\ta adult parrot\n\ta adult turtle\n\ta adult wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "12": {
+    "episodeIdx": 12,
+    "history": {
+      "variationIdx": 12,
+      "fold": "test",
+      "taskDescription": "Your task is to focus on the 4 life stages of the butterfly, starting from earliest to latest.",
+      "taskName": "identify-life-stages-1",
+      "task_id": 12,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the living room. In it, you see: \n\tthe agent\n\ta substance called air\n\ta book shelf (containing nothing)\n\ta chair. On the chair is: nothing.\n\ta couch. On the couch is: a white pillow.\n\ta drawing\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the living room. In it, you see: \n\tthe agent\n\ta substance called air\n\ta book shelf (containing nothing)\n\ta chair. On the chair is: nothing.\n\ta couch. On the couch is: a white pillow.\n\ta drawing\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to hallway",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the living room. In it, you see: \n\tthe agent\n\ta substance called air\n\ta book shelf (containing nothing)\n\ta chair. On the chair is: nothing.\n\ta couch. On the couch is: a white pillow.\n\ta drawing\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to hallway",
+          "observation": "You move to the hallway.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the living room. In it, you see: \n\tthe agent\n\ta substance called air\n\ta book shelf (containing nothing)\n\ta chair. On the chair is: nothing.\n\ta couch. On the couch is: a white pillow.\n\ta drawing\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to greenhouse",
+          "observation": "The door is already open.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to greenhouse",
+          "observation": "You move to the greenhouse.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta shovel\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta shovel\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on egg butterfly in outside",
+          "observation": "You focus on the butterfly egg.",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.37",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.37",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.41000000000000003",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.41000000000000003",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.45",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta blue jay egg\n\ta butterfly egg\n\ta crocodile egg\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on caterpillar butterfly in outside",
+          "observation": "You focus on the caterpillar.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.7",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta hatchling blue jay\n\ta caterpillar\n\ta hatchling crocodile\n\ta hatchling dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta hatchling parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on pupa butterfly in outside",
+          "observation": "You focus on the butterfly pupa.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.95",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile blue jay\n\ta butterfly pupa\n\ta juvenile crocodile\n\ta juvenile dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta juvenile parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on adult butterfly in outside",
+          "observation": "You focus on the adult butterfly.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult blue jay\n\ta adult butterfly\n\ta adult crocodile\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta adult parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult blue jay\n\ta adult butterfly\n\ta adult crocodile\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta adult parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult blue jay\n\ta adult butterfly\n\ta adult crocodile\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta adult parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult blue jay\n\ta adult butterfly\n\ta adult crocodile\n\ta adult dove\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta adult parrot\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "13": {
+    "episodeIdx": 13,
+    "history": {
+      "variationIdx": 13,
+      "fold": "test",
+      "taskDescription": "Your task is to focus on the 3 life stages of the brown bear, starting from earliest to latest.",
+      "taskName": "identify-life-stages-1",
+      "task_id": 12,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta finger painting\n\ta glass cup (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is open, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta finger painting\n\ta glass cup (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is open, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to kitchen",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta finger painting\n\ta glass cup (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is open, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to kitchen",
+          "observation": "You move to the kitchen.",
+          "score": "0.05",
+          "isCompleted": "false",
+          "freelook": "This room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta finger painting\n\ta glass cup (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is closed, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.05",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.1",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.1",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby brown bear in outside",
+          "observation": "You focus on the baby brown bear.",
+          "score": "0.43333333333333335",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.43333333333333335",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.48333333333333334",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.48333333333333334",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.5333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.5333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.5833333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.5833333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.5833333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.5833333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta frog egg\n\tthe ground\n\ta butterfly egg\n\ta parrot egg\n\ta turtle egg\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on juvenile brown bear in outside",
+          "observation": "You focus on the juvenile brown bear.",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.9166666666666666",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta juvenile brown bear\n\ta juvenile elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta tadpole\n\tthe ground\n\ta caterpillar\n\ta hatchling parrot\n\ta hatchling turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on adult brown bear in outside",
+          "observation": "You focus on the adult brown bear.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta adult elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\tthe ground\n\ta butterfly pupa\n\ta juvenile parrot\n\ta juvenile turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta adult elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\tthe ground\n\ta butterfly pupa\n\ta juvenile parrot\n\ta juvenile turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta adult elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\tthe ground\n\ta butterfly pupa\n\ta juvenile parrot\n\ta juvenile turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult brown bear\n\ta adult elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta adult frog\n\tthe ground\n\ta butterfly pupa\n\ta juvenile parrot\n\ta juvenile turtle\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  }
+}

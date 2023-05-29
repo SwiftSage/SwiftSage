@@ -1,0 +1,582 @@
+{
+  "6": {
+    "episodeIdx": 6,
+    "history": {
+      "variationIdx": 6,
+      "fold": "test",
+      "taskDescription": "Your task is to focus on the life stages of the lemon plant, starting from earliest to latest. The plants are located outside.",
+      "taskName": "identify-life-stages-2",
+      "task_id": 13,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta shovel\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta shovel\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta shovel\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta shovel\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the adult stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the adult stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on lemon seed in the seed stage in self watering flower pot 4",
+          "observation": "You focus on the lemon seed.",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the adult stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the adult stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the adult stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on lemon tree in the seedling stage in self watering flower pot 1",
+          "observation": "You focus on the lemon tree.",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the adult stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the adult stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the adult stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on lemon tree in the adult stage in self watering flower pot 5",
+          "observation": "You focus on the lemon tree.",
+          "score": "0.87",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the adult stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage. On the lemon tree you see: a flower. , soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.87",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage. On the lemon tree you see: a flower. , soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on lemon tree in the reproducing stage in self watering flower pot 3",
+          "observation": "You focus on the lemon tree.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage. On the lemon tree you see: a flower. , soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage. On the lemon tree you see: a flower. , soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage. On the lemon tree you see: a flower. , soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta dead dove\n\ta adult dove\n\ta juvenile dove\n\ta hatchling dove\n\ta dove egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a lemon tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a lemon tree in the reproducing stage. On the lemon tree you see: a flower. , soil)\n\ta self watering flower pot 4 (containing a lemon seed, soil, a substance called water)\n\ta self watering flower pot 5 (containing a lemon tree in the reproducing stage, soil)\n\ta self watering flower pot 6 (containing a dead lemon tree, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "7": {
+    "episodeIdx": 7,
+    "history": {
+      "variationIdx": 7,
+      "fold": "test",
+      "taskDescription": "Your task is to focus on the life stages of the orange plant, starting from earliest to latest. The plants are located outside.",
+      "taskName": "identify-life-stages-2",
+      "task_id": 13,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to kitchen",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to kitchen",
+          "observation": "You move to the kitchen.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage, soil)\n\ta self watering flower pot 6 (containing a orange tree in the adult stage, soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage, soil)\n\ta self watering flower pot 6 (containing a orange tree in the adult stage, soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on orange seed in the seed stage in self watering flower pot 2",
+          "observation": "You focus on the orange seed.",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage, soil)\n\ta self watering flower pot 6 (containing a orange tree in the adult stage, soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on orange tree in the seedling stage in self watering flower pot 9",
+          "observation": "You focus on the orange tree.",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.66",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on orange tree in the adult stage in self watering flower pot 9",
+          "observation": "You focus on the orange tree.",
+          "score": "0.91",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange tree in the seedling stage, soil)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the adult stage, soil)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the adult stage, soil)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.91",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the adult stage, soil)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on orange tree in the reproducing stage in self watering flower pot 4",
+          "observation": "You focus on the orange tree.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the adult stage, soil)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the adult stage, soil)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the adult stage, soil)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta juvenile giant tortoise\n\ta hatchling giant tortoise\n\ta dead giant tortoise\n\ta giant tortoise egg\n\ta adult giant tortoise\n\tthe ground\n\ta self watering flower pot 2 (containing a orange tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 6 (containing a orange tree in the reproducing stage. On the orange tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a dead orange tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a orange tree in the adult stage, soil)\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "8": {
+    "episodeIdx": 8,
+    "history": {
+      "variationIdx": 8,
+      "fold": "test",
+      "taskDescription": "Your task is to focus on the life stages of the peach plant, starting from earliest to latest. The plants are located outside.",
+      "taskName": "identify-life-stages-2",
+      "task_id": 13,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta glass cup (containing nothing)\n\ta picture\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is open, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta glass cup (containing nothing)\n\ta picture\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is open, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to kitchen",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta glass cup (containing nothing)\n\ta picture\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is open, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to kitchen",
+          "observation": "You move to the kitchen.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta glass cup (containing nothing)\n\ta picture\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is closed, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the adult stage, soil)\n\ta self watering flower pot 7 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the adult stage, soil)\n\ta self watering flower pot 7 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on peach seed in the seed stage in self watering flower pot 3",
+          "observation": "You focus on the peach seed.",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the adult stage, soil)\n\ta self watering flower pot 7 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on peach tree in the seedling stage in self watering flower pot 7",
+          "observation": "You focus on the peach tree.",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.66",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach seed, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage, soil)\n\ta self watering flower pot 7 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on peach tree in the adult stage in self watering flower pot 7",
+          "observation": "You focus on the peach tree.",
+          "score": "0.91",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach tree in the seedling stage, soil)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a peach tree in the adult stage, soil)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a peach tree in the adult stage, soil)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.91",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a peach tree in the adult stage, soil)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on peach tree in the reproducing stage in self watering flower pot 8",
+          "observation": "You focus on the peach tree.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a peach tree in the adult stage, soil)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a peach tree in the adult stage, soil)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a peach tree in the adult stage, soil)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta adult beaver\n\ta dead beaver\n\ta juvenile beaver\n\ta baby beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a dead peach tree, soil, a substance called water)\n\ta self watering flower pot 3 (containing a peach tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 4 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta self watering flower pot 7 (containing a peach tree in the adult stage, soil)\n\ta self watering flower pot 8 (containing a peach tree in the reproducing stage. On the peach tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "9": {
+    "episodeIdx": 9,
+    "history": {
+      "variationIdx": 9,
+      "fold": "test",
+      "taskDescription": "Your task is to focus on the life stages of the pear plant, starting from earliest to latest. The plants are located outside.",
+      "taskName": "identify-life-stages-2",
+      "task_id": 13,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to hallway",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to hallway",
+          "observation": "You move to the hallway.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to greenhouse",
+          "observation": "The door is already open.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta picture\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to greenhouse",
+          "observation": "You move to the greenhouse.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta picture\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.04",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a pear seed, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.08",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a pear seed, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on pear seed in the seed stage in self watering flower pot 3",
+          "observation": "You focus on the pear seed.",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a pear seed, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a pear seed, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.33",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a pear seed, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on pear tree in the seedling stage in self watering flower pot 2",
+          "observation": "You focus on the pear tree.",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a pear seed, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a pear seed, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a pear seed, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "0.62",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 3 (containing a pear seed, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage, soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on pear tree in the adult stage in self watering flower pot 2",
+          "observation": "You focus on the pear tree.",
+          "score": "0.91",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the adult stage, soil)\n\ta self watering flower pot 3 (containing a pear tree in the seedling stage, soil)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the adult stage, soil)\n\ta self watering flower pot 3 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "0.91",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the adult stage, soil)\n\ta self watering flower pot 3 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on pear tree in the reproducing stage in self watering flower pot 9",
+          "observation": "You focus on the pear tree.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the adult stage, soil)\n\ta self watering flower pot 3 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "look around",
+          "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the adult stage, soil)\n\ta self watering flower pot 3 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the adult stage, soil)\n\ta self watering flower pot 3 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta juvenile beaver\n\ta dead beaver\n\ta adult beaver\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta self watering flower pot 1 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta self watering flower pot 2 (containing a pear tree in the adult stage, soil)\n\ta self watering flower pot 3 (containing a pear tree in the seedling stage, soil, a substance called water)\n\ta self watering flower pot 7 (containing a dead pear tree, soil, a substance called water)\n\ta self watering flower pot 9 (containing a pear tree in the reproducing stage. On the pear tree you see: a flower. , soil)\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  }
+}

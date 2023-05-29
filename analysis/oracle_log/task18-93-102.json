@@ -1,0 +1,792 @@
+{
+  "93": {
+    "episodeIdx": 93,
+    "history": {
+      "variationIdx": 93,
+      "fold": "test",
+      "taskDescription": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+      "taskName": "lifespan-longest-lived-then-shortest-lived",
+      "task_id": 18,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.3333333333333333",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on crocodile",
+          "observation": "You focus on the crocodile egg.",
+          "score": "0.8333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby mouse\n\ta shovel\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby mouse",
+          "observation": "You focus on the baby mouse.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby mouse\n\ta shovel\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta crocodile egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby mouse\n\ta shovel\n\ta baby wolf\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "94": {
+    "episodeIdx": 94,
+    "history": {
+      "variationIdx": 94,
+      "fold": "test",
+      "taskDescription": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+      "taskName": "lifespan-longest-lived-then-shortest-lived",
+      "task_id": 18,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta shovel\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta shovel\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta shovel\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.3333333333333333",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta shovel\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on egg giant tortoise",
+          "observation": "You focus on the giant tortoise egg.",
+          "score": "0.8333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby chipmunk\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta baby hedgehog\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby hedgehog",
+          "observation": "You focus on the baby hedgehog.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby chipmunk\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta baby hedgehog\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby chipmunk\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\ta giant tortoise egg\n\tthe ground\n\ta baby hedgehog\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "95": {
+    "episodeIdx": 95,
+    "history": {
+      "variationIdx": 95,
+      "fold": "test",
+      "taskDescription": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+      "taskName": "lifespan-longest-lived-then-shortest-lived",
+      "task_id": 18,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta finger painting\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta finger painting\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to kitchen",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta finger painting\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to kitchen",
+          "observation": "You move to the kitchen.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta finger painting\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.3333333333333333",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on egg parrot",
+          "observation": "You focus on the parrot egg.",
+          "score": "0.8333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta chameleon egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta baby rabbit\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on chameleon",
+          "observation": "You focus on the chameleon egg.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta chameleon egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta baby rabbit\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta chameleon egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta parrot egg\n\ta baby rabbit\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "96": {
+    "episodeIdx": 96,
+    "history": {
+      "variationIdx": 96,
+      "fold": "test",
+      "taskDescription": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+      "taskName": "lifespan-longest-lived-then-shortest-lived",
+      "task_id": 18,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the workshop. In it, you see: \n\tthe agent\n\ta substance called air\n\ta table. On the table is: a battery, a black wire, a orange light bulb, which is off, a orange wire, a red wire, a switch, which is off, a violet light bulb, which is off, a yellow light bulb, which is off.\n\ta ultra low temperature freezer. The ultra low temperature freezer door is closed. \nYou also see:\n\tA door to the hallway (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the workshop. In it, you see: \n\tthe agent\n\ta substance called air\n\ta table. On the table is: a battery, a black wire, a orange light bulb, which is off, a orange wire, a red wire, a switch, which is off, a violet light bulb, which is off, a yellow light bulb, which is off.\n\ta ultra low temperature freezer. The ultra low temperature freezer door is closed. \nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to hallway",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the workshop. In it, you see: \n\tthe agent\n\ta substance called air\n\ta table. On the table is: a battery, a black wire, a orange light bulb, which is off, a orange wire, a red wire, a switch, which is off, a violet light bulb, which is off, a yellow light bulb, which is off.\n\ta ultra low temperature freezer. The ultra low temperature freezer door is closed. \nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to hallway",
+          "observation": "You move to the hallway.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the workshop. In it, you see: \n\tthe agent\n\ta substance called air\n\ta table. On the table is: a battery, a black wire, a orange light bulb, which is off, a orange wire, a red wire, a switch, which is off, a violet light bulb, which is off, a yellow light bulb, which is off.\n\ta ultra low temperature freezer. The ultra low temperature freezer door is closed. \nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to kitchen",
+          "observation": "The door is already open.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta painting\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to kitchen",
+          "observation": "You move to the kitchen.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta painting\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.3333333333333333",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby brown bear",
+          "observation": "You focus on the baby brown bear.",
+          "score": "0.8333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby chipmunk\n\ta baby dragonfly\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby dragonfly",
+          "observation": "You focus on the baby dragonfly.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby chipmunk\n\ta baby dragonfly\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta baby chipmunk\n\ta baby dragonfly\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "97": {
+    "episodeIdx": 97,
+    "history": {
+      "variationIdx": 97,
+      "fold": "test",
+      "taskDescription": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+      "taskName": "lifespan-longest-lived-then-shortest-lived",
+      "task_id": 18,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the foundry. In it, you see: \n\tthe agent\n\ta substance called air\n\ta blast furnace, which is turned off. The blast furnace door is closed. \n\ta sink, which is turned off. In the sink is: nothing.\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the outside (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the foundry. In it, you see: \n\tthe agent\n\ta substance called air\n\ta blast furnace, which is turned off. The blast furnace door is closed. \n\ta sink, which is turned off. In the sink is: nothing.\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the foundry. In it, you see: \n\tthe agent\n\ta substance called air\n\ta blast furnace, which is turned off. The blast furnace door is closed. \n\ta sink, which is turned off. In the sink is: nothing.\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.3333333333333333",
+          "isCompleted": "false",
+          "freelook": "This room is called the foundry. In it, you see: \n\tthe agent\n\ta substance called air\n\ta blast furnace, which is turned off. The blast furnace door is closed. \n\ta sink, which is turned off. In the sink is: nothing.\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby elephant",
+          "observation": "You focus on the baby elephant.",
+          "score": "0.8333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\ta baby ant\n\tan axe\n\ta baby beaver\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on ant",
+          "observation": "You focus on the baby ant.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\ta baby ant\n\tan axe\n\ta baby beaver\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\ta baby ant\n\tan axe\n\ta baby beaver\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "98": {
+    "episodeIdx": 98,
+    "history": {
+      "variationIdx": 98,
+      "fold": "test",
+      "taskDescription": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+      "taskName": "lifespan-longest-lived-then-shortest-lived",
+      "task_id": 18,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta book shelf (containing A book (Moby Dick) titled Moby Dick by Herman Melville, A book (Pride and Prejudice) titled Pride and Prejudice by Jane Austen, A book (Sherlock Holmes) titled Sherlock Holmes by Arthur Conan Doyle)\n\ta closet. The closet door is closed. \n\ta drawing\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta book shelf (containing A book (Moby Dick) titled Moby Dick by Herman Melville, A book (Pride and Prejudice) titled Pride and Prejudice by Jane Austen, A book (Sherlock Holmes) titled Sherlock Holmes by Arthur Conan Doyle)\n\ta closet. The closet door is closed. \n\ta drawing\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to hallway",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta book shelf (containing A book (Moby Dick) titled Moby Dick by Herman Melville, A book (Pride and Prejudice) titled Pride and Prejudice by Jane Austen, A book (Sherlock Holmes) titled Sherlock Holmes by Arthur Conan Doyle)\n\ta closet. The closet door is closed. \n\ta drawing\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to hallway",
+          "observation": "You move to the hallway.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta book shelf (containing A book (Moby Dick) titled Moby Dick by Herman Melville, A book (Pride and Prejudice) titled Pride and Prejudice by Jane Austen, A book (Sherlock Holmes) titled Sherlock Holmes by Arthur Conan Doyle)\n\ta closet. The closet door is closed. \n\ta drawing\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to greenhouse",
+          "observation": "The door is already open.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to greenhouse",
+          "observation": "You move to the greenhouse.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.3333333333333333",
+          "isCompleted": "false",
+          "freelook": "This room is called the greenhouse. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bee hive. The bee hive door is closed. \n\ta jug (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby brown bear",
+          "observation": "You focus on the baby brown bear.",
+          "score": "0.8333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta frog egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby hedgehog\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby hedgehog",
+          "observation": "You focus on the baby hedgehog.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta frog egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby hedgehog\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta frog egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby hedgehog\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "99": {
+    "episodeIdx": 99,
+    "history": {
+      "variationIdx": 99,
+      "fold": "test",
+      "taskDescription": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+      "taskName": "lifespan-longest-lived-then-shortest-lived",
+      "task_id": 18,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the art studio. In it, you see: \n\tthe agent\n\ta substance called air\n\ta large cupboard. The large cupboard door is closed. \n\ta table. On the table is: a glass cup (containing nothing).\n\ta wood cup (containing red paint)\n\ta wood cup (containing yellow paint)\n\ta wood cup (containing blue paint)\nYou also see:\n\tA door to the hallway (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the art studio. In it, you see: \n\tthe agent\n\ta substance called air\n\ta large cupboard. The large cupboard door is closed. \n\ta table. On the table is: a glass cup (containing nothing).\n\ta wood cup (containing red paint)\n\ta wood cup (containing yellow paint)\n\ta wood cup (containing blue paint)\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to hallway",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the art studio. In it, you see: \n\tthe agent\n\ta substance called air\n\ta large cupboard. The large cupboard door is closed. \n\ta table. On the table is: a glass cup (containing nothing).\n\ta wood cup (containing red paint)\n\ta wood cup (containing yellow paint)\n\ta wood cup (containing blue paint)\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to hallway",
+          "observation": "You move to the hallway.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the art studio. In it, you see: \n\tthe agent\n\ta substance called air\n\ta large cupboard. The large cupboard door is closed. \n\ta table. On the table is: a glass cup (containing nothing).\n\ta wood cup (containing red paint)\n\ta wood cup (containing yellow paint)\n\ta wood cup (containing blue paint)\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to kitchen",
+          "observation": "The door is already open.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta finger painting\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to kitchen",
+          "observation": "You move to the kitchen.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta finger painting\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.3333333333333333",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby elephant",
+          "observation": "You focus on the baby elephant.",
+          "score": "0.8333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby chipmunk\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby hedgehog\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby hedgehog",
+          "observation": "You focus on the baby hedgehog.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby chipmunk\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby hedgehog\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby chipmunk\n\ta baby elephant\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby hedgehog\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "100": {
+    "episodeIdx": 100,
+    "history": {
+      "variationIdx": 100,
+      "fold": "test",
+      "taskDescription": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+      "taskName": "lifespan-longest-lived-then-shortest-lived",
+      "task_id": 18,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to kitchen",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to kitchen",
+          "observation": "You move to the kitchen.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.3333333333333333",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby brown bear",
+          "observation": "You focus on the baby brown bear.",
+          "score": "0.8333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby mouse\n\ta baby rabbit\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby mouse",
+          "observation": "You focus on the baby mouse.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby mouse\n\ta baby rabbit\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby mouse\n\ta baby rabbit\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "101": {
+    "episodeIdx": 101,
+    "history": {
+      "variationIdx": 101,
+      "fold": "test",
+      "taskDescription": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+      "taskName": "lifespan-longest-lived-then-shortest-lived",
+      "task_id": 18,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta book shelf (containing A book (Beowulf) titled Beowulf by Beowulf poet, A book (Pride and Prejudice) titled Pride and Prejudice by Jane Austen, A book (The Foundations of the Origin of Species) titled The Foundations of the Origin of Species by Charles Darwin)\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta book shelf (containing A book (Beowulf) titled Beowulf by Beowulf poet, A book (Pride and Prejudice) titled Pride and Prejudice by Jane Austen, A book (The Foundations of the Origin of Species) titled The Foundations of the Origin of Species by Charles Darwin)\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to hallway",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta book shelf (containing A book (Beowulf) titled Beowulf by Beowulf poet, A book (Pride and Prejudice) titled Pride and Prejudice by Jane Austen, A book (The Foundations of the Origin of Species) titled The Foundations of the Origin of Species by Charles Darwin)\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to hallway",
+          "observation": "You move to the hallway.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the bedroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bed. On the bed is: a mattress. On the mattress is: a white pillow..\n\ta book shelf (containing A book (Beowulf) titled Beowulf by Beowulf poet, A book (Pride and Prejudice) titled Pride and Prejudice by Jane Austen, A book (The Foundations of the Origin of Species) titled The Foundations of the Origin of Species by Charles Darwin)\n\ta closet. The closet door is closed. \n\ta picture\n\ta table. On the table is: nothing.\nYou also see:\n\tA door to the hallway (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to kitchen",
+          "observation": "The door is already open.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to kitchen",
+          "observation": "You move to the kitchen.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta drawing\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.16666666666666666",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.3333333333333333",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby brown bear",
+          "observation": "You focus on the baby brown bear.",
+          "score": "0.8333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta baby brown bear\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby mouse\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby mouse",
+          "observation": "You focus on the baby mouse.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta baby brown bear\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby mouse\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby beaver\n\ta baby brown bear\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby mouse\n\ta shovel\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  },
+  "102": {
+    "episodeIdx": 102,
+    "history": {
+      "variationIdx": 102,
+      "fold": "test",
+      "taskDescription": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+      "taskName": "lifespan-longest-lived-then-shortest-lived",
+      "task_id": 18,
+      "history": [
+        {
+          "action": "look around",
+          "observation": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "open door to outside",
+          "observation": "The door is already open.",
+          "score": "0.0",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "go to outside",
+          "observation": "You move to the outside.",
+          "score": "0.3333333333333333",
+          "isCompleted": "false",
+          "freelook": "This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on baby baby brown bear",
+          "observation": "You focus on the baby brown bear.",
+          "score": "0.8333333333333333",
+          "isCompleted": "false",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta chameleon egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby rabbit\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "focus on chameleon",
+          "observation": "You focus on the chameleon egg.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta chameleon egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby rabbit\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        },
+        {
+          "action": "wait1",
+          "observation": "You decide to wait for 1 iterations.",
+          "score": "1.0",
+          "isCompleted": "true",
+          "freelook": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta baby brown bear\n\ta chameleon egg\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta baby rabbit\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n",
+          "inventory": "In your inventory, you see:\n\tan orange\n"
+        }
+      ]
+    },
+    "notes": {
+      "mode": "oracle"
+    }
+  }
+}
