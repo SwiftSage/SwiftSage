@@ -297,7 +297,7 @@ def eval(args, task_num, logger):
 
                 mode = args["mode"]
                 logger.info("Mode: " + mode)
-                # TODO: clean some parts of the recent history if they are not useful "examine", "teleport" --> "go to", repeat
+                
                 clean_recent_actions, clean_recent_obs, clean_recent_scores, clean_recent_reward, _ = \
                     clean_history(recent_actions, recent_obs, recent_scores, recent_reward, recent_locs)
                 input_str, _ = compose_instance(mode=mode, step_id=step+1, task_desc=task_description, returns_to_go=returns_to_go,
@@ -314,10 +314,7 @@ def eval(args, task_num, logger):
                 if args["slow_agent"]:                    
                     force_system_2 = False 
                     force_system_1 = False 
-                    # TODO: double check 
-                    # if step == 1: 
-                    #     force_system_2 = True  
-
+                    
                     if no_action_done >= 2 or len(failed_messages) >= 2:
                         force_system_1 = False
                         force_system_2 = True            
@@ -349,7 +346,6 @@ def eval(args, task_num, logger):
                         
                     else:
                         action = None 
-                        # TODO: keep some focus on, pick up, activate, use? 
                         action_buffer = return_result[0] # reset the buffer 
                         obs_buffer = return_result[1]
                         failed_messages = [] # reset the failed messages 
@@ -363,13 +359,6 @@ def eval(args, task_num, logger):
                         
                     if action is not None and action not in validActions:
                         logger.info(f"action '{action}' is not in validActions; ") 
-                        # deal with go to action 
-                        # logger.info("Use SBERT to search validActions")
-                        # action = sbert_search([action], list(validActions), sbert_model, logger)
-                        # logger.info("Use Edit Distance to search validActions")
-                        # action = rank_candidates_by_common_words(action, list(validActions))[0]
-                        
-                        # logger.info("Put a possible Fast-Agent action to the buffer")
                         action = "wait"
                         action_buffer.append(action)
                         obs_buffer.append(action)
@@ -384,13 +373,7 @@ def eval(args, task_num, logger):
                     predStrs = get_model_output(args, input_str, tokenizer, lm_model, device, logger)
                     action = findValidActionNew(predStrs, env, info['look'], recent_actions, sbert_model, logger) 
             
-
-
-
-            # check the action is repeated 
-            # if action.startswith("teleport") and action in recent_actions[-3:]:
-            #     logger.info(f"We are skipping action=[{action}] because this room just been visited")
-            #     continue  
+ 
 
             
             if action.startswith("focus on") and focus_on_done:
@@ -439,7 +422,7 @@ def eval(args, task_num, logger):
                     focus_on_done = True 
 
             if score < 0 or (len(recent_reward)>=100 and sum(recent_reward[-30:])==0):
-                # Our own solution for dealing with such cases
+                # Note: our own solution for dealing with such cases; It is different from the official ScienceWorld evaluation script. You can find our discussion in the Issues.
                 if args["no_stop"]:
                     done = True
                     score = last_score
@@ -464,7 +447,7 @@ def eval(args, task_num, logger):
   
 
             logger.info("Recent Actions: " + str(recent_actions))
-            logger.info("Recent Obervations: " + str(recent_obs))
+            logger.info("Recent Observations: " + str(recent_obs))
             logger.info("Recent Reward: " + str(recent_reward))
 
             # Early stopping if we're in a loop
@@ -508,7 +491,7 @@ def parse_args():
     parser.add_argument("--jar_path", type=str) 
     parser.add_argument("--task_nums", default="11")  # use comma to split 
     parser.add_argument("--env_step_limit", type=int, default=300) # for different tasks, this should be different 
-    parser.add_argument("--lm_path", default="fast_agent/model_ckpts/flan_large_0411/checkpoint-500") 
+    parser.add_argument("--lm_path", default="yuchenlin/swift_sw") 
     parser.add_argument("--simplification_str", default="easy")
     parser.add_argument("--beams", type=int, default=5)
     parser.add_argument("--max_episode_per_file", type=int, default=9999)
@@ -525,9 +508,7 @@ def parse_args():
     parser.add_argument("--slow_agent", action="store_true", default=True) 
     parser.add_argument("--gpt_version", default="gpt-4", type=str)  
     parser.add_argument("--demo_file", default="slow_agent/demos.json", type=str)
-    # parser.add_argument("--debug_var", type=int, default=-1)
     parser.add_argument("--debug_var", type=int, default=93)
-        # parser.add_argument("--slow_prompt_path", type=str, default="slow_agent/query_data.gpt3.5.json")
     args = parser.parse_args()
     params = vars(args)
     return params

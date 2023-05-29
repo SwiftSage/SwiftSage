@@ -29,12 +29,11 @@ action_type_description = [
     {"action_type": "CONNECT(object)", "desc": "connect two objects so that they become useful"},
     {"action_type": "MOVE(object, place)", "desc": "move/place the object to a place"},
     {"action_type": "USE(object A, object B)", "desc": "use an object A on object B, for example, USE(thermometer in inventory, water) to check the temperature of water."},
-    {"action_type": "MIX(container)", "desc": "mix the objects in a container such as MIX(cup contaitning sugar and water)"},
+    {"action_type": "MIX(container)", "desc": "mix the objects in a container such as MIX(cup containing sugar and water)"},
     {"action_type": "DUNK(object A, object B)", "desc": "dunk object A into object B (optional)"},
     {"action_type": "DROP(object A, object B)", "desc": "drop object A into object B (optional)"},
     {"action_type": "POUR(object A, object B)", "desc": "pour the object A into the container B; For example, POUR(red paint, glass cup)"},
     {"action_type": "FOCUS(object)", "desc": "focus on an important object that are required by the task description (e.g., a substance, a plant, an animal, and so on)."},
-    # for example, FOUCS(substance) if you want to boil that substance later; Do NOT FOCUS indrectly or unimporatnt objects. For example, if you want to foucs on the substance in a cup which is on a table, just do FOCUS(substance). "
 ]
 
 focus_on_count = {
@@ -85,37 +84,7 @@ def clean_look(look, version="not_lite"):
         return "\n \t - ".join(clean_looks[:])        
 
 
-
-# look = """
-#  This room is called the kitchen. In it, you see: 
-# 	the agent
-# 	a substance called air
-# 	a chair. On the chair is: nothing.
-# 	a counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.
-# 	a cupboard. The cupboard door is closed. 
-# 	a freezer. The freezer door is closed. 
-# 	a fridge. The fridge door is closed. 
-# 	a glass jar (containing a substance called sodium chloride)
-# 	a lighter
-# 	a oven, which is turned off. The oven door is closed. 
-# 	a painting
-# 	a sink, which is turned off. In the sink is: nothing.
-# 	a substance called soap
-# 	a stopwatch, which is deactivated. 
-# 	a stove, which is turned off. On the stove is: nothing.
-# 	a table. On the table is: a glass cup (containing nothing).
-# 	a thermometer, currently reading a temperature of 10 degrees celsius
-# You also see:
-# 	A door to the bathroom (that is open)
-# 	A door to the hallway (that is open)
-# 	A door to the outside (that is open)
-
-# """
-# print(clean_look(look, version="lite"))
-# print(clean_look(look, version="all"))
-# exit()
-    
-
+ 
 def get_current_room(look):
     global rooms 
     first_sent = look.split(".")[0]
@@ -128,12 +97,7 @@ def get_current_room(look):
 def load_model(args, device):
     tokenizer = AutoTokenizer.from_pretrained(args["lm_path"])
     lm_model = AutoModelForSeq2SeqLM.from_pretrained(args["lm_path"])
-    lm_model.eval()
-    # num_layers = len(lm_model.encoder.block)
-    # mp_size = args["model_parallelism_size"]
-    # layers_per_device = ceil(num_layers/mp_size)
-    # device_map = {i: list(range(i*layers_per_device, min((i+1)*layers_per_device, num_layers))) for i in range(mp_size)}
-    # lm_model.parallelize(device_map) 
+    lm_model.eval() 
     lm_model.to(device)
     if args["sbert"]:
         sbert_model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
@@ -148,13 +112,9 @@ def load_variation(env, args, task_num, logger):
     variations = []
     if (args["set"] == "train"):
         variations = list(env.getVariationsTrain())
-        if task_num == 26:
-            # random.seed(1)
-            # random.shuffle(variations)
+        if task_num == 26: 
             variations = variations[:int(len(variations)/10)]
-        elif task_num == 29:
-            # random.seed(1)
-            # random.shuffle(variations)
+        elif task_num == 29: 
             variations = variations[:int(len(variations)/2)]
     elif (args["set"] == "test"):
         variations = list(env.getVariationsTest())
@@ -201,7 +161,7 @@ def findValidActionNew(predictions, env, look, recent_actions, sbert_model, logg
 
     inventory = env.inventory().lower()
     
-    validActions.difference_update(recent_actions[-3:]) # TODO: except for `wait1`
+    validActions.difference_update(recent_actions[-3:]) 
 
     for va in list(validActions):
         if "door" in va and "open" not in va:
@@ -293,8 +253,6 @@ def getFilteredValidActions(env, look, filter=True, task_id=None, task_desc=None
 
     inventory = env.inventory()
     
-    # validActions.difference_update(recent_actions[-3:])
-    # TODO: double check 
     validActions.add("wait")
     validActions.add("wait1") 
     if task_id is not None and task_desc is not None: 
@@ -326,14 +284,6 @@ def getFilteredValidActions(env, look, filter=True, task_id=None, task_desc=None
         if "door" in va and "open" not in va:
             validActions.remove(va)
             continue
-        # if va.startswith("focus on"):  
-        #     items = va.replace("focus on", "").split()
-        #     valid = True
-        #     for obj in items:
-        #         if obj.lower() not in look.lower() + " " + inventory.lower():
-        #             valid = False
-        #     if not valid:
-        #         validActions.remove(va)
     return validActions
     
 def sbert_search(action_list, validActions, sbert_model, logger, k=1, N=1, return_scores=False):
@@ -412,25 +362,13 @@ def try_to_replace(action, validActions, look=None, inventory=None):
         if action.replace("go to", "teleport to") in validActions:
             return action.replace("go to", "teleport to")
         elif action.replace("go to", "open door to") in validActions:
-            return action.replace("go to", "open door to")
-    if action.startswith("exmaine"):
-        if action.replace("exmaine", "focus on") in validActions:
-            return action.replace("exmaine", "focus on")
-        if action.replace("exmaine", "teleport to") in validActions:
-            return action.replace("exmaine", "teleport to")
-        action = action.replace("exmaine", "focus on")
+            return action.replace("go to", "open door to") 
     if action.startswith("pick up"):
         action = find_object(action, look)
         if action in validActions:
             return action 
         if action.replace("substance in ","") in validActions:
             return action
-        # pick_up_substance = [] 
-        # for a in list(validActions):
-        #     if a.startswith("pick up substance in"):
-        #         pick_up_substance.append(a) 
-        # if pick_up_substance:
-        #     return pick_up_substance[0]
     if action.startswith("focus on"):
         obj = action.replace("focus on", "").strip()
         todo = "focus on substance in inventory"
@@ -448,26 +386,6 @@ def try_to_replace(action, validActions, look=None, inventory=None):
             return todo
     
 
-    # if action.startswith("use thermometer on"):
-    #     states = ["liquid", "gaseous", "solid"]
-    #     action_objs = action.replace("use thermometer on","").strip().split()
-    #     max_len_intersection = 0
-    #     max_len_va = 0
-    #     max_va = None  
-    #     for va in validActions:
-    #         if va.startswith("use thermometer on"):
-    #             va_objs = va.replace("use thermometer on","").strip().split()
-    #             a = set(action_objs).difference(states)
-    #             b = set(va_objs).difference(states)
-    #             if a & b:
-    #                 if len(a & b) > max_len_intersection:
-    #                     max_len_intersection = len(a & b)
-    #                     max_va = va 
-    #     if max_va:
-    #         return max_va
-
-                
-
     split_string = action.rsplit(" in ", 1) # Split the string from the last occurrence of " in "
     if split_string[0] in validActions:
         return split_string[0]
@@ -480,13 +398,6 @@ def try_to_replace(action, validActions, look=None, inventory=None):
         
     for r in rooms:
         action = action.replace("in " + r, "")
-    # for va in validActions:
-    #     # open blast furnace door -->  open blast furnace 
-    #     if va in action and not va.startswith("focus on"):
-    #         return va 
-    # TODO: check rooms?
-    # if len(split_string) >= 2 and "stage" not in action and "substance" not in action and "to" not in split_string[1]:  
-    #     return split_string[0]
     return action 
         
 
@@ -556,11 +467,6 @@ def findValidActionWithSystem2(predictions, env, task_id, task_description, look
                     break 
             trial_action = predictions[0] if trial_action is None and predictions else trial_action
             return False, trial_action
-        # if force_system_1:
-        #     # logger.info("Using Fast System output. + SBERT")
-        #     # pred = try_to_replace(predictions[0], validActions, look, inventory)  
-        #     # action = sbert_search([pred], list(validActions), sbert_model, logger)
-        #     return False, action 
 
 
     assert enable_system2  or force_system_2
@@ -651,7 +557,7 @@ def findValidActionWithSystem2(predictions, env, task_id, task_description, look
         logger.info("Error from System 2. Try again.")
         prompt_again = []
         prompt_again.append("Your previous generation is wrong. I cannot use your output actions to complete the next subgoal or the task. Please rethink and generate the actions again. ")
-        prompt_again.append("Note that I can only do actions with avaliable objects in the current inenvornment or my inventory. If the needed object are not avaliable, please teleport to the location first.")
+        prompt_again.append("Note that I can only do actions with available objects in the current in environment or my inventory. If the needed object are not available, please teleport to the location first.")
         prompt_again.append("Please use the below format to organize the response.")
         prompt_again.append("Action 1: [...] -->  \n Action 2: [...] --> \n ...")
         prompt_again = "\n".join(prompt_again)
@@ -763,7 +669,7 @@ def compose_prompt_to_nextactions(demos, task_desc, recent_actions, recent_obs, 
 
     prompt_to_next_actions.append("Please use the above mentioned action types to convert the unfinished subgoal to a short sequence of concrete actions.  DO NOT USER OTHER TYPES OF ACTIONS. Follow the report of the two example tasks shown to you previously.")    
     prompt_to_next_actions.append("Please do not try to look for books or computers to look up information. You will need to use your own commonsense knowledge to make decisions (e.g., determining properties of objects and animals).")
-    prompt_to_next_actions.append("Note that I can only do actions with availiable objects in the current location or inventory!!") #  If the needed thing are not availiable, please teleport to a location for picking it up first.
+    prompt_to_next_actions.append("Note that I can only do actions with available objects in the current location or inventory!!") 
     prompt_to_next_actions.append("Please use the below format to organize the response.")
     prompt_to_next_actions.append("Action 1: [...] -->  \n Action 2: [...] --> \n ...")
     return "\n".join(prompt_to_next_actions)
@@ -785,13 +691,6 @@ def compose_prompt_to_plan(demos, useful_focus_on, task_desc, recent_actions, re
         if f"In {recent_locs[i+1]}, {obs}" in clean_obs:
             continue
         
-        # if i+2 < len(recent_obs) and obs == recent_obs[i+2]:
-        #     repeat += 1 
-        #     continue
-        # if repeat > 0:
-        #     clean_obs.append(f"Repeated the above action for {repeat} times.")
-        #     repeat = 0
-
         if recent_actions[i+1] in recent_actions[i+1-5:i+1] and recent_actions[i+1] in recent_actions[i+2:i+2+5]:
             repeat += 1
             continue
@@ -815,16 +714,6 @@ def compose_prompt_to_plan(demos, useful_focus_on, task_desc, recent_actions, re
 
     
     prompt_to_plan  = []
-    # prompt_to_plan.append("You have done a science experiments successfully and below are the observation history.")
-    # prompt_to_plan.append("Example task 1: "+ demos[1][0])
-    # obs = []
-    # for h in demos[1][1:]:
-    #     start_ind = h.index("Action: ") 
-    #     end_ind = h.index("--> ") + len("--> ")
-    #     obs.append(h[:start_ind] + h[end_ind:])
-    # prompt_to_plan += obs 
-    # prompt_to_plan.append("Example task 2: "+ demos[1][0])
-    # prompt_to_plan += demos[1][1:]
 
     prompt_to_plan.append("You are an experienced teacher who always guides students to complete the science experiments by giving executable advice and instructions with world knowledge.")
 
@@ -871,13 +760,11 @@ def compose_prompt_to_plan(demos, useful_focus_on, task_desc, recent_actions, re
         failed_messages = set(failed_messages)
         prompt_to_plan.append("There are some error messages about my previous actions:")
         prompt_to_plan += failed_messages
-    prompt_to_plan.append("Please review the task description and the previous observations and then answer the following questions to help me plan for efficieintly completing the next subgoal.")
+    prompt_to_plan.append("Please review the task description and the previous observations and then answer the following questions to help me plan for efficiently completing the next subgoal.")
     prompt_to_plan.append("Question 1: To efficiently complete the task, what substance and objects do I need to collect? Please list them and their possible locations one by one. Please ignore protective gears because I have them already.")
-    # prompt_to_plan.append("Question 2: Based on your answer to Question 1, are there any substance or objects that I should keep looking for? If so, which rooms are they likely to be? Note that I cannot do actions without them if they are not collected yet. You can use the previous observations to judge if an object has been picked up or not.")
     prompt_to_plan.append("Question 2: Based on your answer to Question 1, are there any substance or objects that are not in my inventory now and I should keep looking for?" + \
                           " If so, which rooms are they likely to be? " + \
                           "Note that some of your suggested items might not exist in the rooms. In that case, let's try to use the similar ones in the environment." + \
-                        #   " Note that I may have picked up some objects but left them in a broken place, such as a broken stove in the kitchen, in such cases, I should teleport to these places to pick them up again." + \
                           " Note that I cannot do actions without them if they are not collected yet. ")
    
 
@@ -888,7 +775,7 @@ def compose_prompt_to_plan(demos, useful_focus_on, task_desc, recent_actions, re
     prompt_to_plan.append("Question 3: To most efficiently complete the task, what will be the important subgoals to finish? Please list up to five subgoals." + \
                           f" Importantly, please include the subgoals about 'focus on' as required in the task description. Remember that it is ONLY possible focus on these items: {', '.join(to_focus)}! You should NOT focus on other things!! If you list a subgoal of focusing on, make sure that is mentioned and required by the task.")
     prompt_to_plan.append("Question 4: In these subgoals, what have I already completed based on the previous observations? And which subgoals should I aim to do right now?" + \
-                          " These subgoals may need additional common knowledge to make decisions. Please recall the knowledge about the properties of objects or anmials. Think step by step, and list the facts that are useful. And then use them for determining or comparing if needed. Finally, list the next subgoals based on the knowledge and current observations.")
+                          " These subgoals may need additional common knowledge to make decisions. Please recall the knowledge about the properties of objects or animals. Think step by step, and list the facts that are useful. And then use them for determining or comparing if needed. Finally, list the next subgoals based on the knowledge and current observations.")
     prompt_to_plan.append("Question 5: Based on the observations, did I make any mistakes that prevent me from efficiently finishing the next subgoals? Did I forget to go to a location to pick up thing? Or did I forget to open/activate/move something? Did I repeat any actions too many times? If so, how should I fix it?")
     prompt_to_plan.append("Please do not try to look for books or computers to look up information. You will need to use your own commonsense knowledge to make decisions (e.g., determining properties of objects and animals).")
     prompt_to_plan.append("Please read the task description carefully, and think step by step to answer these questions one by one. Please be concise. Thank you very much.")
@@ -926,14 +813,8 @@ def get_model_output(args, input_str, tokenizer, lm_model, device, logger):
     sample_outputs = lm_model.generate(
         input_ids.to(device),
         max_length=16,
-        # dbs
-        # diversity_penalty=50.0,
-        # num_beam_groups=args['beams'],
-        # normal bs
         num_return_sequences=args['beams'],
         num_beams=args['beams'],
-        # constrained decoding ?
-        # bad_words_ids = bad_words_ids,
     )
  
     lm_pred = sample_outputs
@@ -1015,62 +896,4 @@ def rank_candidates_by_common_words(query, candidates):
     return ranked_candidates
 
 if __name__ == "__main__":  
-
-    look = """
-  This room is called the art studio. In it, you see: 
-	the agent
-	a substance called air
-	a large cupboard. The large cupboard door is closed. 
-	a table. On the table is: a glass cup (containing blue paint, red paint).
-	a wood cup (containing yellow paint)
-	a wood cup (containing nothing)
-	a wood cup (containing nothing)
-You also see:
-	A door to the hallway (that is open)
-    """
-
-    inventory = """
- In your inventory, you see:
-	an orange
-    """
-
-    # pattern = re.compile(r'\b(?:a|an|the)\s(.*?)(?:\n|$|\.|\()', re.IGNORECASE)
-    # objects = []
-    # # for l in look.split():
-    # #     objects += pattern.findall(l) 
-    # objects = pattern.findall(look)
-    # print(objects)
-    # exit()
-
-    
-    
-    # validActions.remove("mix cup containing blue paint and red paint")
-    # validActions = [va for va in validActions if va.split()[0] == action.split()[0]]
-    # validActions_clean = []
-    # for va in validActions:
-    #     if va.startswith("pour") and any(["into " + r in va for r in rooms + ["table", "inventory"]]):
-    #         continue
-    #     validActions_clean.append(va)
-    # sbert_model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
-    # candidates = sbert_search([action], list(validActions), sbert_model, None, k=1, N=10, return_scores=False)
-    candidates = rank_candidates_by_common_words(action, list(validActions))[:30]
-    # print(candidates[:50])
-    # print(candidates[:30])
-    print(gpt_select_valid(action, candidates, look, inventory, obs, print, 5, "gpt-3.5-turbo"))
-    exit()
-
-    look= """This room is called the workshop. In it, you see: 
-	the agent
-	a substance called air
-	a table. On the table is: a battery, a black wire, a blue wire, a glass cup (containing nothing), a orange light bulb, which is off, a orange wire, a switch, which is off, a violet light bulb, which is off, a yellow light bulb, which is off.
-	a ultra low temperature freezer. The ultra low temperature freezer door is closed. 
-You also see:
-	A door to the hallway (that is open)
-
-    """
-
-    look = 'This room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is open. In the cupboard is: a ceramic cup (containing nothing), a drawer, a tin cup (containing nothing).\n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: a metal pot (containing a substance called tin).\n\ta table. On the table is: a glass cup (containing nothing).\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n'
-
-    print(get_current_room(look))
-
-    exit()
+    print()
