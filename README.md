@@ -51,6 +51,7 @@ conda install -c conda-forge openjdk # if needed
 </p>
 You can skip this step by simply using our checkpoint here: https://huggingface.co/yuchenlin/swift_sw
 It is based on Flan-t5-large (770m).
+
 ### Generating data for imitation learning (behavior cloning)
 
 ```bash
