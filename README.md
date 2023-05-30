@@ -4,7 +4,7 @@
   <a href="https://yuchenlin.xyz/swiftsage/">
     <img src="https://img.shields.io/badge/Website-💻-red">
   </a>
-  <a href="https://yuchenlin.xyz/files/swiftsage.pdf">
+  <a href="https://arxiv.org/abs/2305.17390">
     <img src="https://img.shields.io/badge/Paper-📝-blue">
   </a> 
 
