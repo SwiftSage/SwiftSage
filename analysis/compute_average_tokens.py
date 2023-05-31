@@ -25,27 +25,27 @@ def get_result(file_name):
             task_len = []
             token_len = []
 
-            lenth = 0
+            length = 0
             flag = 0
             for i in range(n):
                 if 'Prompt: Interact with a household to solve a task. Here is an example.' in text[i]:
                     flag = 1
                     index = text[i].find('Prompt')
-                    lenth = len(encoding.encode(text[i][index:]))
+                    length = len(encoding.encode(text[i][index:]))
                     # print(text[i])
                 
                 elif '[INFO' in text[i] and flag:
-                    token_len.append(lenth)
+                    token_len.append(length)
                     flag = 0
-                    lenth = 0
+                    length = 0
                     # print(text[i])
                     # exit()
                 
                 else:
-                    lenth += len(encoding.encode(text[i]))
+                    length += len(encoding.encode(text[i]))
                     # print(text[i])
                 
-                # print(lenth)
+                # print(length)
                 
             results[task_name] = {'ave_token': sum(token_len)/len(token_len), 'num_actions': len(token_len)}
             token_len = []
