@@ -216,7 +216,7 @@ def parse_args():
     parser.add_argument("--sbert", action="store_true", default=True)
     parser.add_argument("--no_stop", action="store_true", default=True) 
     parser.add_argument("--slow_agent", action="store_true", default=True) 
-    parser.add_argument("--demo_file", default="slow_agent/demos.json", type=str)
+    parser.add_argument("--demo_file", default="data_utils/demos.json", type=str)
     parser.add_argument("--debug_var", type=int, default=93)
         # parser.add_argument("--slow_prompt_path", type=str, default="slow_agent/query_data.gpt3.5.json")
         

@@ -19,7 +19,7 @@ echo "---> $output_path"
  
 cp eval_agent_fast_slow.py $output_path/
 cp eval_utils.py $output_path/
-cp slow_agent/demos.json $output_path/
+cp data_utils/demos.json $output_path/
 cp data_utils/data_utils.py $output_path/
 
 for ((i=0; i<L; i++)); do
