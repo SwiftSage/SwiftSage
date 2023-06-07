@@ -7,8 +7,8 @@
   <a href="https://arxiv.org/abs/2305.17390">
     <img src="https://img.shields.io/badge/Paper-📝-blue">
   </a> 
-
 </p>
+
 
 
 # SwiftSage

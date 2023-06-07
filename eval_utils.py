@@ -9,7 +9,7 @@ from sentence_transformers import SentenceTransformer
 
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-from slow_agent.utils import completion_with_backoff, generate_followup_prompt, load_triplets, sample_few_shot
+from slow_agent.utils import completion_with_backoff
 from data_utils.data_utils import formalize_action, recover_action
 import string 
 import editdistance
