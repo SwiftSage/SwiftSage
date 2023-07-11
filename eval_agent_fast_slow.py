@@ -102,15 +102,15 @@ def get_file_name(args, task_num):
 
 # Example user input console, to play through a game.
 def eval(args, task_num, logger):
-    if args["compose_mode"] == "v1":
-        compose_instance = compose_instance_v1
-    elif args["compose_mode"] == "v1_1":
-        compose_instance = compose_instance_v1_1
-    elif args["compose_mode"] == "v2":
-        compose_instance = compose_instance_v2
-    elif args["compose_mode"] == "v3":
-        compose_instance = compose_instance_v3
-    elif args["compose_mode"] == "v4":
+    # if args["compose_mode"] == "v1":
+    #     compose_instance = compose_instance_v1
+    # elif args["compose_mode"] == "v1_1":
+    #     compose_instance = compose_instance_v1_1
+    # elif args["compose_mode"] == "v2":
+    #     compose_instance = compose_instance_v2
+    # elif args["compose_mode"] == "v3":
+    #     compose_instance = compose_instance_v3
+    if args["compose_mode"] == "v4":
         compose_instance = compose_instance_v4
     
     demo_data = None 
@@ -124,7 +124,8 @@ def eval(args, task_num, logger):
     taskNames = env.getTaskNames()
     taskName = taskNames[task_num]
     env.load(taskName, 0, args['simplification_str'])
-    lm_model, tokenizer, sbert_model = load_model(args, device)
+    lm_model, tokenizer, sbert_model, llm = load_model(args, device)
+
     variations = load_variation(env, args, task_num, logger)
     filenameOutPrefixSeed = get_file_name(args, task_num)
     # plans = get_plans(args)
@@ -402,7 +403,7 @@ def eval(args, task_num, logger):
                                                               recent_actions, recent_reward, recent_obs, recent_locs, recent_looks, failed_messages,
                                                               demo_data, logger, sbert_model, step, last_time_system2_steps,
                                                               useful_focus_on, focus_on_done, force_system_1, force_system_2, 
-                                                              gpt_version)  
+                                                              gpt_version, llm=llm)  
                     if not used_sys2:
                         action = return_result
                         consecutive_system2 = 0
@@ -570,6 +571,7 @@ def parse_args():
     parser.add_argument("--no_stop", action="store_true", default=True) 
     parser.add_argument("--slow_agent", action="store_true", default=True) 
     parser.add_argument("--gpt_version", default="gpt-4", type=str)  
+    parser.add_argument("--local_llm", default="none", type=str)  
     parser.add_argument("--demo_file", default="data_utils/demos.json", type=str)
     parser.add_argument("--debug_var", type=int, default=93)
     args = parser.parse_args()

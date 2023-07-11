@@ -26,6 +26,9 @@ Bill Yuchen Lin, Yicheng Fu, Karina Yang, Prithviraj Ammanabrolu, Faeze Brahman,
 ![](https://yuchenlin.xyz/swiftsage/ss_pipeline.png)
 
 
+## TODO:
+- [] add support to open-source LLMs (e.g., `https://huggingface.co/Salesforce/xgen-7b-8k-inst`)
+- [] add other tasks such as web tasks and math problems 
 
 ## Installation
 
@@ -85,16 +88,42 @@ The logs will be saved and the scripts for showing results and doing analysis ar
 Specifically, if you'd like to test the pipeline or debug a particular task and var:
 
 ```bash 
-CUDA_VISIBLE_DEVICES=7 python eval_agent_fast_slow.py \
+CUDA_VISIBLE_DEVICES=0 python eval_agent_fast_slow.py \
     --task_nums "28" \
     --set "test_mini" \
     --seed 42 \
     --debug_var "450" \
     --gpt_version "gpt-4" \
     --output_path "fast_slow_logs/tmp_gpt4/"
-
 # you can then check `fast_slow_logs/tmp/task28.log` for the progress.
 ```
+
+<!-- 
+# CUDA_VISIBLE_DEVICES=7 python eval_agent_fast_slow.py \
+#     --task_nums "0" \
+#     --set "test_mini" \
+#     --seed 42 \
+#     --debug_var "23" \
+#     --gpt_version "gpt-4" \
+#     --output_path "fast_slow_logs/tmp_gpt4/"
+
+# CUDA_VISIBLE_DEVICES=7 python eval_agent_fast_slow.py \
+#     --task_nums "28" \
+#     --set "test_mini" \
+#     --seed 42 \
+#     --debug_var "450" \
+#     --local_llm "xgen" \
+#     --output_path "fast_slow_logs/tmp_llm/"
+
+# CUDA_VISIBLE_DEVICES=7 python eval_agent_fast_slow.py \
+#     --task_nums "0" \
+#     --set "test_mini" \
+#     --seed 42 \
+#     --debug_var "21" \
+#     --local_llm "xgen" \
+#     --output_path "fast_slow_logs/tmp_llm/"
+
+ -->
 
 ## Evaluation  
 

@@ -16,6 +16,8 @@ import editdistance
 import time 
 import tiktoken 
 
+from slow_agent import local_llm
+
 action_type_description = [
     {"action_type": "WAIT()", "desc": "wait for something to be done, for example, an object on stove to be boiled"},
     {"action_type": "TELEPORT(room)", "desc": "directly go to a room such as TELEPORT(kitchen)"},
@@ -103,7 +105,17 @@ def load_model(args, device):
         sbert_model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
     else:
         sbert_model = None 
-    return lm_model, tokenizer, sbert_model
+    
+    if args["local_llm"] == "xgen":
+        local_llm.load()
+        assert local_llm.llm_model is not None 
+        assert local_llm.llm_tokenizer is not None 
+        print("Testing local LLM:" + args["local_llm"])
+        print(local_llm.generate("Hello, who are you?")) # for testing 
+        llm_model = local_llm.llm_model
+    else:
+        llm_model = None 
+    return lm_model, tokenizer, sbert_model, llm_model
 
 
 
@@ -405,7 +417,7 @@ def findValidActionWithSystem2(predictions, env, task_id, task_description, look
                                recent_actions, recent_reward, recent_obs, recent_locs, recent_looks, failed_messages,
                                demo_data, logger, sbert_model, step, last_time_system2_steps, 
                                useful_focus_on, focus_on_done, force_system_1, force_system_2, 
-                               gpt_version="gpt-4"):
+                               gpt_version="gpt-4", llm=None):
     
     inventory = env.inventory()
     #### Done preparing valid actions #### 
@@ -491,9 +503,13 @@ def findValidActionWithSystem2(predictions, env, task_id, task_description, look
         logger.info("-"*30 + "prompt_to_plan" + "-"*30)
         logger.info("\n"+prompt_to_plan)
         logger.info("-"*35 + "-"*35)
-        response = completion_with_backoff(model=gpt_version, # try gpt-4? # gpt-3.5-turbo
-                messages=[{"role": "user", "content": prompt_to_plan}], n = 1, temperature=0, top_p=1)
-        response_plan = response["choices"][0]["message"]["content"]
+        if llm is None:
+            response = completion_with_backoff(model=gpt_version, # try gpt-4? # gpt-3.5-turbo
+                    messages=[{"role": "user", "content": prompt_to_plan}], n = 1, temperature=0, top_p=1)
+            response_plan = response["choices"][0]["message"]["content"]
+        else:
+            response_plan = local_llm.generate(prompt_to_plan, logger=logger.info)
+            
         logger.info("-"*30 + "response_plan" + "-"*30)
         logger.info("\n"+response_plan)
         logger.info("-"*35 + "-"*35) 
@@ -507,15 +523,18 @@ def findValidActionWithSystem2(predictions, env, task_id, task_description, look
         logger.info("-"*30 + "prompt_to_next_actions" + "-"*30)
         logger.info("\n"+prompt_to_next_actions)
         logger.info("-"*35 + "-"*35)
-        response = completion_with_backoff(model=gpt_version,
-                messages=[{"role": "user", "content": prompt_to_next_actions}], n = 1, temperature=0, top_p=1)
-        response_next_actions = response["choices"][0]["message"]["content"]
+        if llm is None:
+            response = completion_with_backoff(model=gpt_version,
+                    messages=[{"role": "user", "content": prompt_to_next_actions}], n = 1, temperature=0, top_p=1)
+            response_next_actions = response["choices"][0]["message"]["content"]
+        else:
+            response_next_actions = local_llm.generate(prompt_to_next_actions)
         
         def post_process(response_next_actions):
             logger.info("-"*30 + "response_next_actions" + "-"*30)
             logger.info("\n"+response_next_actions)
             logger.info("-"*35 + "-"*35)
-            action_list = response_next_actions.split("\n")
+            action_list = response_next_actions.split("\n")[:5] # only the take the first 10
             logger.info(f"action_list={action_list}") 
             real_action_list = []
             guess_obs_list = []
@@ -565,13 +584,22 @@ def findValidActionWithSystem2(predictions, env, task_id, task_description, look
         logger.info("\n"+prompt_again)
         logger.info("-"*35 + "-"*35)
 
-        response_v2 = completion_with_backoff(model=gpt_version,
-                messages=[{"role": "user", "content": prompt_to_next_actions},
-                          {"role": "assistant", "content": response_next_actions},
-                          {"role": "user", "content": prompt_again},
-                          ], n = 1, temperature=0, top_p=1)
-        
-        response_next_actions_v2 = response_v2["choices"][0]["message"]["content"]
+        if llm is None:        
+            response_v2 = completion_with_backoff(model=gpt_version,
+                    messages=[{"role": "user", "content": prompt_to_next_actions},
+                            {"role": "assistant", "content": response_next_actions},
+                            {"role": "user", "content": prompt_again},
+                            ], n = 1, temperature=0, top_p=1)
+            
+            response_next_actions_v2 = response_v2["choices"][0]["message"]["content"]
+        else:
+            # TODO: llm.generate()
+            response_next_actions_v2 = local_llm.generate(prompt_to_next_actions 
+                                                          + "### Assistant: " 
+                                                          + response_next_actions 
+                                                          + "### Human: " 
+                                                          + prompt_again) 
+
         real_action_list, guess_obs_list = post_process(response_next_actions_v2)
     if len(real_action_list) == 0:
         logger.info("Error from System 2. Still does not work. Use Fast System (+ sbert)")
@@ -850,7 +878,7 @@ def post_process_generation(raw_pred):
     return result.strip()
 
 
-def gpt_select_valid(action, candidates, look, inventory, goal, logger, n=1, gpt_version="gpt-4"):
+def gpt_select_valid(action, candidates, look, inventory, goal, logger, n=1, gpt_version="gpt-4", llm=None):
     prompt_to_search = []
     prompt_to_search.append("Let's play a text game.")
     prompt_to_search.append(clean_look(look, version="all"))
@@ -866,12 +894,15 @@ def gpt_select_valid(action, candidates, look, inventory, goal, logger, n=1, gpt
     logger("-"*30 + "prompt_to_search" + "-"*30)
     logger("\n"+prompt_to_search)
     logger("-"*35 + "-"*35)
+    if llm is None:
+        responses = completion_with_backoff(model=gpt_version,
+                messages=[{"role": "user", "content": prompt_to_search},  
+                            ], n = n, temperature=0, top_p=1)
+        # logger(responses)
+        selections = [responses["choices"][i]["message"]["content"] for i in range(n)]
+    else:
+        selections = local_llm.generate(prompt_to_search)
 
-    responses = completion_with_backoff(model=gpt_version,
-            messages=[{"role": "user", "content": prompt_to_search},  
-                        ], n = n, temperature=0, top_p=1)
-    # logger(responses)
-    selections = [responses["choices"][i]["message"]["content"] for i in range(n)]
     logger("\n" + "Responses: \n" + "\n".join(selections))
 
     return selections  
