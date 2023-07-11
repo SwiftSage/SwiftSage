@@ -31,10 +31,12 @@ Bill Yuchen Lin, Yicheng Fu, Karina Yang, Prithviraj Ammanabrolu, Faeze Brahman,
 
 
 ```bash
-conda create -n sw python=3.8 pip
-conda activate sw
-pip install scienceworld==1.1.3
-pip install -r requirements.txt
+conda create -n swiftsage python=3.8 pip
+conda activate swiftsage
+pip3 install scienceworld==1.1.3
+pip3 install -r requirements.txt
+pip3 install torch --extra-index-url https://download.pytorch.org/whl/cu116
+conda install -c "nvidia/label/cuda-11.6.0" cuda-toolkit
 conda install -c conda-forge openjdk # if needed 
 ```
 
@@ -80,10 +82,23 @@ bash run_eval_fast_slow.sh
 
 The logs will be saved and the scripts for showing results and doing analysis are in the `analysis` folder.
 
+Specifically, if you'd like to test the pipeline:
+
+```bash 
+CUDA_VISIBLE_DEVICES=7 python eval_agent_fast_slow.py \
+    --task_nums "28" \
+    --set "test_mini" \
+    --seed 42 \
+    --debug_var "450" \
+    --gpt_version "gpt-3.5-turbo" \
+    --output_path "fast_slow_logs/tmp/"
+
+# you can then check `fast_slow_logs/tmp/task0.log` for the progress.
+```
+
 ## Evaluation  
 
 ### SayCan, ReAct, Reflexion 
-
 
 
 Please check the `baselines` folder for the scripts and code.
@@ -91,3 +106,24 @@ Please check the `baselines` folder for the scripts and code.
 ### Other baseline methods
 
 Check out: https://github.com/allenai/ScienceWorld
+
+
+## Known issues 
+
+There is a minor logging bug in ScienceWorld, so you may see the following message. But it won't break the job, and you can totally ignore this.
+```bash
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "eval_agent_fast_slow.py", line 562, in <module>
+    main()
+  File "eval_agent_fast_slow.py", line 559, in main
+    eval(args, int(task_num), logger)
+  File "eval_agent_fast_slow.py", line 60, in eval
+    env = ScienceWorldEnv("", args["jar_path"], envStepLimit = args["env_step_limit"])
+  File "/home/yuchenl/.conda/envs/swiftsage/lib/python3.8/site-packages/scienceworld/scienceworld.py", line 51, in __init__
+    logger.info("ScienceWorld server running on port", port)
+Message: 'ScienceWorld server running on port'
+Arugments: (xxxxx,)
+```
+
+If you'd like to remove such a message, you can go to `/path/to/your/envs/swiftsage/lib/python3.8/site-packages/scienceworld/scienceworld.py`, line 51, and change the `logger.info("ScienceWorld server running on port", port)` with `logger.info(f"ScienceWorld server running on {port}")`. 

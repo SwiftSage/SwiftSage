@@ -205,7 +205,7 @@ def eval(args, task_num, logger):
                         buffer_overall_trail = 0
                         break 
                     
-                    ### 2) try to execute the obs (guessed) as if it is an action 
+                    ### 2) try to execute the obs as if it is an action 
                     
                     action_candidate_v2 = obs_buffer[action_ind].lower() if formalize_action(obs_buffer[action_ind].lower()) is not None else None
                     action_candidate_v2 = None if action_candidate_v2 == action_candidate else action_candidate_v2
