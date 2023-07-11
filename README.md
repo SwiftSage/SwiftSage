@@ -82,7 +82,7 @@ bash run_eval_fast_slow.sh
 
 The logs will be saved and the scripts for showing results and doing analysis are in the `analysis` folder.
 
-Specifically, if you'd like to test the pipeline:
+Specifically, if you'd like to test the pipeline or debug a particular task and var:
 
 ```bash 
 CUDA_VISIBLE_DEVICES=7 python eval_agent_fast_slow.py \
@@ -93,7 +93,7 @@ CUDA_VISIBLE_DEVICES=7 python eval_agent_fast_slow.py \
     --gpt_version "gpt-3.5-turbo" \
     --output_path "fast_slow_logs/tmp/"
 
-# you can then check `fast_slow_logs/tmp/task0.log` for the progress.
+# you can then check `fast_slow_logs/tmp/task28.log` for the progress.
 ```
 
 ## Evaluation  
@@ -126,4 +126,18 @@ Message: 'ScienceWorld server running on port'
 Arugments: (xxxxx,)
 ```
 
-If you'd like to remove such a message, you can go to `/path/to/your/envs/swiftsage/lib/python3.8/site-packages/scienceworld/scienceworld.py`, line 51, and change the `logger.info("ScienceWorld server running on port", port)` with `logger.info(f"ScienceWorld server running on {port}")`. 
+If you'd like to remove such a message, you can go to `/path/to/your/local/scienceworld/scienceworld.py`, line 51, and change the `logger.info("ScienceWorld server running on port", port)` with `logger.info(f"ScienceWorld server running on {port}")`. 
+
+
+## Citation 
+
+```bib
+@article{Lin2023SwiftSageAG,
+    author = {Bill Yuchen Lin and Yicheng Fu and Karina Yang and Prithviraj Ammanabrolu and Faeze Brahman and Shiyu Huang and Chandra Bhagavatula and Yejin Choi and Xiang Ren},
+    journal = {ArXiv preprint},
+    title = {SwiftSage: A Generative Agent with Fast and Slow Thinking for Complex Interactive Tasks},
+    url = {https://arxiv.org/abs/2305.17390},
+    volume = {abs/2305.17390},
+    year = {2023}
+}
+```
