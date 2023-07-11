@@ -16,6 +16,69 @@ from eval_utils import try_to_replace, rooms, clean_history, get_current_room, c
 from collections import defaultdict
 
 
+# from scienceworld
+from py4j.java_gateway import JavaGateway, GatewayParameters, launch_gateway, CallbackServerParameters
+from scienceworld.constants import BASEPATH, DEBUG_MODE, ID2TASK, JAR_PATH, NAME2ID
+from scienceworld.utils import infer_task
+import logging
+logger = logging.getLogger(__name__)
+
+class MyScienceWorldEnv(ScienceWorldEnv):
+    # it is only used for fixing the logging error --> logger.info(f"ScienceWorld server running on {port}") 
+    def __init__(self, taskName=None, serverPath=None, envStepLimit=100):
+        serverPath = serverPath or JAR_PATH  # Use the builtin jar.
+
+        # Launch the server and connect to the JVM.
+        # Launch Java side with dynamic port and get back the port on which the
+        # server was bound to.
+        if DEBUG_MODE:
+            import sys, time
+            port = launch_gateway(
+                classpath=serverPath, die_on_exit=True, cwd=BASEPATH,
+                javaopts=['-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005,quiet=y'],
+                redirect_stdout=sys.stdout, redirect_stderr=sys.stderr)
+            print("Attach debugger within the next 10 seconds")
+            time.sleep(10)  # Give time for user to attach debugger
+        else:
+            port = launch_gateway(classpath=serverPath, die_on_exit=True, cwd=BASEPATH)
+
+        # Connect python side to Java side with Java dynamic port and start python
+        # callback server with a dynamic port
+        self._gateway = JavaGateway(
+            gateway_parameters=GatewayParameters(auto_field=True, port=port),
+            callback_server_parameters=CallbackServerParameters(port=0, daemonize=True))
+
+        # Retrieve the port on which the python callback server was bound to.
+        python_port = self._gateway.get_callback_server().get_listening_port()
+
+        # Tell the Java side to connect to the python callback server with the new
+        # python port. Note that we use the java_gateway_server attribute that
+        # retrieves the GatewayServer instance.
+        self._gateway.java_gateway_server.resetCallbackClient(
+            self._gateway.java_gateway_server.getCallbackClient().getAddress(),
+            python_port)
+
+        self.server = self._gateway.jvm.scienceworld.runtime.pythonapi.PythonInterface()
+        logger.info(f"ScienceWorld server running on {port}" ) 
+
+        # Keep track of the last step score, to calculate reward from score
+        self.lastStepScore = 0
+
+        # Load the script
+        self.taskName = taskName
+        if self.taskName:
+            self.load(taskName, 0, "")
+
+        # Set the environment step limit
+        self.envStepLimit = envStepLimit
+
+        # Clear the run histories
+        self.clearRunHistories()
+
+        # By default, set that the gold path was not generated unless the user asked for it
+        self.goldPathGenerated = False
+
+
 
 import logging
 from logging import INFO, WARN
@@ -57,7 +120,7 @@ def eval(args, task_num, logger):
     
     # Initialize environment
     # env = ScienceWorldEnv("", args["jar_path"], envStepLimit = args["env_step_limit"], threadNum = 0)
-    env = ScienceWorldEnv("", args["jar_path"], envStepLimit = args["env_step_limit"])
+    env = MyScienceWorldEnv("", args["jar_path"], envStepLimit = args["env_step_limit"])
     taskNames = env.getTaskNames()
     taskName = taskNames[task_num]
     env.load(taskName, 0, args['simplification_str'])

@@ -90,8 +90,8 @@ CUDA_VISIBLE_DEVICES=7 python eval_agent_fast_slow.py \
     --set "test_mini" \
     --seed 42 \
     --debug_var "450" \
-    --gpt_version "gpt-3.5-turbo" \
-    --output_path "fast_slow_logs/tmp/"
+    --gpt_version "gpt-4" \
+    --output_path "fast_slow_logs/tmp_gpt4/"
 
 # you can then check `fast_slow_logs/tmp/task28.log` for the progress.
 ```
@@ -108,7 +108,7 @@ Please check the `baselines` folder for the scripts and code.
 Check out: https://github.com/allenai/ScienceWorld
 
 
-## Known issues 
+<!-- ## Known issues 
 
 There is a minor logging bug in ScienceWorld, so you may see the following message. But it won't break the job, and you can totally ignore this.
 ```bash
@@ -127,7 +127,7 @@ Arugments: (xxxxx,)
 ```
 
 If you'd like to remove such a message, you can go to `/path/to/your/local/scienceworld/scienceworld.py`, line 51, and change the `logger.info("ScienceWorld server running on port", port)` with `logger.info(f"ScienceWorld server running on {port}")`. 
-
+ -->
 
 ## Citation 
 
