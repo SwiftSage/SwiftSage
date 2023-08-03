@@ -9,7 +9,7 @@ deepspeed --master_port 29510 \
 		--do_eval \
 		--save_total_limit=100 \
         --train_file ../data_utils/data_v5/fast_system.train.jsonl \
-		--validation_file ../data_utils/data_v5/fast_system.test.jsonl \
+		--validation_file ../data_utils/data_v5/fast_system.val.jsonl \
 		--predict_with_generate 0 \
         --learning_rate 1e-4 \
 		--adam_eps 1e-06 \
