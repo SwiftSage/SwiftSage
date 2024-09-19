@@ -61,6 +61,8 @@ def setup_logging():
 def extract_and_parse_markup(text):
     keys = ["reasoning_steps", "final_answer", "feedback", "score", "critical_feedback", "revised_plan", "solved"]
     result = {}
+    if "<final_answer>" in text and "</final_answer>" not in text:
+        text = text + "</final_answer>"
 
     for key in keys:
         # Create a pattern for each key
@@ -216,7 +218,7 @@ class PromptTemplate:
 
 
 class LLMClient:
-    def __init__(self, model_id, api_config, temperature=0.3, top_p=1.0, max_tokens=2048):
+    def __init__(self, model_id, api_config, temperature=0.3, top_p=1.0, max_tokens=3000):
         self.client = openai.OpenAI(
             api_key=api_config['api_key'],
             base_url=api_config['url_base']

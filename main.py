@@ -208,7 +208,7 @@ class SwiftSage:
                 logger.info(f"Reward for iteration {i+1}: {score}/10")
                 logger.info(f"Feedback: {feedback}")
 
-                if score < prev_score:
+                if False and score < prev_score:
                     logger.info("Score is lower than the previous score. Stopping the iteration. Reverting to the previous solution and reasoning.")
                     # revert to the previous solution and reasoning
                     current_solution = self.swift.solution_time[i-1]
@@ -256,7 +256,7 @@ prompt_template_dir = "./prompt_templates"
 # }
 
 swift_config = {
-    "model_id": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+    "model_id": "meta-llama/Meta-Llama-3-8B-Instruct-Turbo",
     "api_config": api_configs['Together']
 }
 
@@ -292,11 +292,33 @@ s2 = SwiftSage(
 # problem = "How many grams of hydrogen (H) are present in 23.5 grams of water (H2O)?"
 # problem = "What is the distance between the points (2, 3) and (5, 8)?"
 # problem = "Why can the Hubble telescope capture clear images of distant stars and galaxies, but not a detailed image of Pluto?"
-problem = """
-A rectangular band formation is a formation with $m$ band members in each of $r$ rows, where $m$ and $r$ are integers. A particular band has less than 100 band members. The director arranges them in a rectangular formation and finds that he has two members left over. If he increases the number of members in each row by 1 and reduces the number of rows by 2, there are exactly enough places in the new formation for each band member. What is the largest number of members the band could have?
-"""
+# problem = """
+# A rectangular band formation is a formation with $m$ band members in each of $r$ rows, where $m$ and $r$ are integers. A particular band has less than 100 band members. The director arranges them in a rectangular formation and finds that he has two members left over. If he increases the number of members in each row by 1 and reduces the number of rows by 2, there are exactly enough places in the new formation for each band member. What is the largest number of members the band could have?
+# """
 
 # problem = "Tim wants to invest some money in a bank which compounds quarterly with an annual interest rate of $7\%$. To the nearest dollar, how much money should he invest if he wants a total of $\$60,\!000$ at the end of $5$ years?"
+
+# problem = """
+# In an SR latch built from NOR gates, which condition is not allowed
+
+# Options:
+# [ "S=0, R=2", "S=2, R=2", "S=1, R=1", "S=1, R=-1", "S=1, R=2", "S=0, R=0", "S=2, R=0", "S=1, R=0", "S=2, R=1", "S=0, R=1" ]
+
+# Which one is the correct answer?
+
+# """
+
+# https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/viewer/default/validation?q=Let+A+be+the+set+of+all+&row=1https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/viewer/default/validation?q=Let+A+be+the+set+of+all+&row=1
+problem = """
+Let V be the set of all real polynomials p(x). Let transformations T, S be defined on V by T:p(x) -> xp(x) and S:p(x) -> p'(x) = d/dx p(x), and interpret (ST)(p(x)) as S(T(p(x))). Which of the following is true?
+
+Options:
+[ "ST + TS is the identity map of V onto itself.", "TS = 0", "ST = 1", "ST - TS = 0", "ST = T", "ST = 0", "ST = TS", "ST - TS is the identity map of V onto itself.", "TS = T", "ST = S" ]
+
+Which one is the correct answer?
+
+"""
+
 
 reasoning, solution = s2.solve(problem, max_iterations=5)
 logger.info(f"Final reasoning:\n{reasoning}")

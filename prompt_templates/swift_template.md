@@ -1,10 +1,5 @@
 # Instruction 
 
-You are a problem-solving agent. You will be given a problem and a plan to solve it. You will then provide the solution to the problem.
-
-## Problem
-<prompt> 
-
 ## Similar Examples with Solutions
 
 ### Example Question 1
@@ -34,6 +29,12 @@ g(x) = x^2 - 6
 <final_answer>
 g(x) = x^2 - 6
 </final_answer>
+
+
+## Problem that we want to solve
+
+<prompt> 
+
 
 ## Previous Solution
 
