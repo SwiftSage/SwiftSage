@@ -30,13 +30,17 @@ Take care and do not give false information in the critical feedback.
 
 ## Output Format
 
-Format your response as a JSON object with the following structure:
+Remember to present your output in the following format:
 
-```json
-{
-  "feedback": "Your critical feedback here for analyzing the solution",
-  "score": "[1-10]"
-}
-```
+<feedback>
+Your critical feedback here.
+</feedback>
 
-Ensure that your response is a valid JSON object and includes all keys.
+
+<score>
+Your score here.
+</score>
+
+# Important Notes
+
+You must follow the format strictly, do not miss any field. Start your output by "<feedback>" and end your output by "</score>".

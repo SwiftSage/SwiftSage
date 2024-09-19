@@ -17,21 +17,37 @@ If the current solution is correct and complete, you will suggest the problem is
  
 ## Critical Feedback
 
-We are not sure if the current solution is correct, can you provide a critical feedback on the current solution and suggest a revised plan for the next steps. Consider any challenges or improvements needed. Please note that you do not need to solve the problem, just provide a critical feedback and revised plan for another agent to follow and solve the problem. Please point out the errors in the current solution if there are any in the `critical_feedback` field, and then provide the revised plan in the `revised_plan` field. If the problem is solved, please set `solved` to `"True"`, and leave `critical_feedback` and `revised_plan` empty.
+We are not sure if the current solution is correct, can you provide a critical feedback on the current solution and suggest a revised plan for the next steps. Consider any challenges or improvements needed. 
 
-Format your response as a JSON object with the following structure:
+If the solution and answer are correct, please set `solved` to `"True"`, and leave `critical_feedback` and `reasoning_steps` empty.
+Please point out the errors in the current solution if there are any in the `critical_feedback` field, and then provide the revised plan in the `reasoning_steps` field, and finally provide the final answer in the `final_answer` field.
 
-```json
-{
-  "solved": "True or False", 
-  "critical_feedback": "Your critical feedback here",
-  "revised_plan": [
-    "Step 1",
-    "Step 2",
-    "Step 3",
-    ...
-  ]
-}
-```
 
-Ensure that your response is a valid JSON object and includes all keys.
+Format your response in the following format: 
+
+
+<solved>
+True or False
+</solved>
+
+<critical_feedback>
+Your critical feedback here.
+</critical_feedback>
+
+<reasoning_steps>
+Your reasoning steps here. 
+Step 1: ...
+Step 2: ...
+Step 3: ...
+... 
+Do not use too many reasoning steps (no more than 15 steps).
+</reasoning_steps>
+
+<final_answer>
+The final answer (usually very short).
+</final_answer> 
+
+# Important Notes
+
+You must follow the format strictly, do not miss any field. Start your output by "<solved>" and end your output by "</final_answer>".
+

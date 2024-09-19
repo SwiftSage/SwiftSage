@@ -9,7 +9,7 @@ import datetime
 import re
 import hjson
 
-from utils import extract_and_parse_json, Agent, api_configs, LLMClient, PromptTemplate, logger
+from utils import extract_and_parse_markup, Agent, api_configs, LLMClient, PromptTemplate, logger
 
 class RetrievalAugmentation:
     def __init__(self, dataset, embeddings):
@@ -40,24 +40,25 @@ class SwiftAgent(Agent):
         swift_prompt = self.prompt_template.format(
             "swift",
             prompt=prompt,
-            # reasoning=reasoning, # TODO: check if this is needed
+            current_reasoning=reasoning, # TODO: check if this is needed
             examples=examples_text,
             current_solution=current_solution,
             critical_feedback=critical_feedback,
             revised_plan=plan
         )
-        logger.info(f"SwiftAgent prompt:\n{swift_prompt}")
+        # logger.info(f"SwiftAgent prompt:\n{swift_prompt}")
 
         messages = [
-            {"role": "system", "content": "You are a problem-solving agent."},
-            {"role": "user", "content": swift_prompt}
+            {"role": "system", "content": ''},
+            {"role": "user", "content": swift_prompt},
+            # {"role": "assistant", "content": "\n<reasoning_steps>"} # prefix-filling 
         ]
         
         response = self.llm_client.generate_response(messages) 
         
         try:
-            parsed_response = extract_and_parse_json(response)
-            return json.dumps(parsed_response, indent=2)
+            parsed_response = extract_and_parse_markup(response)
+            return parsed_response
         except json.JSONDecodeError:
             logger.error("Error: Swift's response was not in valid JSON format. Returning raw response.")
             return response
@@ -81,10 +82,10 @@ class SageAgent(Agent):
             reasoning=reasoning, 
             current_solution=current_solution
         )
-        logger.info(f"SageAgent prompt:\n{sage_prompt}")
+        # logger.info(f"SageAgent prompt:\n{sage_prompt}")
         
         messages = [
-            {"role": "system", "content": "You are a high-level problem-solving agent."},
+            {"role": "system", "content": ""},
             {"role": "user", "content": sage_prompt}
         ]
         
@@ -92,8 +93,8 @@ class SageAgent(Agent):
         # logger.info(f"SageAgent raw response:\n{response}")
         
         try:
-            parsed_response = extract_and_parse_json(response)
-            return json.dumps(parsed_response, indent=2)
+            parsed_response = extract_and_parse_markup(response)
+            return parsed_response
         except json.JSONDecodeError:
             logger.error("Error: Sage's response was not in valid JSON format. Returning raw response.")
             return response
@@ -110,20 +111,20 @@ class RewardModel:
         reward_prompt = self.prompt_template.format(
             "reward",
             problem=problem,
-            reasoning= "\n - " + "\n - ".join(reasoning),
+            reasoning= reasoning,
             current_solution=current_solution
         )
-        logger.info(f"RewardModel prompt:\n{reward_prompt}")
+        # logger.info(f"RewardModel prompt:\n{reward_prompt}")
         
         messages = [
-            {"role": "system", "content": "You are a reward model."},
+            {"role": "system", "content": ""},
             {"role": "user", "content": reward_prompt}
         ]
         
         reward_response = self.llm_client.generate_response(messages) 
         
         try:
-            parsed_response = extract_and_parse_json(reward_response)
+            parsed_response = extract_and_parse_markup(reward_response)
             score = int(parsed_response["score"])
             
             # Update stagnant_count based on score comparison
@@ -133,7 +134,7 @@ class RewardModel:
                 self.stagnant_count = 0
              
             
-            return json.dumps(parsed_response, indent=2)
+            return parsed_response
         except json.JSONDecodeError:
             logger.error("Error: Reward model's response was not in valid JSON format. Returning raw response.")
             return reward_response
@@ -143,21 +144,20 @@ class RewardModel:
         return self.stagnant_count >= 1 or (len(self.scores) > 0 and self.scores[-1] < 5)
 
 class SwiftSage:
-    def __init__(self, dataset, embeddings, prompt_template_dir, api_configs, use_retrieval=True, start_with_sage=True):
+    def __init__(self, dataset, embeddings, prompt_template_dir, swift_config, sage_config, reward_config, use_retrieval=True, start_with_sage=True):
         prompt_template = PromptTemplate(prompt_template_dir)
         retrieval_augmentation = RetrievalAugmentation(dataset, embeddings) if use_retrieval else None
         
-        sambanova_config = api_configs['SambaNova']
-        swift_llm = LLMClient("Meta-Llama-3.1-8B-Instruct", sambanova_config)
-        sage_llm = LLMClient("Meta-Llama-3.1-70B-Instruct", sambanova_config)
-        reward_llm = LLMClient("Meta-Llama-3.1-8B-Instruct", sambanova_config)
+        swift_llm = LLMClient(**swift_config)
+        sage_llm = LLMClient(**sage_config)
+        reward_llm = LLMClient(**reward_config)
 
         self.swift = SwiftAgent(prompt_template, swift_llm, retrieval_augmentation)
         self.sage = SageAgent(prompt_template, sage_llm)
         self.reward_model = RewardModel(prompt_template, reward_llm)
         self.start_with_sage = start_with_sage
     
-    def solve(self, problem, max_iterations=10):
+    def solve(self, problem, max_iterations=10, reward_threshold=8):
         logger.info(f"Starting to solve problem: {problem}")
         current_solution = "No current solution yet." # final answer
         current_reasoning = "No reasoning steps yet." # reasoning steps
@@ -168,22 +168,27 @@ class SwiftSage:
             logger.info(f"Iteration {i+1}")
 
             if (i == 0 and self.start_with_sage) or self.reward_model.should_consult_sage():
-                sage_response = self.sage.generate_response(problem, current_reasoning, current_solution)
-                sage_parsed = extract_and_parse_json(sage_response)
+                sage_parsed = self.sage.generate_response(problem, current_reasoning, current_solution) 
                 critical_feedback = sage_parsed["critical_feedback"]
-                plan = "\n - " + "\n - ".join(sage_parsed["revised_plan"])
+                # plan = "\n - " + "\n - ".join(sage_parsed["revised_plan"])
+                reasoning = sage_parsed["reasoning_steps"]
+                current_reasoning = reasoning    
                 solved = sage_parsed["solved"].lower() == "true" if i != 0 else sage_parsed["solved"] 
                 logger.info(f"Sage's feedback (iteration {i+1}):\n{critical_feedback}")
-                logger.info(f"Sage's revised plan:\n{plan}")
+                # logger.info(f"Sage's revised plan:\n{plan}")
+                logger.info(f"Sage's reasoning steps:\n{current_reasoning}")
                 self.sage.feedbacks[i] = critical_feedback
-                self.sage.plans[i] = plan
+                # self.sage.plans[i] = plan
+                current_solution = sage_parsed["final_answer"]
+                logger.info("Activated Sage, so we should return the reasoning and solution from Sage.")
+                return reasoning, current_solution
             
             if not solved:
-                swift_response = self.swift.generate_response(problem, current_reasoning, current_solution, plan, critical_feedback)
-                swift_parsed = extract_and_parse_json(swift_response)
+                swift_parsed = self.swift.generate_response(problem, current_reasoning, current_solution, plan, critical_feedback)
+                
                 
                 current_solution = swift_parsed["final_answer"]
-                reasoning = swift_parsed["reasoning_steps"]
+                reasoning = swift_parsed.get("reasoning_steps", json.dumps(swift_parsed))
 
                 self.swift.reasoning_time[i] = reasoning
                 self.swift.solution_time[i] = current_solution
@@ -191,8 +196,8 @@ class SwiftSage:
                 logger.info(f"Swift's reasoning:\n{reasoning}")
                 logger.info(f"Swift's current solution:\n{current_solution}")
             
-                reward_response = self.reward_model.calculate_reward(problem, reasoning, current_solution)
-                reward_parsed = extract_and_parse_json(reward_response)
+                reward_parsed = self.reward_model.calculate_reward(problem, reasoning, current_solution)
+                
                 score = int(reward_parsed["score"])
                 feedback = reward_parsed["feedback"] 
                 prev_score = self.reward_model.scores[-1] if len(self.reward_model.scores) > 0 else 0
@@ -212,12 +217,13 @@ class SwiftSage:
 
                 
                 critical_feedback = feedback
-                current_reasoning = "\n - " + "\n - ".join(reasoning)
+                current_reasoning = reasoning
 
             
-            if score >= 9 or solved:
+            if score >= reward_threshold or solved:
                 logger.info("Perfect solution found!")
                 return reasoning, current_solution 
+            
             
             if self.reward_model.should_consult_sage():
                 logger.info("Reward model: The solution quality hasn't improved recently. Consulting Sage for the next iteration.")
@@ -233,17 +239,51 @@ embeddings = np.random.rand(len(dataset), 768)  # Placeholder, replace with actu
 # specify the path to the prompt templates
 prompt_template_dir = "./prompt_templates"
 
+# Configuration for each LLM
+# swift_config = {
+#     "model_id": "Meta-Llama-3.1-8B-Instruct",
+#     "api_config": api_configs['SambaNova']
+# }
+
+# reward_config = {
+#     "model_id": "Meta-Llama-3.1-70B-Instruct",
+#     "api_config": api_configs['SambaNova']
+# }
+
+# sage_config = {
+#     "model_id": "Meta-Llama-3.1-405B-Instruct",
+#     "api_config": api_configs['SambaNova']
+# }
+
+swift_config = {
+    "model_id": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+    "api_config": api_configs['Together']
+}
+
+reward_config = {
+    "model_id": "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+    "api_config": api_configs['Together']
+}
+
+sage_config = {
+    "model_id": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+    "api_config": api_configs['Together']
+}
+
+
 s2 = SwiftSage(
     dataset, 
     embeddings, 
     prompt_template_dir, 
-    api_configs, 
-    use_retrieval=False,  # Set to False to disable retrieval augmentation
-    start_with_sage=False  # Set to False to start with Swift
+    swift_config,
+    sage_config,
+    reward_config,
+    use_retrieval=False,
+    start_with_sage=False
 )
 
 # problem = "Solve the equation: 2x + 5 = 13"
-problem = "If h(x)=x-4 and g(h(x))=x^2-8x+10, find g(x)? show the formula for g(x)"
+# problem = "If h(x)=x-4 and g(h(x))=x^2-8x+10, find g(x)? show the formula for g(x)"
 # problem = "Solve the equation: 6y + 5 = 29"
 # problem = "Who lives longer, Lowell Sherman or Jonathan Kaplan?"
 # problem = "9.9 or 9.11 --  which is bigger?"
@@ -252,9 +292,13 @@ problem = "If h(x)=x-4 and g(h(x))=x^2-8x+10, find g(x)? show the formula for g(
 # problem = "How many grams of hydrogen (H) are present in 23.5 grams of water (H2O)?"
 # problem = "What is the distance between the points (2, 3) and (5, 8)?"
 # problem = "Why can the Hubble telescope capture clear images of distant stars and galaxies, but not a detailed image of Pluto?"
-reasoning, solution = s2.solve(problem)
-logger.info(f"Final reasoning:\n")
-for step in reasoning:
-    logger.info(f" - {step}")
+problem = """
+A rectangular band formation is a formation with $m$ band members in each of $r$ rows, where $m$ and $r$ are integers. A particular band has less than 100 band members. The director arranges them in a rectangular formation and finds that he has two members left over. If he increases the number of members in each row by 1 and reduces the number of rows by 2, there are exactly enough places in the new formation for each band member. What is the largest number of members the band could have?
+"""
+
+# problem = "Tim wants to invest some money in a bank which compounds quarterly with an annual interest rate of $7\%$. To the nearest dollar, how much money should he invest if he wants a total of $\$60,\!000$ at the end of $5$ years?"
+
+reasoning, solution = s2.solve(problem, max_iterations=5)
+logger.info(f"Final reasoning:\n{reasoning}")
 logger.info(f"Final solution:\n{solution}")
 
