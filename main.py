@@ -25,20 +25,22 @@ class SwiftAgent(Agent):
     def __init__(self, prompt_template, llm_client, retrieval_augmentation=None):
         super().__init__(prompt_template, llm_client)
         self.retrieval_augmentation = retrieval_augmentation
+        self.reasoning_time = {}
+        self.solution_time = {}
 
     def generate_response(self, prompt, reasoning, current_solution, plan, critical_feedback):
         logger.info("SwiftAgent generating response")
         if self.retrieval_augmentation:
             query_embedding = self.get_query_embedding(prompt)
             similar_examples = self.retrieval_augmentation.get_similar_examples(query_embedding)
-            examples_text = "\n".join(similar_examples)
+            examples_text = "\n".join(similar_examples) # TODO: add more context to the prompt
         else:
             examples_text = "No similar examples available."
         
         swift_prompt = self.prompt_template.format(
             "swift",
             prompt=prompt,
-            reasoning=reasoning,
+            # reasoning=reasoning, # TODO: check if this is needed
             examples=examples_text,
             current_solution=current_solution,
             critical_feedback=critical_feedback,
@@ -65,6 +67,12 @@ class SwiftAgent(Agent):
         return np.random.rand(768)  # Placeholder, replace with actual embedding
  
 class SageAgent(Agent):
+    def __init__(self, prompt_template, llm_client):
+        super().__init__(prompt_template, llm_client)
+        self.feedbacks = {}
+        self.plans = {}
+        
+
     def generate_response(self, prompt, reasoning, current_solution):
         logger.info("SageAgent generating response")
         sage_prompt = self.prompt_template.format(
@@ -81,7 +89,7 @@ class SageAgent(Agent):
         ]
         
         response = self.llm_client.generate_response(messages)
-        logger.info(f"SageAgent raw response:\n{response}")
+        # logger.info(f"SageAgent raw response:\n{response}")
         
         try:
             parsed_response = extract_and_parse_json(response)
@@ -93,8 +101,9 @@ class SageAgent(Agent):
 class RewardModel:
     def __init__(self, prompt_template, llm_client):
         self.prompt_template = prompt_template
-        self.llm_client = llm_client
-        self.previous_score = 0
+        self.llm_client = llm_client 
+        self.scores = [] 
+        self.feedbacks = [] 
         self.stagnant_count = 0
 
     def calculate_reward(self, problem, reasoning, current_solution):
@@ -115,15 +124,14 @@ class RewardModel:
         
         try:
             parsed_response = extract_and_parse_json(reward_response)
-            score = parsed_response["score"]
+            score = int(parsed_response["score"])
             
             # Update stagnant_count based on score comparison
-            if score <= self.previous_score:
+            if len(self.scores) > 0 and score <= self.scores[-1]:
                 self.stagnant_count += 1
             else:
                 self.stagnant_count = 0
-            
-            self.previous_score = score
+             
             
             return json.dumps(parsed_response, indent=2)
         except json.JSONDecodeError:
@@ -132,7 +140,7 @@ class RewardModel:
 
     def should_consult_sage(self):
         # This method remains unchanged
-        return self.stagnant_count >= 1
+        return self.stagnant_count >= 1 or (len(self.scores) > 0 and self.scores[-1] < 5)
 
 class SwiftSage:
     def __init__(self, dataset, embeddings, prompt_template_dir, api_configs, use_retrieval=True, start_with_sage=True):
@@ -163,31 +171,53 @@ class SwiftSage:
                 sage_response = self.sage.generate_response(problem, current_reasoning, current_solution)
                 sage_parsed = extract_and_parse_json(sage_response)
                 critical_feedback = sage_parsed["critical_feedback"]
-                plan = "\n".join(sage_parsed["revised_plan"])
+                plan = "\n - " + "\n - ".join(sage_parsed["revised_plan"])
                 solved = sage_parsed["solved"].lower() == "true" if i != 0 else sage_parsed["solved"] 
                 logger.info(f"Sage's feedback (iteration {i+1}):\n{critical_feedback}")
                 logger.info(f"Sage's revised plan:\n{plan}")
+                self.sage.feedbacks[i] = critical_feedback
+                self.sage.plans[i] = plan
             
             if not solved:
                 swift_response = self.swift.generate_response(problem, current_reasoning, current_solution, plan, critical_feedback)
                 swift_parsed = extract_and_parse_json(swift_response)
+                
                 current_solution = swift_parsed["final_answer"]
                 reasoning = swift_parsed["reasoning_steps"]
+
+                self.swift.reasoning_time[i] = reasoning
+                self.swift.solution_time[i] = current_solution
+
                 logger.info(f"Swift's reasoning:\n{reasoning}")
                 logger.info(f"Swift's current solution:\n{current_solution}")
             
                 reward_response = self.reward_model.calculate_reward(problem, reasoning, current_solution)
                 reward_parsed = extract_and_parse_json(reward_response)
-                score = reward_parsed["score"]
-                feedback = reward_parsed["feedback"]
+                score = int(reward_parsed["score"])
+                feedback = reward_parsed["feedback"] 
+                prev_score = self.reward_model.scores[-1] if len(self.reward_model.scores) > 0 else 0
+                self.reward_model.scores.append(score)
+                self.reward_model.feedbacks.append(feedback)
+
+                # detect if the score is lower than the previous score
                 logger.info(f"Reward for iteration {i+1}: {score}/10")
                 logger.info(f"Feedback: {feedback}")
+
+                if score < prev_score:
+                    logger.info("Score is lower than the previous score. Stopping the iteration. Reverting to the previous solution and reasoning.")
+                    # revert to the previous solution and reasoning
+                    current_solution = self.swift.solution_time[i-1]
+                    reasoning = self.swift.reasoning_time[i-1]
+                    continue 
+
+                
                 critical_feedback = feedback
-                current_reasoning = "\n -" + "\n - ".join(reasoning)
+                current_reasoning = "\n - " + "\n - ".join(reasoning)
+
             
             if score >= 9 or solved:
                 logger.info("Perfect solution found!")
-                return reasoning, current_solution
+                return reasoning, current_solution 
             
             if self.reward_model.should_consult_sage():
                 logger.info("Reward model: The solution quality hasn't improved recently. Consulting Sage for the next iteration.")
@@ -213,7 +243,15 @@ s2 = SwiftSage(
 )
 
 # problem = "Solve the equation: 2x + 5 = 13"
-problem = "If h(x)=x-4 and g(h(x))=x^2-8x+10, find g(x)?"
+problem = "If h(x)=x-4 and g(h(x))=x^2-8x+10, find g(x)? show the formula for g(x)"
+# problem = "Solve the equation: 6y + 5 = 29"
+# problem = "Who lives longer, Lowell Sherman or Jonathan Kaplan?"
+# problem = "9.9 or 9.11 --  which is bigger?"
+# problem = "How can you solve the quadratic equation 3x^2 + 7x + 4 = 0 using the quadratic formula?"
+# problem = "Explain why sound waves cannot travel in a vacuum?"
+# problem = "How many grams of hydrogen (H) are present in 23.5 grams of water (H2O)?"
+# problem = "What is the distance between the points (2, 3) and (5, 8)?"
+# problem = "Why can the Hubble telescope capture clear images of distant stars and galaxies, but not a detailed image of Pluto?"
 reasoning, solution = s2.solve(problem)
 logger.info(f"Final reasoning:\n")
 for step in reasoning:

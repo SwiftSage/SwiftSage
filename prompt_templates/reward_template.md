@@ -25,6 +25,7 @@ We are not sure if the current solution is correct. Please evaluate the current 
 
 Provide a score from 1 to 10 and a brief explanation. 
 If you are not sure about the final answer, provide a score between 1 to 7 and explain why you are not sure about the final answer.
+Take care and do not give false information in the critical feedback.
 
 
 ## Output Format
@@ -34,7 +35,7 @@ Format your response as a JSON object with the following structure:
 ```json
 {
   "feedback": "Your critical feedback here for analyzing the solution",
-  "score": [1-10]
+  "score": "[1-10]"
 }
 ```
 

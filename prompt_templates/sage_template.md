@@ -17,7 +17,7 @@ If the current solution is correct and complete, you will suggest the problem is
  
 ## Critical Feedback
 
-We are not sure if the current solution is correct, can you provide a critical feedback on the current solution and suggest a revised plan for the next steps. Consider any challenges or improvements needed. Please note that you do not need to solve the problem, just provide a critical feedback and revised plan for another agent to follow and solve the problem. Please point out the errors in the current solution if there are any in the `critical_feedback` field, and then provide the revised plan in the `revised_plan` field.
+We are not sure if the current solution is correct, can you provide a critical feedback on the current solution and suggest a revised plan for the next steps. Consider any challenges or improvements needed. Please note that you do not need to solve the problem, just provide a critical feedback and revised plan for another agent to follow and solve the problem. Please point out the errors in the current solution if there are any in the `critical_feedback` field, and then provide the revised plan in the `revised_plan` field. If the problem is solved, please set `solved` to `"True"`, and leave `critical_feedback` and `revised_plan` empty.
 
 Format your response as a JSON object with the following structure:
 

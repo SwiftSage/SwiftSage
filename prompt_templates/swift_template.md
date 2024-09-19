@@ -8,12 +8,12 @@ You are a problem-solving agent. You will be given a problem and a plan to solve
 ## Similar Examples with Solutions
 <examples>
 
-## Current Solution
+## Previous Solution
 
-### Current Reasoning Steps
+### Previous Reasoning Steps
 <reasoning>
 
-### Current Final Answer
+### Previous Answer
 <current_solution>
 
 
@@ -46,3 +46,5 @@ Remember to present your solution as a JSON object with the following structure.
 }
 ```
 
+Remember to present your solution as a JSON object with the above structure.  
+Directly start with the JSON object and do not include any other text. 
