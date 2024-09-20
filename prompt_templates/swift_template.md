@@ -77,8 +77,6 @@ The final answer (usually very short).
 </final_answer> 
  
 
-You must follow the format strictly, do not miss any field. 
-Start your output by "<reasoning_steps>" and end your output by "</final_answer>".
-Start your output by "<reasoning_steps>" and end your output by "</final_answer>".
-Start your output by "<reasoning_steps>" and end your output by "</final_answer>".
+You must follow the format strictly, do not miss any field.  
+Start your output by "<reasoning_steps>...</reasoning_steps>" and end your output by "<final_answer> ... </final_answer>".
 

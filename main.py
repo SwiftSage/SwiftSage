@@ -186,6 +186,12 @@ class SwiftSage:
             if not solved:
                 swift_parsed = self.swift.generate_response(problem, current_reasoning, current_solution, plan, critical_feedback)
                 
+                if "final_answer" not in swift_parsed:
+                    logger.info("Swift's response does not contain the 'final_answer' field. Returning raw response.")
+                    self.reward_model.scores.append(0)
+                    self.reward_model.feedbacks.append("No feedback")
+                    self.reward_model.stagnant_count += 5
+                    continue 
                 
                 current_solution = swift_parsed["final_answer"]
                 reasoning = swift_parsed.get("reasoning_steps", json.dumps(swift_parsed))
@@ -319,8 +325,33 @@ Which one is the correct answer?
 
 """
 
+# GPQA
+problem = """
+Two quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they be clearly resolved?
 
-reasoning, solution = s2.solve(problem, max_iterations=5)
+Choices: 
+["10^-4 ev", "10^-8 ev", "10^-9 ev", "10^-11 ev"]
+
+Which one is the correct answer?
+"""
+
+problem = """
+Consider the following metric: ds^{2}=\frac{32}{\left(4-x^{2}-y^{2}\right)}\left(dx^{2}+dy^{2}\right) What is the area of the pseudosphere of radius r=2?
+
+Choices:
+["+\infty", "0", "4\pi\left(x^{2}+y^{2}\right)", "4\pi\left(x^{2}-y^{2}\right)"]
+
+Which one is the correct answer?
+"""
+
+# AIME 
+
+problem = """
+Two externally tangent circles $\omega_1$ and $\omega_2$ have centers $O_1$ and $O_2$, respectively. A third circle $\Omega$ passing through $O_1$ and $O_2$ intersects $\omega_1$ at $B$ and $C$ and $\omega_2$ at $A$ and $D$, as shown. Suppose that $AB = 2$, $O_1O_2 = 15$, $CD = 16$, and $ABO_1CDO_2$ is a convex hexagon. Find the area of this hexagon.
+"""
+
+
+reasoning, solution = s2.solve(problem, max_iterations=5, reward_threshold=8)
 logger.info(f"Final reasoning:\n{reasoning}")
 logger.info(f"Final solution:\n{solution}")
 
