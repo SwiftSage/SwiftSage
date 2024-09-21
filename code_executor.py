@@ -143,7 +143,7 @@ class PythonExecutor:
 
         # Post-processing
         result, report = str(result).strip(), str(report).strip()
-        result, report = self.truncate(result), self.truncate(report)
+        # result, report = self.truncate(result), self.truncate(report)
 
         return result, report
 

@@ -123,16 +123,22 @@ Jonathan Kaplan lived longer.
 
 ## Your Final Solution
 
+Read the current problem in <task>...</task> again.
+
+<task>
+<prompt> 
+</task>
+
 To solve the current problem, you should first write the overall plan in <plan>...</plan> to solve the problem. Then, write python code in <code>...</code> tags to solve the problem.  If there is critical feedback and suggested plan, please revise your previous solution (if any) and provide the new plan and solution to solve the problem based on the critical feedback and suggested plan.
 
 ## Remember to present your output in the following format:
 
 <plan>
-...
+[Your general plan to solve the problem by using code. You can recall the required knowledge that you can use in the code, such as the facts, formulas, etc.]
 </plan>
 
 <code>
-...
+[Your python code to solve the problem. Please print the final answer at the end of the code.]
 </code> 
  
 You must follow the format strictly, do not miss any field.  

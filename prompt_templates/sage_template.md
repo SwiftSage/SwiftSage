@@ -27,27 +27,19 @@ Format your response in the following format:
 
 
 <solved>
-True or False
+[True or False]
 </solved>
 
 <critical_feedback>
-Your critical feedback here.
+[Your critical feedback here.]
 </critical_feedback>
 
 <reasoning_steps>
-Your reasoning steps here. 
-Step 1: ...
-Step 2: ...
-Step 3: ...
-... 
-Do not use too many reasoning steps (no more than 15 steps).
+[Put your reasoning steps here to revise the previous solution. Use additional knowledge if needed and then we will write the code to solve the problem in the next field.]
 </reasoning_steps>
 
-<final_answer>
-The final answer (usually very short).
-</final_answer> 
-
-# Important Notes
-
-You must follow the format strictly, do not miss any field. Start your output by "<solved>" and end your output by "</final_answer>".
+<code>
+[Put your updated code here to solve the problem.]
+</code>
+ 
 

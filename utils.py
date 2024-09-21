@@ -76,6 +76,9 @@ def extract_and_parse_markup(text):
             content = match.group(1).strip()
             result[key] = content
 
+    if "code" in result.keys():
+        result["code"] = result["code"].replace("```python", "").replace("```", "").strip()
+
     return result
 
 
@@ -94,13 +97,12 @@ class PromptTemplate:
     def format(self, key, **kwargs):
         template = self.templates.get(key, "")
         for k, v in kwargs.items():
-            template = template.replace("<" + k + ">", str(v))
-        # logger.info(f"Formatted {key} template:\n{template}")
+            template = template.replace("<" + k + ">", str(v)) 
         return template
 
 
 class LLMClient:
-    def __init__(self, model_id, api_config, temperature=0.3, top_p=1.0, max_tokens=3000):
+    def __init__(self, model_id, api_config, temperature=0.3, top_p=1.0, max_tokens=3000, logger=None):
         self.client = openai.OpenAI(
             api_key=api_config['api_key'],
             base_url=api_config['url_base']
@@ -109,10 +111,11 @@ class LLMClient:
         self.temperature = temperature
         self.top_p = top_p
         self.max_tokens = max_tokens
+        self.logger = logger
 
     def generate_response(self, messages):
-        logger.info(f"Sending request to {self.model_id}")
-        logger.info(f"Messages: {messages}")
+        self.logger.info(f"Sending request to {self.model_id}")
+        self.logger.info(f"Messages: {messages}")
         response = self.client.chat.completions.create(
             model=self.model_id,
             messages=messages,
@@ -121,11 +124,11 @@ class LLMClient:
             max_tokens=self.max_tokens
         )
         content = response.choices[0].message.content
-        logger.info(f"Response from {self.model_id}:\n{content}")
+        self.logger.info(f"Response from {self.model_id}:\n{content}")
         return content
 
 
-logger = setup_logging()
+
 
 
 if __name__ == "__main__":

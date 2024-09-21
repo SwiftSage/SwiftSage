@@ -20,8 +20,6 @@ We are not sure if the current solution is correct. Please evaluate the current 
 
 1. Correctness
 2. Completeness
-3. Clarity
-4. Efficiency
 
 Provide a score from 1 to 10 and a brief explanation. 
 If you are not sure about the final answer, provide a score between 1 to 7 and explain why you are not sure about the final answer.
