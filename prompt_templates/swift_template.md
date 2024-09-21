@@ -2,47 +2,112 @@
 
 ## Similar Examples with Solutions
 
-### Example Question 1
+### Example Task 1
  
-If h(x)=x-4 and g(h(x))=x^2-8x+10, find g(x)? show the formula for g(x)
+<task>
+Convert the point $(0, -3 \sqrt{3}, 3)$ in rectangular coordinates to spherical coordinates.  Enter your answer in the form $(\rho,\theta,\phi),$ where $\rho > 0,$ $0 \le \theta < 2 \pi,$ and $0 \le \phi \le \pi.$
+</task>
 
-<reasoning_steps>
+<plan>
+Step 1. Recall the formulas for converting from rectangular coordinates $(x, y, z)$ to spherical coordinates $(\rho, \theta, \phi)$:
+   - $\rho = \sqrt{x^2 + y^2 + z^2}$
+   - $\theta = \arctan2(y, x)$
+   - $\phi = \arccos\left(\frac{z}{\rho}\right)$
 
-Here's my plan and solution for finding g(x):
-Step 1: Understand the given functions and their relationship.
-h(x) = x - 4
-g(h(x)) = x^2 - 8x + 10
+Step 2. Given point: $(0, -3\sqrt{3}, 3)$
+   $x = 0$
+   $y = -3\sqrt{3}$
+   $z = 3$
 
-Step 2: Replace x in g(h(x)) with h(x) to get g(x).
-g(h(x)) = x^2 - 8x + 10
-g(x - 4) = x^2 - 8x + 10
+Step 3. Calculate $\rho$ using the formula.
 
-Step 3: Replace x with (x + 4) in the equation from Step 2.
-g(x) = (x + 4)^2 - 8(x + 4) + 10
+Step 4. Calculate $\theta$:
+   - Since $x = 0$, we need to handle this special case.
+   - When $x = 0$ and $y < 0$, $\theta = \frac{3\pi}{2}$
 
-Step 4: Expand the equation.
-g(x) = x^2 + 8x + 16 - 8x - 32 + 10
-g(x) = x^2 + 8x - 8x + 16 - 32 + 10
-g(x) = x^2 - 6
-</reasoning_steps>
+Step 5. Calculate $\phi$ using the formula.
+
+Step 6. Ensure $\theta$ is in the range $[0, 2\pi)$ and $\phi$ is in the range $[0, \pi]$.
+</plan>
+ 
+<code> 
+from sympy import sqrt, atan2, acos, pi
+
+def rectangular_to_spherical():
+    x, y, z = 0, -3*sqrt(3), 3
+    rho = sqrt(x**2 + y**2 + z**2)
+    theta = atan2(y, x)
+    phi = acos(z/rho)
+    return rho, theta, phi
+
+spherical_coordinates = rectangular_to_spherical()
+print(spherical_coordinates)  
+</code>
+
 
 <final_answer>
-g(x) = x^2 - 6
+(6, -pi/2, pi/3)
+</final_answer>
+
+### Example Task 2 
+
+<task>
+Determine who lived longer between Lowell Sherman and Jonathan Kaplan.
+</task>
+
+<plan>
+Step 1: Research the birth and death dates of Lowell Sherman.
+Step 2: Research the birth and death dates of Jonathan Kaplan.
+Step 3: Calculate the lifespan of each person in years.
+Step 4: Compare the lifespans to determine who lived longer.
+</plan>
+
+<code>
+from datetime import datetime
+
+def calculate_lifespan(birth_date, death_date):
+    birth = datetime.strptime(birth_date, "%Y-%m-%d")
+    death = datetime.strptime(death_date, "%Y-%m-%d")
+    return (death - birth).days / 365.25
+
+def compare_lifespans():
+    lowell_sherman = calculate_lifespan("1885-10-11", "1934-12-28")
+    jonathan_kaplan = calculate_lifespan("1947-11-25", "2021-01-03")
+    
+    if lowell_sherman > jonathan_kaplan:
+        return "Lowell Sherman"
+    elif jonathan_kaplan > lowell_sherman:
+        return "Jonathan Kaplan"
+    else:
+        return "They lived equally long"
+
+result = compare_lifespans()
+print(f"{result} lived longer.")
+</code>
+
+<final_answer>
+Jonathan Kaplan lived longer. 
 </final_answer>
 
 
-## Problem that we want to solve
+---
 
+## Current problem that we want to solve
+<task>
 <prompt> 
-
+</task>
 
 ## Previous Solution
 
 ### Previous Reasoning Steps 
+<plan>
 <current_reasoning>
+</plan>
 
 ### Previous Answer 
+<final_answer>
 <current_solution>
+</final_answer>
 
 
 
@@ -58,25 +123,18 @@ g(x) = x^2 - 6
 
 ## Your Final Solution
 
-Based on the current plan and similar examples (if available), solve the problem. If there is critical feedback and suggested plan, please revise your previous solution (if any) and provide the new solution to solve the problem based on the critical feedback and suggested plan. Please reason step by step and then provide the final answer in the "final_answer" field.
+To solve the current problem, you should first write the overall plan in <plan>...</plan> to solve the problem. Then, write python code in <code>...</code> tags to solve the problem.  If there is critical feedback and suggested plan, please revise your previous solution (if any) and provide the new plan and solution to solve the problem based on the critical feedback and suggested plan.
 
 ## Remember to present your output in the following format:
 
-<reasoning_steps>
-First, talk about your overall plan to solve the problem. Then, show each step you took to solve the problem with intermediate reasoning results. Keep the reasoning steps concise and to the point. Do not repeat the same reasoning steps again and again. And finally, provide the final answer to the problem. 
-Your reasoning steps here. 
-Step 1: ...
-Step 2: ...
-Step 3: ...
-... 
-Do not use too many reasoning steps (no more than 15 steps in general).
-</reasoning_steps>
+<plan>
+...
+</plan>
 
-<final_answer>
-The final answer (usually very short).
-</final_answer> 
+<code>
+...
+</code> 
  
-
 You must follow the format strictly, do not miss any field.  
-Start your output by "<reasoning_steps>...</reasoning_steps>" and end your output by "<final_answer> ... </final_answer>".
+Start your output by "<plan>...</plan>" and end your output by "<code> ... </code>".
 

@@ -59,7 +59,7 @@ def setup_logging():
  
 
 def extract_and_parse_markup(text):
-    keys = ["reasoning_steps", "final_answer", "feedback", "score", "critical_feedback", "revised_plan", "solved"]
+    keys = ["reasoning_steps", "final_answer", "feedback", "score", "critical_feedback", "revised_plan", "solved", "plan", "code"]
     result = {}
     if "<final_answer>" in text and "</final_answer>" not in text:
         text = text + "</final_answer>"
@@ -78,6 +78,64 @@ def extract_and_parse_markup(text):
 
     return result
 
+
+class PromptTemplate:
+    def __init__(self, template_dir):
+        self.template_dir = template_dir
+        self.templates = {}
+        self.load_templates()
+
+    def load_templates(self):
+        for filename in ['swift_template.md', 'sage_template.md', 'reward_template.md']:
+            with open(os.path.join(self.template_dir, filename), 'r') as f:
+                key = filename.split('_')[0]
+                self.templates[key] = f.read()
+
+    def format(self, key, **kwargs):
+        template = self.templates.get(key, "")
+        for k, v in kwargs.items():
+            template = template.replace("<" + k + ">", str(v))
+        # logger.info(f"Formatted {key} template:\n{template}")
+        return template
+
+
+class LLMClient:
+    def __init__(self, model_id, api_config, temperature=0.3, top_p=1.0, max_tokens=3000):
+        self.client = openai.OpenAI(
+            api_key=api_config['api_key'],
+            base_url=api_config['url_base']
+        )
+        self.model_id = model_id
+        self.temperature = temperature
+        self.top_p = top_p
+        self.max_tokens = max_tokens
+
+    def generate_response(self, messages):
+        logger.info(f"Sending request to {self.model_id}")
+        logger.info(f"Messages: {messages}")
+        response = self.client.chat.completions.create(
+            model=self.model_id,
+            messages=messages,
+            temperature=self.temperature,
+            top_p=self.top_p,
+            max_tokens=self.max_tokens
+        )
+        content = response.choices[0].message.content
+        logger.info(f"Response from {self.model_id}:\n{content}")
+        return content
+
+
+logger = setup_logging()
+
+
+if __name__ == "__main__":
+    test_text = "test"
+     
+    print(extract_and_parse_markup(test_text))
+
+
+
+"""
 
 def extract_and_parse_json(text):
 
@@ -197,111 +255,5 @@ def extract_and_parse_json_v1(text):
 
  
  
-class PromptTemplate:
-    def __init__(self, template_dir):
-        self.template_dir = template_dir
-        self.templates = {}
-        self.load_templates()
 
-    def load_templates(self):
-        for filename in ['swift_template.md', 'sage_template.md', 'reward_template.md']:
-            with open(os.path.join(self.template_dir, filename), 'r') as f:
-                key = filename.split('_')[0]
-                self.templates[key] = f.read()
-
-    def format(self, key, **kwargs):
-        template = self.templates.get(key, "")
-        for k, v in kwargs.items():
-            template = template.replace("<" + k + ">", str(v))
-        # logger.info(f"Formatted {key} template:\n{template}")
-        return template
-
-
-class LLMClient:
-    def __init__(self, model_id, api_config, temperature=0.3, top_p=1.0, max_tokens=3000):
-        self.client = openai.OpenAI(
-            api_key=api_config['api_key'],
-            base_url=api_config['url_base']
-        )
-        self.model_id = model_id
-        self.temperature = temperature
-        self.top_p = top_p
-        self.max_tokens = max_tokens
-
-    def generate_response(self, messages):
-        logger.info(f"Sending request to {self.model_id}")
-        logger.info(f"Messages: {messages}")
-        response = self.client.chat.completions.create(
-            model=self.model_id,
-            messages=messages,
-            temperature=self.temperature,
-            top_p=self.top_p,
-            max_tokens=self.max_tokens
-        )
-        content = response.choices[0].message.content
-        logger.info(f"Response from {self.model_id}:\n{content}")
-        return content
-
-
-logger = setup_logging()
-
-
-if __name__ == "__main__":
-    test_text = """
-    
- <reasoning_steps>
-
-Let's denote the number of band members in each row as $m$ and the number of rows as $r$. Given that the total number of band members is less than 100 and that there are two members left over when arranged in the rectangular formation with $m$ members in each row and $r$ rows, we can express this as $mr + 2$. 
-
-Now, when the director increases the number of members in each row by 1 and reduces the number of rows by 2, we know that there are exactly enough places in the new formation for each band member. This can be represented by the equation $(m + 1)(r - 2)$.
-
-We can now set these two expressions equal to each other since they both represent the total number of band members:
-
-$mr + 2 = (m + 1)(r - 2)$.
-
-Expanding the right side gives us:
-
-$mr + 2 = mr - 2m + r - 2$
-
-After canceling out $mr$ from both sides, we have:
-
-$2 = -2m + r - 2$
-
-Simplifying further, we get:
-
-$r = 2m + 4$
-
-Now we need to find the largest number of members the band could have. We also need to remember that this number must be less than 100.
-
-Given the expression for $r$ as $2m + 4$, we know that the total number of band members is $mr + 2$. Substitute the expression for $r$ to get $m(2m + 4) + 2$. Simplifying this gives us:
-
-$2m^2 + 4m + 2$.
-
-This is a quadratic expression that we want to maximize. Since the maximum occurs at the vertex, we want to find the vertex of this quadratic. 
-
-The x-coordinate of the vertex of a parabola $ax^2 + bx + c$ is given by $\frac{-b}{2a}$. In this case, $a = 2$ and $b = 4$.
-
-Plugging these values into the formula for the x-coordinate of the vertex gives us:
-
-$\frac{-4}{2*2} = -1$
-
-Since $m$ is an integer, $m$ must be less than $-1$, which is not possible because there are no negative band members in each row. However, this problem likely assumes that $m$ will be a positive number, since we're counting band members.
-
-If $m$ is a positive number, we can disregard the value of $m$ for which we find the vertex. Instead, let's plug in integers into $m$ until we get a product greater than or equal to 98, which is one less than 100, and still less than 100.
-
-The largest $mr + 2$ less than 100 occurs when $m$ equals 6 and $r$ equals 16:
-
-$6*16 + 2 = 98$
-
-However, we could verify that when $m$ equals 7 and $r$ equals 18, the product also produces a number less than 100:
-
-$7*18 + 2 = 128$
-
-Let’s verify if this makes sense.
-
-</reasoning_steps>
-
-<final_answer>
-98
-</final_answer> """
-    print(extract_and_parse_markup(test_text))
+"""

@@ -8,8 +8,10 @@ import logging
 import datetime
 import re
 import hjson
+import multiprocess
 
 from utils import extract_and_parse_markup, Agent, api_configs, LLMClient, PromptTemplate, logger
+from code_executor import PythonExecutor
 
 class RetrievalAugmentation:
     def __init__(self, dataset, embeddings):
@@ -25,10 +27,10 @@ class SwiftAgent(Agent):
     def __init__(self, prompt_template, llm_client, retrieval_augmentation=None):
         super().__init__(prompt_template, llm_client)
         self.retrieval_augmentation = retrieval_augmentation
-        self.reasoning_time = {}
-        self.solution_time = {}
+        self.plans = {}
+        self.codes = {}
 
-    def generate_response(self, prompt, reasoning, current_solution, plan, critical_feedback):
+    def generate_response(self, prompt, reasoning, current_solution, plan, critical_feedback, prefill=True):
         logger.info("SwiftAgent generating response")
         if self.retrieval_augmentation:
             query_embedding = self.get_query_embedding(prompt)
@@ -50,11 +52,14 @@ class SwiftAgent(Agent):
 
         messages = [
             {"role": "system", "content": ''},
-            {"role": "user", "content": swift_prompt},
-            # {"role": "assistant", "content": "\n<reasoning_steps>"} # prefix-filling 
+            {"role": "user", "content": swift_prompt}
         ]
+        if prefill:
+            messages.append({"role": "assistant", "content": "<plan>"}) # prefix-filling 
         
         response = self.llm_client.generate_response(messages) 
+        if prefill:
+            response = "<plan>" + response
         
         try:
             parsed_response = extract_and_parse_markup(response)
@@ -144,7 +149,7 @@ class RewardModel:
         return self.stagnant_count >= 1 or (len(self.scores) > 0 and self.scores[-1] < 5)
 
 class SwiftSage:
-    def __init__(self, dataset, embeddings, prompt_template_dir, swift_config, sage_config, reward_config, use_retrieval=True, start_with_sage=True):
+    def __init__(self, dataset, embeddings, prompt_template_dir, swift_config, sage_config, reward_config, use_retrieval=True, start_with_sage=False):
         prompt_template = PromptTemplate(prompt_template_dir)
         retrieval_augmentation = RetrievalAugmentation(dataset, embeddings) if use_retrieval else None
         
@@ -156,6 +161,7 @@ class SwiftSage:
         self.sage = SageAgent(prompt_template, sage_llm)
         self.reward_model = RewardModel(prompt_template, reward_llm)
         self.start_with_sage = start_with_sage
+        # self.executor = PythonExecutor(get_answer_from_stdout=True)
     
     def solve(self, problem, max_iterations=10, reward_threshold=8):
         logger.info(f"Starting to solve problem: {problem}")
@@ -166,7 +172,9 @@ class SwiftSage:
         solved = False
         for i in range(max_iterations):
             logger.info(f"Iteration {i+1}")
+            
 
+            #  Use the Sage Agent 
             if (i == 0 and self.start_with_sage) or self.reward_model.should_consult_sage():
                 sage_parsed = self.sage.generate_response(problem, current_reasoning, current_solution) 
                 critical_feedback = sage_parsed["critical_feedback"]
@@ -184,26 +192,37 @@ class SwiftSage:
                 return reasoning, current_solution
             
             if not solved:
+                # Use the Swift Agent 
                 swift_parsed = self.swift.generate_response(problem, current_reasoning, current_solution, plan, critical_feedback)
                 
-                if "final_answer" not in swift_parsed:
-                    logger.info("Swift's response does not contain the 'final_answer' field. Returning raw response.")
+                if "code" not in swift_parsed and "final_answer" not in swift_parsed: 
+                    logger.info("Swift's response does not contain the 'final_answer' or 'code' field. Returning raw response.")
                     self.reward_model.scores.append(0)
                     self.reward_model.feedbacks.append("No feedback")
-                    self.reward_model.stagnant_count += 5
+                    self.reward_model.stagnant_count += max_iterations # force to use Sage Agent
                     continue 
                 
-                current_solution = swift_parsed["final_answer"]
-                reasoning = swift_parsed.get("reasoning_steps", json.dumps(swift_parsed))
+                current_plan = swift_parsed["plan"]
+                current_code = swift_parsed["code"]
+                current_answer = swift_parsed.get("final_answer", None)
 
-                self.swift.reasoning_time[i] = reasoning
-                self.swift.solution_time[i] = current_solution
+                self.swift.plans[i] = current_plan
+                self.swift.codes[i] = current_code  
 
-                logger.info(f"Swift's reasoning:\n{reasoning}")
-                logger.info(f"Swift's current solution:\n{current_solution}")
+                logger.info(f"Swift's plan:\n{current_plan}")
+                logger.info(f"Swift's code:\n{current_code}")
+
+                # Call sandbox to run the code and get the result
+                executor = PythonExecutor(get_answer_from_stdout=True)
+                code_result, code_report = executor.apply(current_code)
+                logger.info(f"Code execution report: {code_report}")
+                logger.info(f"Code execution result: {code_result}")
             
+                reasoning = current_plan + "\n" + current_code 
+                current_solution = code_result
+
+                # Calling the reward model to provide feedback and score 
                 reward_parsed = self.reward_model.calculate_reward(problem, reasoning, current_solution)
-                
                 score = int(reward_parsed["score"])
                 feedback = reward_parsed["feedback"] 
                 prev_score = self.reward_model.scores[-1] if len(self.reward_model.scores) > 0 else 0
@@ -217,8 +236,8 @@ class SwiftSage:
                 if False and score < prev_score:
                     logger.info("Score is lower than the previous score. Stopping the iteration. Reverting to the previous solution and reasoning.")
                     # revert to the previous solution and reasoning
-                    current_solution = self.swift.solution_time[i-1]
-                    reasoning = self.swift.reasoning_time[i-1]
+                    current_solution = self.swift.codes[i-1]
+                    reasoning = self.swift.plans[i-1]
                     continue 
 
                 
@@ -238,120 +257,132 @@ class SwiftSage:
         logger.info("Problem solving completed")
         return reasoning, current_solution
 
-# for retrieval augmentation (not implemented yet now)
-dataset = ["Example problem 1: ...", "Example problem 2: ...", "Example problem 3: ..."]
-embeddings = np.random.rand(len(dataset), 768)  # Placeholder, replace with actual embeddings
+if __name__ == '__main__':
+    multiprocess.set_start_method('spawn')
 
-# specify the path to the prompt templates
-prompt_template_dir = "./prompt_templates"
+    # for retrieval augmentation (not implemented yet now)
+    dataset = ["Example problem 1: ...", "Example problem 2: ...", "Example problem 3: ..."]
+    embeddings = np.random.rand(len(dataset), 768)  # Placeholder, replace with actual embeddings
 
-# Configuration for each LLM
-# swift_config = {
-#     "model_id": "Meta-Llama-3.1-8B-Instruct",
-#     "api_config": api_configs['SambaNova']
-# }
+    # specify the path to the prompt templates
+    prompt_template_dir = "./prompt_templates"
 
-# reward_config = {
-#     "model_id": "Meta-Llama-3.1-70B-Instruct",
-#     "api_config": api_configs['SambaNova']
-# }
+    # Configuration for each LLM
+    # swift_config = {
+    #     "model_id": "Meta-Llama-3.1-8B-Instruct",
+    #     "api_config": api_configs['SambaNova']
+    # }
 
-# sage_config = {
-#     "model_id": "Meta-Llama-3.1-405B-Instruct",
-#     "api_config": api_configs['SambaNova']
-# }
+    # reward_config = {
+    #     "model_id": "Meta-Llama-3.1-70B-Instruct",
+    #     "api_config": api_configs['SambaNova']
+    # }
 
-swift_config = {
-    "model_id": "meta-llama/Meta-Llama-3-8B-Instruct-Turbo",
-    "api_config": api_configs['Together']
-}
+    # sage_config = {
+    #     "model_id": "Meta-Llama-3.1-405B-Instruct",
+    #     "api_config": api_configs['SambaNova']
+    # }
 
-reward_config = {
-    "model_id": "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
-    "api_config": api_configs['Together']
-}
+    swift_config = {
+        "model_id": "meta-llama/Meta-Llama-3-8B-Instruct-Turbo",
+        "api_config": api_configs['Together']
+    }
 
-sage_config = {
-    "model_id": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
-    "api_config": api_configs['Together']
-}
+    reward_config = {
+        "model_id": "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+        "api_config": api_configs['Together']
+    }
 
-
-s2 = SwiftSage(
-    dataset, 
-    embeddings, 
-    prompt_template_dir, 
-    swift_config,
-    sage_config,
-    reward_config,
-    use_retrieval=False,
-    start_with_sage=False
-)
-
-# problem = "Solve the equation: 2x + 5 = 13"
-# problem = "If h(x)=x-4 and g(h(x))=x^2-8x+10, find g(x)? show the formula for g(x)"
-# problem = "Solve the equation: 6y + 5 = 29"
-# problem = "Who lives longer, Lowell Sherman or Jonathan Kaplan?"
-# problem = "9.9 or 9.11 --  which is bigger?"
-# problem = "How can you solve the quadratic equation 3x^2 + 7x + 4 = 0 using the quadratic formula?"
-# problem = "Explain why sound waves cannot travel in a vacuum?"
-# problem = "How many grams of hydrogen (H) are present in 23.5 grams of water (H2O)?"
-# problem = "What is the distance between the points (2, 3) and (5, 8)?"
-# problem = "Why can the Hubble telescope capture clear images of distant stars and galaxies, but not a detailed image of Pluto?"
-# problem = """
-# A rectangular band formation is a formation with $m$ band members in each of $r$ rows, where $m$ and $r$ are integers. A particular band has less than 100 band members. The director arranges them in a rectangular formation and finds that he has two members left over. If he increases the number of members in each row by 1 and reduces the number of rows by 2, there are exactly enough places in the new formation for each band member. What is the largest number of members the band could have?
-# """
-
-# problem = "Tim wants to invest some money in a bank which compounds quarterly with an annual interest rate of $7\%$. To the nearest dollar, how much money should he invest if he wants a total of $\$60,\!000$ at the end of $5$ years?"
-
-# problem = """
-# In an SR latch built from NOR gates, which condition is not allowed
-
-# Options:
-# [ "S=0, R=2", "S=2, R=2", "S=1, R=1", "S=1, R=-1", "S=1, R=2", "S=0, R=0", "S=2, R=0", "S=1, R=0", "S=2, R=1", "S=0, R=1" ]
-
-# Which one is the correct answer?
-
-# """
-
-# https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/viewer/default/validation?q=Let+A+be+the+set+of+all+&row=1https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/viewer/default/validation?q=Let+A+be+the+set+of+all+&row=1
-problem = """
-Let V be the set of all real polynomials p(x). Let transformations T, S be defined on V by T:p(x) -> xp(x) and S:p(x) -> p'(x) = d/dx p(x), and interpret (ST)(p(x)) as S(T(p(x))). Which of the following is true?
-
-Options:
-[ "ST + TS is the identity map of V onto itself.", "TS = 0", "ST = 1", "ST - TS = 0", "ST = T", "ST = 0", "ST = TS", "ST - TS is the identity map of V onto itself.", "TS = T", "ST = S" ]
-
-Which one is the correct answer?
-
-"""
-
-# GPQA
-problem = """
-Two quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they be clearly resolved?
-
-Choices: 
-["10^-4 ev", "10^-8 ev", "10^-9 ev", "10^-11 ev"]
-
-Which one is the correct answer?
-"""
-
-problem = """
-Consider the following metric: ds^{2}=\frac{32}{\left(4-x^{2}-y^{2}\right)}\left(dx^{2}+dy^{2}\right) What is the area of the pseudosphere of radius r=2?
-
-Choices:
-["+\infty", "0", "4\pi\left(x^{2}+y^{2}\right)", "4\pi\left(x^{2}-y^{2}\right)"]
-
-Which one is the correct answer?
-"""
-
-# AIME 
-
-problem = """
-Two externally tangent circles $\omega_1$ and $\omega_2$ have centers $O_1$ and $O_2$, respectively. A third circle $\Omega$ passing through $O_1$ and $O_2$ intersects $\omega_1$ at $B$ and $C$ and $\omega_2$ at $A$ and $D$, as shown. Suppose that $AB = 2$, $O_1O_2 = 15$, $CD = 16$, and $ABO_1CDO_2$ is a convex hexagon. Find the area of this hexagon.
-"""
+    sage_config = {
+        "model_id": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+        "api_config": api_configs['Together']
+    }
 
 
-reasoning, solution = s2.solve(problem, max_iterations=5, reward_threshold=8)
-logger.info(f"Final reasoning:\n{reasoning}")
-logger.info(f"Final solution:\n{solution}")
+    s2 = SwiftSage(
+        dataset, 
+        embeddings, 
+        prompt_template_dir, 
+        swift_config,
+        sage_config,
+        reward_config,
+        use_retrieval=False,
+        start_with_sage=False
+    )
+
+
+    # Below are testing code 
+
+
+    # problem = "Solve the equation: 2x + 5 = 13"
+    # problem = "If h(x)=x-4 and g(h(x))=x^2-8x+10, find g(x)? show the formula for g(x)"
+    # problem = "Solve the equation: 6y + 5 = 29"
+    # problem = "Who lives longer, Lowell Sherman or Jonathan Kaplan?"
+    # problem = "9.9 or 9.11 --  which is bigger?"
+    # problem = "How can you solve the quadratic equation 3x^2 + 7x + 4 = 0 using the quadratic formula?"
+    # problem = "Explain why sound waves cannot travel in a vacuum?"
+    # problem = "How many grams of hydrogen (H) are present in 23.5 grams of water (H2O)?"
+    # problem = "What is the distance between the points (2, 3) and (5, 8)?"
+    # problem = "Why can the Hubble telescope capture clear images of distant stars and galaxies, but not a detailed image of Pluto?"
+    # problem = """
+    # A rectangular band formation is a formation with $m$ band members in each of $r$ rows, where $m$ and $r$ are integers. A particular band has less than 100 band members. The director arranges them in a rectangular formation and finds that he has two members left over. If he increases the number of members in each row by 1 and reduces the number of rows by 2, there are exactly enough places in the new formation for each band member. What is the largest number of members the band could have?
+    # """
+
+    # problem = "Tim wants to invest some money in a bank which compounds quarterly with an annual interest rate of $7\%$. To the nearest dollar, how much money should he invest if he wants a total of $\$60,\!000$ at the end of $5$ years?"
+
+    # problem = """
+    # In an SR latch built from NOR gates, which condition is not allowed
+
+    # Options:
+    # [ "S=0, R=2", "S=2, R=2", "S=1, R=1", "S=1, R=-1", "S=1, R=2", "S=0, R=0", "S=2, R=0", "S=1, R=0", "S=2, R=1", "S=0, R=1" ]
+
+    # Which one is the correct answer?
+
+    # """
+
+    # https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/viewer/default/validation?q=Let+A+be+the+set+of+all+&row=1https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/viewer/default/validation?q=Let+A+be+the+set+of+all+&row=1
+    problem = """
+    Let V be the set of all real polynomials p(x). Let transformations T, S be defined on V by T:p(x) -> xp(x) and S:p(x) -> p'(x) = d/dx p(x), and interpret (ST)(p(x)) as S(T(p(x))). Which of the following is true?
+
+    Options:
+    [ "ST + TS is the identity map of V onto itself.", "TS = 0", "ST = 1", "ST - TS = 0", "ST = T", "ST = 0", "ST = TS", "ST - TS is the identity map of V onto itself.", "TS = T", "ST = S" ]
+
+    Which one is the correct answer?
+
+    """
+
+    # GPQA
+    problem = """
+    Two quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they be clearly resolved?
+
+    Choices: 
+    ["10^-4 ev", "10^-8 ev", "10^-9 ev", "10^-11 ev"]
+
+    Which one is the correct answer?
+    """
+
+    problem = """
+    Consider the following metric: ds^{2}=\frac{32}{\left(4-x^{2}-y^{2}\right)}\left(dx^{2}+dy^{2}\right) What is the area of the pseudosphere of radius r=2?
+
+    Choices:
+    ["+\infty", "0", "4\pi\left(x^{2}+y^{2}\right)", "4\pi\left(x^{2}-y^{2}\right)"]
+
+    Which one is the correct answer?
+    """
+
+    # AIME 
+
+    problem = """
+    Two externally tangent circles $\omega_1$ and $\omega_2$ have centers $O_1$ and $O_2$, respectively. A third circle $\Omega$ passing through $O_1$ and $O_2$ intersects $\omega_1$ at $B$ and $C$ and $\omega_2$ at $A$ and $D$, as shown. Suppose that $AB = 2$, $O_1O_2 = 15$, $CD = 16$, and $ABO_1CDO_2$ is a convex hexagon. Find the area of this hexagon.
+    """
+
+
+    problem = """
+    How many letter r are there in the word "strawberry"?
+    """
+
+
+    reasoning, solution = s2.solve(problem, max_iterations=5, reward_threshold=8)
+    logger.info(f"Final reasoning:\n{reasoning}")
+    logger.info(f"Final solution:\n{solution}")
 
