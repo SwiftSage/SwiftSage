@@ -51,12 +51,12 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
 
     with gr.Row():
         swift_model_id = gr.Textbox(label="Swift Model ID", value="meta-llama/Meta-Llama-3-8B-Instruct-Turbo")
-        sage_model_id = gr.Textbox(label="Sage Model ID", value="meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo")
         reward_model_id = gr.Textbox(label="Reward Model ID", value="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo")
+        sage_model_id = gr.Textbox(label="Sage Model ID", value="meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo")
 
     with gr.Row():
-        max_iterations = gr.Slider(minimum=1, maximum=100, value=10, step=1, label="Max Iterations")
-        reward_threshold = gr.Slider(minimum=1, maximum=10, value=8, step=1, label="Reward Threshold")
+        max_iterations = gr.Slider(minimum=1, maximum=10, value=5, step=1, label="Max Iterations")
+        reward_threshold = gr.Slider(minimum=4, maximum=10, value=8, step=1, label="Reward Threshold")
 
     use_retrieval = gr.Checkbox(label="Use Retrieval Augmentation", value=False)
     start_with_sage = gr.Checkbox(label="Start with Sage", value=False)
