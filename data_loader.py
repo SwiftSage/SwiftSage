@@ -28,7 +28,6 @@ def load_data(
         split='test', 
         data_dir='./data',
         num_test_sample=-1,
-        shuffle=False,
     ):
     if data_name.lower() == "math":
         data_name = 'MATH'  # we use 500 problem test split in "Let's Verify Step-by-Step"
@@ -70,15 +69,10 @@ def load_data(
 
     if num_test_sample > 0:
         examples = examples[:num_test_sample]
-    if shuffle:
-        random.shuffle(examples)
 
-    questions = [parse_question(example, data_name) for example in examples]
-    gt_ans = [parse_ground_truth(example, data_name) for example in examples]
-
-    return questions, gt_ans
+    return examples
 
 
 if __name__ == "__main__":
-    questions, gt_ans = load_data("gpqa", "test")
+    examples = load_data("gpqa", "test")
     print('test')

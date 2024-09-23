@@ -1,3 +1,6 @@
+"""
+Source and credits: https://github.com/ZubinGou/math-evaluation-harness/blob/main/python_executor.py
+"""
 import re
 import regex
 import sympy

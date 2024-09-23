@@ -10,12 +10,15 @@ from abc import ABC, abstractmethod
 import hjson
 import numpy as np
 import openai
+from tqdm import tqdm
 from sklearn.metrics.pairwise import cosine_similarity
 
 from data_loader import load_data
 from code_executor import PythonExecutor
 from utils import (Agent, LLMClient, PromptTemplate, api_configs,
                    extract_and_parse_markup, setup_logging)
+from data_utils import parse_question, parse_ground_truth
+from evaluate import evaluate
 
 
 logger = setup_logging()
@@ -291,8 +294,49 @@ def run_test(swiftsage, problem, max_iterations=5, reward_threshold=8):
 
 
 def run_benchmark(swiftsage, args, max_iterations=5, reward_threshold=8):
-    examples = load_data(args.dataset_names, args.split, args.data_dir, args.num_test_sample, args.shuffle)
-    pass    # TODO: benchmark evaluation
+    examples = load_data(args.dataset_name, args.split, args.data_dir, args.num_test_sample)
+
+    res = []
+    skip_ids = []
+
+    output_path = os.path.join(args.output_path, f"{args.dataset_name}.jsonl")
+    if os.path.exists(output_path):
+        with open(output_path) as fr:
+            model_responses = fr.readlines()
+
+        for item in model_responses:
+            item = json.loads(item)
+            res.append(item)
+            skip_ids.append(item["idx"])
+
+    for example in tqdm(examples, desc=args.dataset_name):
+        if example["idx"] in skip_ids:
+            continue
+        question = parse_question(example, args.dataset_name)
+        gt_ans = parse_ground_truth(example, args.dataset_name)
+        reasoning, solution = swiftsage.solve(question, max_iterations, reward_threshold)
+        
+        # TODO: extract answer from solution
+
+        cur_res = {
+            "idx": example["idx"],
+            "question": question,
+            "gt": gt_ans,
+            "pred": solution,
+            "reasoning": reasoning,
+        }
+        res.append(cur_res)
+
+        with open(output_path, "a") as fw:
+            fw.write(json.dumps(res[-1]) + "\n")
+    
+    # Evaluate the results
+    res, result_metric = evaluate(res)
+    with open(args.output_path, f"{args.dataset_name}_score.jsonl", "w") as fw:
+        for item in res:
+            fw.write(json.dumps(item) + "\n")
+    with open(args.output_path, f"{args.dataset_name}_metric.jsonl", "w") as fw:
+        fw.write(json.dumps(result_metric) + "\n")
 
 
 def main(args):
@@ -384,11 +428,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--eval_mode", default="test", choices=["test", "benchmark"], type=str)
 
-    parser.add_argument("--dataset_names", default="MATH", type=str)
+    parser.add_argument("--dataset_name", default="MATH", type=str)
     parser.add_argument("--data_dir", default="./data", type=str)
     parser.add_argument("--split", default="test", type=str)
     parser.add_argument("--num_test_sample", default=-1, type=int)  # -1 for full data
-    parser.add_argument("--shuffle", action="store_true")
 
     parser.add_argument("--api_provider", default="Together", choices=["Together", "SambaNova"], type=str)
     parser.add_argument("--swift_model_id", default="meta-llama/Meta-Llama-3-8B-Instruct-Turbo", type=str)
@@ -403,10 +446,18 @@ if __name__ == '__main__':
     parser.add_argument("--reward_threshold", default=8, type=int)
 
     parser.add_argument("--save_outputs", action="store_true")
-    parser.add_argument("--output_dir", default="./output", type=str)
+    parser.add_argument("--output_path", default="./output", type=str)
     parser.add_argument("--overwrite", action="store_true")
 
     args = parser.parse_args()
+
+    # remove console output for benchmark evaluation
+    if args.eval_mode != "test":
+        root_logger = logging.getLogger("")
+        for handler in root_logger.handlers:
+            if isinstance(handler, logging.StreamHandler):
+                root_logger.removeHandler(handler)
+                break
 
     if args.api_provider == "SambaNova":
         args.swift_model_id = args.swift_model_id.split("/")[-1][:-len("Turbo")]
