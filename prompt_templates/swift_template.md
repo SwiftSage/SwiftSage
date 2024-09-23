@@ -92,6 +92,12 @@ Jonathan Kaplan lived longer.
 
 ---
 
+## Important Notes
+
+Note that the above are some example tasks and output formats. You need to solve the current problem below.
+
+---
+
 ## Current problem that we want to solve
 <task>
 <prompt> 
@@ -138,7 +144,7 @@ To solve the current problem, you should first write the overall plan in <plan>.
 </plan>
 
 <code>
-[Your python code to solve the problem. Please print the final answer at the end of the code.]
+[Your python code to solve the current problem (instead of the example problems). Please print the final answer at the end of the code.]
 </code> 
  
 You must follow the format strictly, do not miss any field.  
