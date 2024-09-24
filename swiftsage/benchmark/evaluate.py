@@ -9,7 +9,7 @@ import numpy as np
 from pebble import ProcessPool
 from tqdm import tqdm
 
-from grader import math_equal_process
+from swiftsage.benchmark.grader import math_equal_process
 
 
 def evaluate(samples: list=None, file_path: str=None):

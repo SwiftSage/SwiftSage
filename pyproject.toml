@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swiftsage"
+version = "0.0.1"
+description = "SwiftSage: Fast and Slow Thinking for Complex Reasoning Tasks"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+dependencies = [
+    "datasets>=2.17.1",
+    "dirtyjson==1.0.8",
+    "fuzzywuzzy==0.18.0",
+    "gradio>=4.19.2",
+    "hjson==3.1.0",
+    "latex2sympy2==1.9.1",
+    "multiprocess==0.70.16",
+    "numpy>=1.26.4",
+    "openai>=1.46.0",
+    "Pebble==5.0.7",
+    "regex>=2024.4.16",
+    "scikit-learn>=1.4.2",
+    "sympy>=1.12.1",
+    "tqdm",
+    "word2number==1.1"
+]
+
+[project.scripts]
+swiftsage = "swiftsage.cli:main"
+
+
+[tool.setuptools.packages.find]
+exclude = ["assets*", "data*", "logs", "output*", "scripts*"]
+
+[tool.wheel]
+exclude = ["assets*", "data*", "logs", "output*", "scripts*"]

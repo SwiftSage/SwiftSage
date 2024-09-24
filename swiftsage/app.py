@@ -1,14 +1,12 @@
-import gradio as gr
-import os
 import json
 import logging
-import numpy as np
-from utils import (PromptTemplate, api_configs, setup_logging)
-from data_loader import load_data
-from evaluate import evaluate
-from main import SwiftSage, run_test, run_benchmark
-import multiprocessing 
+import multiprocessing
+import os
 
+import gradio as gr
+
+from swiftsage.model import SwiftSage
+from swiftsage.utils.utils import PromptTemplate, api_configs, setup_logging
 
 
 def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, reward_model_id, use_retrieval, start_with_sage):
@@ -32,7 +30,7 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
     }
 
     # specify the path to the prompt templates
-    prompt_template_dir = './prompt_templates'
+    prompt_template_dir = './swiftsage/prompt_templates'
     dataset = [] 
     embeddings = [] # TODO: for retrieval augmentation (not implemented yet now)
     s2 = SwiftSage(
@@ -49,6 +47,7 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
     reasoning, solution = s2.solve(problem, max_iterations, reward_threshold)
     solution = solution.replace("Answer (from running the code):\n ", " ")
     return reasoning, solution
+
 
 with gr.Blocks(theme=gr.themes.Soft()) as demo:
     # gr.Markdown("## SwiftSage: A Multi-Agent Framework for Reasoning")
@@ -91,6 +90,7 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
         inputs=[problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, reward_model_id, use_retrieval, start_with_sage],
         outputs=[reasoning_output, solution_output]
     )
+
 
 if __name__ == '__main__':
     # make logs dir if it does not exist
