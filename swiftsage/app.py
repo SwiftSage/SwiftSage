@@ -9,7 +9,7 @@ from swiftsage.model import SwiftSage
 from swiftsage.utils.utils import PromptTemplate, api_configs, setup_logging
 
 
-def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, reward_model_id, use_retrieval, start_with_sage):
+def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, feedback_model_id, use_retrieval, start_with_sage):
     # Configuration for each LLM
     max_iterations = int(max_iterations)
     reward_threshold = int(reward_threshold)
@@ -20,7 +20,7 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
     }
 
     reward_config = {
-        "model_id": reward_model_id,
+        "model_id": feedback_model_id,
         "api_config": api_configs['Together']
     }
 
@@ -56,7 +56,7 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
 
     with gr.Row(): 
         swift_model_id = gr.Textbox(label="😄 Swift Model ID", value="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo") 
-        reward_model_id = gr.Textbox(label="🤔 Feedback Model ID", value="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo") 
+        feedback_model_id = gr.Textbox(label="🤔 Feedback Model ID", value="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo") 
         sage_model_id = gr.Textbox(label="😎 Sage Model ID", value="meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo") 
         # the following two should have a smaller width
     
@@ -87,7 +87,7 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
 
     solve_button.click(
         solve_problem,
-        inputs=[problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, reward_model_id, use_retrieval, start_with_sage],
+        inputs=[problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, feedback_model_id, use_retrieval, start_with_sage],
         outputs=[reasoning_output, solution_output]
     )
 

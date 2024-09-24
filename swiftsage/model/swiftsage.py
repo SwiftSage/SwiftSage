@@ -1,7 +1,7 @@
 import json
 import logging
 
-from swiftsage.model import SwiftAgent, SageAgent, RewardModel, RetrievalAugmentation
+from swiftsage.model import SwiftAgent, SageAgent, FeedbackModel, RetrievalAugmentation
 from swiftsage.utils import LLMClient, PromptTemplate, PythonExecutor
 
 
@@ -20,7 +20,7 @@ class SwiftSage:
 
         self.swift = SwiftAgent(prompt_template, swift_llm, retrieval_augmentation)
         self.sage = SageAgent(prompt_template, sage_llm)
-        self.reward_model = RewardModel(prompt_template, reward_llm)
+        self.feedback_model = FeedbackModel(prompt_template, reward_llm)
         self.start_with_sage = start_with_sage
         # self.executor = PythonExecutor(get_answer_from_stdout=True)
     
@@ -36,7 +36,7 @@ class SwiftSage:
             
 
             #  Use the Sage Agent 
-            if (i == 0 and self.start_with_sage) or self.reward_model.should_consult_sage():
+            if (i == 0 and self.start_with_sage) or self.feedback_model.should_consult_sage():
                 sage_parsed = self.sage.generate_response(problem, current_reasoning, current_solution) 
                 critical_feedback = sage_parsed["critical_feedback"]
                 # plan = "\n - " + "\n - ".join(sage_parsed["revised_plan"])
@@ -68,9 +68,9 @@ class SwiftSage:
                 
                 if "code" not in swift_parsed and "final_answer" not in swift_parsed: 
                     logger.info("Swift's response does not contain the 'final_answer' or 'code' field. Returning raw response.")
-                    self.reward_model.scores.append(0)
-                    self.reward_model.feedbacks.append("No feedback")
-                    self.reward_model.stagnant_count += max_iterations # force to use Sage Agent
+                    self.feedback_model.scores.append(0)
+                    self.feedback_model.feedbacks.append("No feedback")
+                    self.feedback_model.stagnant_count += max_iterations # force to use Sage Agent
                     continue 
                 
                 current_plan = swift_parsed["plan"]
@@ -93,12 +93,12 @@ class SwiftSage:
                 current_solution = "Answer (from running the code):\n " + code_result
 
                 # Calling the reward model to provide feedback and score 
-                reward_parsed = self.reward_model.calculate_reward(problem, current_reasoning, current_solution)
+                reward_parsed = self.feedback_model.calculate_reward(problem, current_reasoning, current_solution)
                 score = int(reward_parsed["score"])
                 feedback = reward_parsed["feedback"] 
-                prev_score = self.reward_model.scores[-1] if len(self.reward_model.scores) > 0 else 0
-                self.reward_model.scores.append(score)
-                self.reward_model.feedbacks.append(feedback)
+                prev_score = self.feedback_model.scores[-1] if len(self.feedback_model.scores) > 0 else 0
+                self.feedback_model.scores.append(score)
+                self.feedback_model.feedbacks.append(feedback)
 
                 # detect if the score is lower than the previous score
                 logger.info(f"Reward for iteration {i+1}: {score}/10")
@@ -120,7 +120,7 @@ class SwiftSage:
                 return current_reasoning, current_solution 
             
             
-            if self.reward_model.should_consult_sage():
+            if self.feedback_model.should_consult_sage():
                 logger.info("Reward model: The solution quality hasn't improved recently. Consulting Sage for the next iteration.")
         
         logger.info("Max iterations reached without finding a perfect solution.")

@@ -24,7 +24,7 @@ def parse_args():
 
     parser.add_argument("--api_provider", default="Together", choices=["Together", "SambaNova"], type=str)
     parser.add_argument("--swift_model_id", default="meta-llama/Meta-Llama-3-8B-Instruct-Turbo", type=str)
-    parser.add_argument("--reward_model_id", default="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo", type=str)
+    parser.add_argument("--feedback_model_id", default="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo", type=str)
     parser.add_argument("--sage_model_id", default="meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo", type=str)
 
     parser.add_argument("--prompt_template_dir", default='./swiftsage/prompt_templates', type=str)
@@ -38,7 +38,7 @@ def parse_args():
 
     if args.api_provider == "SambaNova":
         args.swift_model_id = args.swift_model_id.split("/")[-1][:-len("Turbo")]
-        args.reward_model_id = args.reward_model_id.split("/")[-1][:-len("Turbo")]
+        args.feedback_model_id = args.feedback_model_id.split("/")[-1][:-len("Turbo")]
         args.sage_model_id = args.sage_model_id.split("/")[-1][:-len("Turbo")]
 
     return args
@@ -74,7 +74,7 @@ def main():
     }
 
     reward_config = {
-        "model_id": args.reward_model_id,
+        "model_id": args.feedback_model_id,
         "api_config": api_configs[args.api_provider]
     }
 

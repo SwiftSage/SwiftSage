@@ -7,7 +7,7 @@ from swiftsage.utils.utils import extract_and_parse_markup
 logger = logging.getLogger("SwiftSage")
 
 
-class RewardModel:
+class FeedbackModel:
     def __init__(self, prompt_template, llm_client):
         self.prompt_template = prompt_template
         self.llm_client = llm_client 
@@ -22,7 +22,7 @@ class RewardModel:
             reasoning= reasoning,
             current_solution=current_solution
         )
-        # logger.info(f"RewardModel prompt:\n{reward_prompt}")
+        # logger.info(f"FeedbackModel prompt:\n{reward_prompt}")
         
         messages = [
             {"role": "system", "content": ""},
