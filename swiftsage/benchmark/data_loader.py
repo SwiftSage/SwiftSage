@@ -6,7 +6,7 @@ from typing import Any, Iterable, Union
 
 from datasets import Dataset, concatenate_datasets, load_dataset
 
-from data_utils import (
+from swiftsage.benchmark.data_utils import (
     lower_keys,
     parse_question,
     parse_ground_truth,

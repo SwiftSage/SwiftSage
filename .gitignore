@@ -166,3 +166,4 @@ cython_debug/
 # Custom
 logs/
 output/
+/data/gpqa/
