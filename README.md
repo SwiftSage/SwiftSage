@@ -24,7 +24,7 @@ pip install -e .
 
 ```bash
 export TOGETHER_API_KEY="your-api-key" # https://www.together.ai
-swiftsage -p "How many letter r are there in the sentence 'My strawberry is so ridiculously red.'?"
+swiftsage -p "How many letter r are there in 'My strawberry is red.'?"
 ```
 
 
