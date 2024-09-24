@@ -68,7 +68,14 @@ def extract_and_parse_markup(text):
             result[key] = content
 
     if "code" in result.keys():
-        result["code"] = result["code"].replace("```python", "").replace("```", "").strip()
+        # find the first full code block inside ```python and ``` and extract the code if any 
+        if "```python" in result["code"]:
+            code_block_pattern = r'```python\s*([\s\S]*?)\s*```'
+            code_blocks = re.findall(code_block_pattern, result["code"], re.IGNORECASE)
+            if code_blocks:
+                result["code"] = code_blocks[0]
+        
+        # result["code"] = result["code"].replace("```python", "").replace("```", "").strip()
 
     return result
 
@@ -123,7 +130,25 @@ class LLMClient:
 
 
 if __name__ == "__main__":
-    test_text = "test"
+    test_text = """
+<code>
+```python
+num1 = 9.11
+num2 = 9.8
+
+if num1 > num2:
+    print("9.11 is larger.")
+elif num2 > num1:
+    print("9.8 is larger.")
+else:
+    print("Both numbers are equal.")
+```
+Alternatively, a more concise version:
+```python
+print("9.11 is larger" if 9.11 > 9.8 else "9.8 is larger")
+```
+</code>
+    """
      
     print(extract_and_parse_markup(test_text))
 
