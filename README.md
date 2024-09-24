@@ -2,7 +2,6 @@
 
 > [!IMPORTANT]
 > This is the beta version of the v2 of SwiftSage, which is still under development. The current version may not be stable and is subject to change. Any comments and suggestions are welcome! 
-
 > The code of SwiftSage v1 (for the experiments in NeurIPS 2023) is archived in the [`science_world`](https://github.com/SwiftSage/SwiftSage/tree/science_world) branch.
 
 
