@@ -37,6 +37,8 @@ class Agent(ABC):
 def setup_logging():
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     log_filename = f"logs/swiftsage_log_{timestamp}.txt"
+    # create folder if it doesn't exist
+    os.makedirs("logs", exist_ok=True)
     
     logging.basicConfig(
         level=logging.INFO,

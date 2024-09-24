@@ -7,3 +7,7 @@
 <!-- Github Readme Important Callout box note -->
 
 
+```bash
+# generate requirements.txt
+pip freeze > requirements.txt
+```

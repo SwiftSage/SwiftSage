@@ -93,5 +93,8 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
     )
 
 if __name__ == '__main__':
+    # make logs dir if it does not exist
+    if not os.path.exists('logs'):
+        os.makedirs('logs')
     multiprocessing.set_start_method('spawn')
     demo.launch(share=False, show_api=False)
