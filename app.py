@@ -13,6 +13,9 @@ import multiprocessing
 
 def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, reward_model_id, use_retrieval, start_with_sage):
     # Configuration for each LLM
+    max_iterations = int(max_iterations)
+    reward_threshold = int(reward_threshold)
+
     swift_config = {
         "model_id": swift_model_id,
         "api_config": api_configs['Together']
@@ -44,28 +47,44 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
     )
 
     reasoning, solution = s2.solve(problem, max_iterations, reward_threshold)
+    solution = solution.replace("Answer (from running the code):\n ", " ")
     return reasoning, solution
 
 with gr.Blocks(theme=gr.themes.Soft()) as demo:
-    gr.Markdown("# SwiftSage Testing Interface")
+    # gr.Markdown("## SwiftSage: A Multi-Agent Framework for Reasoning")
+    # use the html and center the title 
+    gr.HTML("<h1 style='text-align: center;'>SwiftSage: A Multi-Agent Framework for Reasoning</h1>")
 
-    with gr.Row():
-        swift_model_id = gr.Textbox(label="Swift Model ID", value="meta-llama/Meta-Llama-3-8B-Instruct-Turbo")
-        reward_model_id = gr.Textbox(label="Reward Model ID", value="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo")
-        sage_model_id = gr.Textbox(label="Sage Model ID", value="meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo")
+    with gr.Row(): 
+        swift_model_id = gr.Textbox(label="😄 Swift Model ID", value="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo") 
+        reward_model_id = gr.Textbox(label="🤔 Feedback Model ID", value="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo") 
+        sage_model_id = gr.Textbox(label="😎 Sage Model ID", value="meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo") 
+        # the following two should have a smaller width
+    
+    with gr.Accordion(label="⚙️ Advanced Options", open=False):
+        with gr.Row():
+            with gr.Column():
+                max_iterations = gr.Textbox(label="Max Iterations", value="5")
+                reward_threshold = gr.Textbox(label="Reward Threshold", value="8")
+            # TODO: add top-p and temperature for each module for controlling 
+            with gr.Column():
+                top_p_swift = gr.Textbox(label="Top-p for Swift", value="0.9")
+                temperature_swift = gr.Textbox(label="Temperature for Swift", value="0.7")
+            with gr.Column():
+                top_p_sage = gr.Textbox(label="Top-p for Sage", value="0.9")
+                temperature_sage = gr.Textbox(label="Temperature for Sage", value="0.7")
+            with gr.Column():
+                top_p_reward = gr.Textbox(label="Top-p for Feedback", value="0.9")
+                temperature_reward = gr.Textbox(label="Temperature for Feedback", value="0.7")
 
-    with gr.Row():
-        max_iterations = gr.Slider(minimum=1, maximum=10, value=5, step=1, label="Max Iterations")
-        reward_threshold = gr.Slider(minimum=4, maximum=10, value=8, step=1, label="Reward Threshold")
+            use_retrieval = gr.Checkbox(label="Use Retrieval Augmentation", value=False, visible=False)
+            start_with_sage = gr.Checkbox(label="Start with Sage", value=False, visible=False)
 
-    use_retrieval = gr.Checkbox(label="Use Retrieval Augmentation", value=False)
-    start_with_sage = gr.Checkbox(label="Start with Sage", value=False)
+    problem = gr.Textbox(label="Input your problem", value="How many letter r are there in the sentence 'My strawberry is so ridiculously red.'?", lines=2)
 
-    problem = gr.Textbox(label="Problem", placeholder="Enter the problem to solve...")
-
-    solve_button = gr.Button("Solve Problem")
-    reasoning_output = gr.Textbox(label="Reasoning", interactive=False)
-    solution_output = gr.Textbox(label="Solution", interactive=False)
+    solve_button = gr.Button("🚀 Solve Problem")
+    reasoning_output = gr.Textbox(label="Reasoning steps with Code", interactive=False)
+    solution_output = gr.Textbox(label="Final answer", interactive=False)
 
     solve_button.click(
         solve_problem,

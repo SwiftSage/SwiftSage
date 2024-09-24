@@ -212,7 +212,7 @@ class SwiftSage:
                 code_result, code_report = executor.apply(current_code)
                 logger.info(f"Sage Code execution report: {code_report}")
                 logger.info(f"Sage Code execution result: {code_result}")
-                current_reasoning = current_reasoning + f"\n The generated code is:\n```python\n{current_code}\n```"
+                current_reasoning = current_reasoning + f"\n\nThe generated code is:\n\n```python\n{current_code}\n```"
                 current_solution = "Answer (from running the code):\n " + code_result
                 
                 # current_solution = sage_parsed["final_answer"]
@@ -246,7 +246,7 @@ class SwiftSage:
                 logger.info(f"Code execution report: {code_report}")
                 logger.info(f"Code execution result: {code_result}")
             
-                current_reasoning = current_plan + f"\n The generated code is:\n```python\n{current_code}\n```"
+                current_reasoning = current_plan + f"\nThe generated code is:\n```python\n{current_code}\n```"
                 current_solution = "Answer (from running the code):\n " + code_result
 
                 # Calling the reward model to provide feedback and score 
