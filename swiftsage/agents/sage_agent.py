@@ -3,8 +3,8 @@ import logging
 
 import numpy as np
 
-from swiftsage.model import Agent
-from swiftsage.utils.utils import extract_and_parse_markup
+from swiftsage.agents import Agent
+from swiftsage.utils.commons import extract_and_parse_markup
 
 
 logger = logging.getLogger("SwiftSage")

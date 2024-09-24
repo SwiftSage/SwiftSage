@@ -1,7 +1,7 @@
 import json
 import logging
 
-from swiftsage.model import SwiftAgent, SageAgent, FeedbackModel, RetrievalAugmentation
+from swiftsage.agents import SwiftAgent, SageAgent, Feedback, RetrievalAugmentation
 from swiftsage.utils import LLMClient, PromptTemplate, PythonExecutor
 
 
@@ -20,7 +20,7 @@ class SwiftSage:
 
         self.swift = SwiftAgent(prompt_template, swift_llm, retrieval_augmentation)
         self.sage = SageAgent(prompt_template, sage_llm)
-        self.feedback_model = FeedbackModel(prompt_template, reward_llm)
+        self.feedback_model = Feedback(prompt_template, reward_llm)
         self.start_with_sage = start_with_sage
         # self.executor = PythonExecutor(get_answer_from_stdout=True)
     

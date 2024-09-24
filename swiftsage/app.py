@@ -5,8 +5,8 @@ import os
 
 import gradio as gr
 
-from swiftsage.model import SwiftSage
-from swiftsage.utils.utils import PromptTemplate, api_configs, setup_logging
+from swiftsage.agents import SwiftSage
+from swiftsage.utils.commons import PromptTemplate, api_configs, setup_logging
 
 
 def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, feedback_model_id, use_retrieval, start_with_sage):

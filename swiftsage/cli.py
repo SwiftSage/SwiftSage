@@ -2,8 +2,8 @@ import argparse
 import multiprocessing
 import random
 
-from swiftsage.model import SwiftSage
-from swiftsage.utils.utils import api_configs, setup_logging
+from swiftsage.agents import SwiftSage
+from swiftsage.utils.commons import api_configs, setup_logging
 
 
 logger = setup_logging()

@@ -7,9 +7,9 @@ import os
 
 from tqdm import tqdm
 
-from swiftsage.model import SwiftSage
+from swiftsage.agents import SwiftSage
 from swiftsage.benchmark.data_loader import load_data
-from swiftsage.utils.utils import api_configs, setup_logging
+from swiftsage.utils.commons import api_configs, setup_logging
 from swiftsage.benchmark.data_utils import parse_question, parse_ground_truth
 from swiftsage.benchmark.evaluate import evaluate
 

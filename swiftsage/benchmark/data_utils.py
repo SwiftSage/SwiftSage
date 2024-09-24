@@ -6,7 +6,7 @@ import regex
 import sympy
 from typing import TypeVar, Iterable, List, Union, Any, Dict
 from word2number import w2n
-from swiftsage.utils.utils import *
+from swiftsage.utils.commons import *
 
 
 def lower_keys(example):  
