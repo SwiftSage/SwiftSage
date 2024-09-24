@@ -167,3 +167,4 @@ cython_debug/
 logs/
 output/
 /data/gpqa/
+.DS_Store

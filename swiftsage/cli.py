@@ -4,6 +4,7 @@ import random
 
 from swiftsage.agents import SwiftSage
 from swiftsage.utils.commons import api_configs, setup_logging
+from pkg_resources import resource_filename
 
 
 logger = setup_logging()
@@ -26,8 +27,9 @@ def parse_args():
     parser.add_argument("--swift_model_id", default="meta-llama/Meta-Llama-3-8B-Instruct-Turbo", type=str)
     parser.add_argument("--feedback_model_id", default="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo", type=str)
     parser.add_argument("--sage_model_id", default="meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo", type=str)
-
-    parser.add_argument("--prompt_template_dir", default='./swiftsage/prompt_templates', type=str)
+    
+    default_template_dir = resource_filename('swiftsage', 'prompt_templates')
+    parser.add_argument("--prompt_template_dir", default=default_template_dir, type=str)
     parser.add_argument("--use_retrieval", action="store_true")
     parser.add_argument("--start_with_sage", action="store_true")
 

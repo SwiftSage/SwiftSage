@@ -9,19 +9,15 @@
 ## Installation
 
 ```bash
+git clone https://github.com/SwiftSage/SwiftSage.git
 pip install -e .
+# pip install git+https://github.com/SwiftSage/SwiftSage.git
 ```
 
 ## Usage
 
-Commandline:
-
 ```bash
-swiftsage -p "which one is larger? 9.11 or 9.8?"
+swiftsage -p "How many letter r are there in the sentence 'My strawberry is so ridiculously red.'?"
 ```
+For more configurations, please refer to the [documentation](https://swiftsage.github.io/SwiftSage/).
 
-Gradio:
-
-```bash
-python -m swiftsage.app
-```

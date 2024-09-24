@@ -7,7 +7,7 @@ import gradio as gr
 
 from swiftsage.agents import SwiftSage
 from swiftsage.utils.commons import PromptTemplate, api_configs, setup_logging
-
+from pkg_resources import resource_filename
 
 def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, feedback_model_id, use_retrieval, start_with_sage):
     # Configuration for each LLM
@@ -30,7 +30,23 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
     }
 
     # specify the path to the prompt templates
-    prompt_template_dir = './swiftsage/prompt_templates'
+    # prompt_template_dir = './swiftsage/prompt_templates'
+    # prompt_template_dir = resource_filename('swiftsage', 'prompt_templates')
+
+    # Try multiple locations for the prompt templates
+    possible_paths = [
+        resource_filename('swiftsage', 'prompt_templates'),
+        os.path.join(os.path.dirname(__file__), '..', 'swiftsage', 'prompt_templates'),
+        os.path.join(os.path.dirname(__file__), 'swiftsage', 'prompt_templates'),
+        '/app/swiftsage/prompt_templates',  # For Docker environments
+    ]
+
+    prompt_template_dir = None
+    for path in possible_paths:
+        if os.path.exists(path):
+            prompt_template_dir = path
+            break
+        
     dataset = [] 
     embeddings = [] # TODO: for retrieval augmentation (not implemented yet now)
     s2 = SwiftSage(
