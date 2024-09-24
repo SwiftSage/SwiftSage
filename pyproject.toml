@@ -33,9 +33,11 @@ dependencies = [
 [project.scripts]
 swiftsage = "swiftsage.cli:main"
 
-
 [tool.setuptools.packages.find]
 exclude = ["assets*", "data*", "logs", "output*", "scripts*"]
+
+[tool.setuptools.package-data]
+swiftsage = ["prompt_templates/*"]
 
 [tool.wheel]
 exclude = ["assets*", "data*", "logs", "output*", "scripts*"]
