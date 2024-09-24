@@ -48,7 +48,14 @@ The main components in SwiftSage v2:
 
 ### SwiftSage Workflow
 
-Given a reasoning problem that a user inputs, Swift Agent firsts generates a plan and a code-based solution. The executor executes the code snippet and generates the final answer. We then use the feedback agent to analyze the generated answer and provide feedbacks including a short paragraph and a score. Depending on the score and the threshold, we can decide if the current solution is good enough to show to the user. If not, we use the critical feedbacks to prompt the Swift Agent again to generate a new solution based on the feedbacks. If the new solution is still not good enough after a few iterations, we can then use the Sage Agent to solve the problem in a more analytical way.  Soon, we'll add retrieval augmentation step to further improve the reasoning process of Swift Agent.  
+- 1. Given a reasoning problem that a user inputs, Swift Agent firsts generates a plan and a code-based solution. 
+- 2. The executor executes the code snippet and generates the final answer. 
+- 3. We then use the feedback agent to analyze the generated answer and provide feedbacks including a short paragraph and a score. Depending on the score and the threshold, we can decide if the current solution is good enough to show to the user. 
+    - 3.1. If yes, we then stop the process and show the answer to the user.
+    - 3.2. If not, we use the critical feedbacks to prompt the Swift Agent again to generate a new solution based on the feedbacks. Go to Step 1 with the feedbacks as the new prompt.
+4. If the new solution is still not good enough after a few iterations, we can then use the Sage Agent to solve the problem in a more analytical way.  
+
+Soon, we'll add retrieval augmentation step to further improve the reasoning process of Swift Agent.  
 
 
 
