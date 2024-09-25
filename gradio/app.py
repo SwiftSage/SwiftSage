@@ -9,24 +9,35 @@ from swiftsage.agents import SwiftSage
 from swiftsage.utils.commons import PromptTemplate, api_configs, setup_logging
 from pkg_resources import resource_filename
 
+# ENGINE = "Together"
+# SWIFT_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
+# FEEDBACK_MODEL_ID = "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
+# SAGE_MODEL_ID = "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
+
+ENGINE = "SambaNova"
+SWIFT_MODEL_ID = "Meta-Llama-3.1-8B-Instruct"
+FEEDBACK_MODEL_ID = "Meta-Llama-3.1-70B-Instruct"
+SAGE_MODEL_ID = "Meta-Llama-3.1-405B-Instruct"
+
 def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, feedback_model_id, use_retrieval, start_with_sage):
+    global ENGINE
     # Configuration for each LLM
     max_iterations = int(max_iterations)
     reward_threshold = int(reward_threshold)
 
     swift_config = {
         "model_id": swift_model_id,
-        "api_config": api_configs['Together']
+        "api_config": api_configs[ENGINE]
     }
 
     reward_config = {
         "model_id": feedback_model_id,
-        "api_config": api_configs['Together']
+        "api_config": api_configs[ENGINE]
     }
 
     sage_config = {
         "model_id": sage_model_id,
-        "api_config": api_configs['Together']
+        "api_config": api_configs[ENGINE]
     }
 
     # specify the path to the prompt templates
@@ -74,9 +85,9 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
     gr.HTML("<h1 style='text-align: center;'>SwiftSage: A Multi-Agent Framework for Reasoning</h1>")
 
     with gr.Row(): 
-        swift_model_id = gr.Textbox(label="😄 Swift Model ID", value="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo") 
-        feedback_model_id = gr.Textbox(label="🤔 Feedback Model ID", value="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo") 
-        sage_model_id = gr.Textbox(label="😎 Sage Model ID", value="meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo") 
+        swift_model_id = gr.Textbox(label="😄 Swift Model ID", value=SWIFT_MODEL_ID)
+        feedback_model_id = gr.Textbox(label="🤔 Feedback Model ID", value=FEEDBACK_MODEL_ID)
+        sage_model_id = gr.Textbox(label="😎 Sage Model ID", value=SAGE_MODEL_ID)
         # the following two should have a smaller width
     
     with gr.Accordion(label="⚙️ Advanced Options", open=False):

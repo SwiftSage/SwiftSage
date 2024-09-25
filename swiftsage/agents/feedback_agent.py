@@ -16,28 +16,30 @@ class Feedback:
         self.stagnant_count = 0
         self.K = K  # Number of stagnant scores before consulting Sage
 
-    def calculate_reward(self, problem, reasoning, current_solution, prefill=True):
-        reward_prompt = self.prompt_template.format(
-            "reward",
+    def calculate_reward(self, problem, reasoning, current_solution, prefill=None):
+        if prefill is None:
+            prefill = self.llm_client.support_prefill
+        feedback_prompt = self.prompt_template.format(
+            "feedback",
             problem=problem,
             reasoning= reasoning,
             current_solution=current_solution
         )
-        # logger.info(f"Feedback prompt:\n{reward_prompt}")
+        # logger.info(f"Feedback prompt:\n{feedback_prompt}")
         
         messages = [
             {"role": "system", "content": ""},
-            {"role": "user", "content": reward_prompt}
+            {"role": "user", "content": feedback_prompt}
         ]
         if prefill:
             messages.append({"role": "assistant", "content": "<feedback>"}) # prefix-filling 
         
-        reward_response = self.llm_client.generate_response(messages) 
+        feedback_response = self.llm_client.generate_response(messages) 
         if prefill:
-            reward_response = "<feedback>" + reward_response
+            feedback_response = "<feedback>" + feedback_response
         
         try:
-            parsed_response = extract_and_parse_markup(reward_response)
+            parsed_response = extract_and_parse_markup(feedback_response)
             score = int(parsed_response["score"])
             
             # Update stagnant_count based on score comparison
@@ -49,7 +51,7 @@ class Feedback:
             return parsed_response
         except json.JSONDecodeError:
             logger.error("Error: Reward model's response was not in valid JSON format. Returning raw response.")
-            return reward_response
+            return feedback_response
 
     def should_consult_sage(self):
         # This method remains unchanged

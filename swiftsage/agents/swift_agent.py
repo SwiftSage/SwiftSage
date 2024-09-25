@@ -17,7 +17,9 @@ class SwiftAgent(Agent):
         self.plans = {}
         self.codes = {}
 
-    def generate_response(self, prompt, reasoning, current_solution, plan, critical_feedback, prefill=True):
+    def generate_response(self, prompt, reasoning, current_solution, plan, critical_feedback, prefill=None):
+        if prefill is None:
+            prefill = self.llm_client.support_prefill
         logger.info("SwiftAgent generating response")
         if self.retrieval_augmentation:
             query_embedding = self.get_query_embedding(prompt)

@@ -14,11 +14,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 api_configs = {
     "SambaNova": {
         "api_key": os.environ.get("SAMBANOVA_API_KEY"),
-        "url_base": "https://api.sambanova.ai/v1"
+        "url_base": "https://api.sambanova.ai/v1",
+        "support_prefill": False
     },
     "Together": {
         "api_key": os.environ.get("TOGETHER_API_KEY"),
-        "url_base": "https://api.together.xyz/v1"
+        "url_base": "https://api.together.xyz/v1",
+        "support_prefill": True
     }
     # You can add more API configurations here for other providers
 }
@@ -87,7 +89,7 @@ class PromptTemplate:
         self.load_templates()
 
     def load_templates(self):
-        for filename in ['swift_template.md', 'sage_template.md', 'reward_template.md']:
+        for filename in ['swift_template.md', 'sage_template.md', 'feedback_template.md']:
             with open(os.path.join(self.template_dir, filename), 'r') as f:
                 key = filename.split('_')[0]
                 self.templates[key] = f.read()
@@ -110,6 +112,7 @@ class LLMClient:
         self.top_p = top_p
         self.max_tokens = max_tokens
         self.logger = logger
+        self.support_prefill = api_config.get("support_prefill", False)
 
     def generate_response(self, messages):
         self.logger.info(f"Sending request to {self.model_id}")

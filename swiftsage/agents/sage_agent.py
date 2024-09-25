@@ -17,7 +17,9 @@ class SageAgent(Agent):
         self.plans = {}
         
 
-    def generate_response(self, prompt, reasoning, current_solution, prefill=True):
+    def generate_response(self, prompt, reasoning, current_solution, prefill=None):
+        if prefill is None:
+            prefill = self.llm_client.support_prefill
         logger.info("SageAgent generating response")
         sage_prompt = self.prompt_template.format(
             "sage",
