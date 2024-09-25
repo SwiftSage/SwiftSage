@@ -60,5 +60,24 @@ TODO: Soon, we'll add retrieval augmentation step to further improve the reasoni
 
 
 
+## Misc.
 
+### Contact
+
+Please email [Bill Yuchen Lin](https://yuchenlin.xyz) at the [gmail](yuchenlin1995@gmail.com) address.
+
+### License
+We use the MIT license for SwiftSage.
+
+### Citation 
+The technical report of SwiftSage V2 is under preparation. Please cite the following paper for the previous version of SwiftSage: 
+```bib
+@inproceedings{
+	lin2023swiftsage,
+	title={SwiftSage: A Generative Agent with Fast and Slow Thinking for Complex Interactive Tasks},
+	author={Bill Yuchen Lin and Yicheng Fu and Karina Yang and Faeze Brahman and Shiyu Huang and Chandra Bhagavatula and Prithviraj Ammanabrolu and Yejin Choi and Xiang Ren},
+	booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+	year={2023}
+}
+```
 
