@@ -82,7 +82,8 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
     )
 
     reasoning, solution, messages = s2.solve(problem, max_iterations, reward_threshold)
-    solution = solution.replace("Answer (from running the code):\n ", " ")
+    reasoning = reasoning.replace("The generated code is:", "\n---\nThe generated code is:").strip()
+    solution = solution.replace("Answer (from running the code):\n ", " ").strip()
     # generate HTML for the log messages and display them with wrap and a scroll bar and a max height in the code block with log style 
 
     log_messages = "<pre style='white-space: pre-wrap; max-height: 500px; overflow-y: scroll;'><code class='log'>" + "\n".join(messages) + "</code></pre>"
