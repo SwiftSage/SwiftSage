@@ -81,3 +81,6 @@ The technical report of SwiftSage V2 is under preparation. Please cite the follo
 }
 ```
 
+### Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=SwiftSage/SwiftSage&type=Date)](https://star-history.com/#SwiftSage/SwiftSage&Date)
