@@ -9,18 +9,18 @@ logger = logging.getLogger("SwiftSage")
 
 
 class SwiftSage:
-    def __init__(self, dataset, embeddings, prompt_template_dir, swift_config, sage_config, reward_config, use_retrieval=True, start_with_sage=False):
+    def __init__(self, dataset, embeddings, prompt_template_dir, swift_config, sage_config, feedback_config, use_retrieval=True, start_with_sage=False):
         prompt_template = PromptTemplate(prompt_template_dir)
         retrieval_augmentation = RetrievalAugmentation(dataset, embeddings) if use_retrieval else None
         
         # add logger to the following LLMClient 
         swift_llm = LLMClient(**swift_config, logger=logger)
         sage_llm = LLMClient(**sage_config, logger=logger)
-        reward_llm = LLMClient(**reward_config, logger=logger)
+        feedback_llm = LLMClient(**feedback_config, logger=logger)
 
         self.swift = SwiftAgent(prompt_template, swift_llm, retrieval_augmentation)
         self.sage = SageAgent(prompt_template, sage_llm)
-        self.feedback_model = Feedback(prompt_template, reward_llm)
+        self.feedback_model = Feedback(prompt_template, feedback_llm)
         self.start_with_sage = start_with_sage
         # self.executor = PythonExecutor(get_answer_from_stdout=True)
     
@@ -91,6 +91,11 @@ class SwiftSage:
                 # Call sandbox to run the code and get the result
                 executor = PythonExecutor(get_answer_from_stdout=True)
                 code_result, code_report = executor.apply(current_code)
+                if code_report != "Done":
+                    # retry generate_response for swift 
+                    log_and_append(f"Code execution report: {code_report}")
+                    log_and_append("Code execution failed. Retrying the Swift agent.")
+                    continue
                 log_and_append(f"Code execution report: {code_report}")
                 log_and_append(f"Code execution result: {code_result}")
             

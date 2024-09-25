@@ -62,7 +62,10 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
 
     reasoning, solution, messages = s2.solve(problem, max_iterations, reward_threshold)
     solution = solution.replace("Answer (from running the code):\n ", " ")
-    return reasoning, solution
+    # generate HTML for the log messages and display them with wrap and a scroll bar and a max height in the code block with log style 
+
+    log_messages = "<pre style='white-space: pre-wrap; max-height: 300px; overflow-y: scroll;'><code class='log'>" + "\n".join(messages) + "</code></pre>"
+    return reasoning, solution, log_messages
 
 
 with gr.Blocks(theme=gr.themes.Soft()) as demo:
@@ -101,11 +104,16 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
     reasoning_output = gr.Textbox(label="Reasoning steps with Code", interactive=False)
     solution_output = gr.Textbox(label="Final answer", interactive=False)
 
+    # add a log display for showing the log messages
+    with gr.Accordion(label="📜 Log Messages", open=False):
+        log_output = gr.HTML("<p>No log messages yet.</p>")
+
     solve_button.click(
         solve_problem,
         inputs=[problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, feedback_model_id, use_retrieval, start_with_sage],
-        outputs=[reasoning_output, solution_output]
+        outputs=[reasoning_output, solution_output, log_output],
     )
+
 
 
 if __name__ == '__main__':

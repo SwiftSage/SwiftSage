@@ -8,12 +8,13 @@ logger = logging.getLogger("SwiftSage")
 
 
 class Feedback:
-    def __init__(self, prompt_template, llm_client):
+    def __init__(self, prompt_template, llm_client, K=3):
         self.prompt_template = prompt_template
         self.llm_client = llm_client 
         self.scores = [] 
         self.feedbacks = [] 
         self.stagnant_count = 0
+        self.K = K  # Number of stagnant scores before consulting Sage
 
     def calculate_reward(self, problem, reasoning, current_solution, prefill=True):
         reward_prompt = self.prompt_template.format(
@@ -52,4 +53,4 @@ class Feedback:
 
     def should_consult_sage(self):
         # This method remains unchanged
-        return self.stagnant_count >= 1 or (len(self.scores) > 0 and self.scores[-1] < 5)
+        return self.stagnant_count >= self.K or (len(self.scores) > 0 and self.scores[-1] < 5)
