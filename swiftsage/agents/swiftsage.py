@@ -9,8 +9,9 @@ logger = logging.getLogger("SwiftSage")
 
 
 class SwiftSage:
-    def __init__(self, dataset, embeddings, prompt_template_dir, swift_config, sage_config, feedback_config, use_retrieval=True, start_with_sage=False):
+    def __init__(self, dataset, embeddings, prompt_template_dir, swift_config, sage_config, feedback_config, use_retrieval=False, start_with_sage=False):
         prompt_template = PromptTemplate(prompt_template_dir)
+        
         retrieval_augmentation = RetrievalAugmentation(dataset, embeddings) if use_retrieval else None
         
         # add logger to the following LLMClient 

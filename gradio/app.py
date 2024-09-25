@@ -9,17 +9,18 @@ from swiftsage.agents import SwiftSage
 from swiftsage.utils.commons import PromptTemplate, api_configs, setup_logging
 from pkg_resources import resource_filename
 
-# ENGINE = "Together"
+ENGINE = "Together"
 # SWIFT_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
-# FEEDBACK_MODEL_ID = "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
-# SAGE_MODEL_ID = "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
+SWIFT_MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct-Reference"
+FEEDBACK_MODEL_ID = "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
+SAGE_MODEL_ID = "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
 
-ENGINE = "SambaNova"
-SWIFT_MODEL_ID = "Meta-Llama-3.1-8B-Instruct"
-FEEDBACK_MODEL_ID = "Meta-Llama-3.1-70B-Instruct"
-SAGE_MODEL_ID = "Meta-Llama-3.1-405B-Instruct"
+# ENGINE = "SambaNova"
+# SWIFT_MODEL_ID = "Meta-Llama-3.1-8B-Instruct"
+# FEEDBACK_MODEL_ID = "Meta-Llama-3.1-70B-Instruct"
+# SAGE_MODEL_ID = "Meta-Llama-3.1-405B-Instruct"
 
-def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, feedback_model_id, use_retrieval, start_with_sage):
+def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, feedback_model_id, use_retrieval, start_with_sage, swift_temperature, swift_top_p, sage_temperature, sage_top_p, feedback_temperature, feedback_top_p):
     global ENGINE
     # Configuration for each LLM
     max_iterations = int(max_iterations)
@@ -27,17 +28,26 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
 
     swift_config = {
         "model_id": swift_model_id,
-        "api_config": api_configs[ENGINE]
+        "api_config": api_configs[ENGINE],
+        "temperature": float(swift_temperature),
+        "top_p": float(swift_top_p),
+        "max_tokens": 2048,
     }
 
-    reward_config = {
+    feedback_config = {
         "model_id": feedback_model_id,
-        "api_config": api_configs[ENGINE]
+        "api_config": api_configs[ENGINE],
+        "temperature": float(feedback_temperature),
+        "top_p": float(feedback_top_p),
+        "max_tokens": 2048,
     }
 
     sage_config = {
         "model_id": sage_model_id,
-        "api_config": api_configs[ENGINE]
+        "api_config": api_configs[ENGINE],
+        "temperature": float(sage_temperature),
+        "top_p": float(sage_top_p),
+        "max_tokens": 2048,
     }
 
     # specify the path to the prompt templates
@@ -66,7 +76,7 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
         prompt_template_dir,
         swift_config,
         sage_config,
-        reward_config,
+        feedback_config,
         use_retrieval=use_retrieval,
         start_with_sage=start_with_sage,
     )
@@ -75,14 +85,14 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
     solution = solution.replace("Answer (from running the code):\n ", " ")
     # generate HTML for the log messages and display them with wrap and a scroll bar and a max height in the code block with log style 
 
-    log_messages = "<pre style='white-space: pre-wrap; max-height: 300px; overflow-y: scroll;'><code class='log'>" + "\n".join(messages) + "</code></pre>"
+    log_messages = "<pre style='white-space: pre-wrap; max-height: 500px; overflow-y: scroll;'><code class='log'>" + "\n".join(messages) + "</code></pre>"
     return reasoning, solution, log_messages
 
 
 with gr.Blocks(theme=gr.themes.Soft()) as demo:
     # gr.Markdown("## SwiftSage: A Multi-Agent Framework for Reasoning")
     # use the html and center the title 
-    gr.HTML("<h1 style='text-align: center;'>SwiftSage: A Multi-Agent Framework for Reasoning</h1>")
+    gr.HTML("<h1 style='text-align: center;'>SwiftSage: A General Reasoning Framework with Fast and Slow Thinking</h1> (v2-beta)")
 
     with gr.Row(): 
         swift_model_id = gr.Textbox(label="😄 Swift Model ID", value=SWIFT_MODEL_ID)
@@ -94,7 +104,7 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
         with gr.Row():
             with gr.Column():
                 max_iterations = gr.Textbox(label="Max Iterations", value="5")
-                reward_threshold = gr.Textbox(label="Reward Threshold", value="8")
+                reward_threshold = gr.Textbox(label="feedback Threshold", value="8")
             # TODO: add top-p and temperature for each module for controlling 
             with gr.Column():
                 top_p_swift = gr.Textbox(label="Top-p for Swift", value="0.9")
@@ -103,8 +113,8 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
                 top_p_sage = gr.Textbox(label="Top-p for Sage", value="0.9")
                 temperature_sage = gr.Textbox(label="Temperature for Sage", value="0.7")
             with gr.Column():
-                top_p_reward = gr.Textbox(label="Top-p for Feedback", value="0.9")
-                temperature_reward = gr.Textbox(label="Temperature for Feedback", value="0.7")
+                top_p_feedback = gr.Textbox(label="Top-p for Feedback", value="0.9")
+                temperature_feedback = gr.Textbox(label="Temperature for Feedback", value="0.7")
 
             use_retrieval = gr.Checkbox(label="Use Retrieval Augmentation", value=False, visible=False)
             start_with_sage = gr.Checkbox(label="Start with Sage", value=False, visible=False)
@@ -121,7 +131,7 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
 
     solve_button.click(
         solve_problem,
-        inputs=[problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, feedback_model_id, use_retrieval, start_with_sage],
+        inputs=[problem, max_iterations, reward_threshold, swift_model_id, sage_model_id, feedback_model_id, use_retrieval, start_with_sage, temperature_swift, top_p_swift, temperature_sage, top_p_sage, temperature_feedback, top_p_feedback],
         outputs=[reasoning_output, solution_output, log_output],
     )
 
