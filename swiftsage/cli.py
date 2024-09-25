@@ -12,7 +12,7 @@ logger = setup_logging()
 
 def run_test(swiftsage, problem, max_iterations=5, reward_threshold=8):
     logger.info(f"Testing problem: {problem}")
-    reasoning, solution = swiftsage.solve(problem, max_iterations, reward_threshold)
+    reasoning, solution, messages = swiftsage.solve(problem, max_iterations, reward_threshold)
     logger.info(f"Final reasoning:\n{reasoning}")
     logger.info(f"Final solution:\n{solution}")
     logger.info("=" * 50)
@@ -38,10 +38,10 @@ def parse_args():
 
     args = parser.parse_args()
 
-    if args.api_provider == "SambaNova":
-        args.swift_model_id = args.swift_model_id.split("/")[-1][:-len("Turbo")]
-        args.feedback_model_id = args.feedback_model_id.split("/")[-1][:-len("Turbo")]
-        args.sage_model_id = args.sage_model_id.split("/")[-1][:-len("Turbo")]
+    # if args.api_provider == "SambaNova":
+    #     args.swift_model_id = args.swift_model_id.split("/")[-1][:-len("Turbo")]
+    #     args.feedback_model_id = args.feedback_model_id.split("/")[-1][:-len("Turbo")]
+    #     args.sage_model_id = args.sage_model_id.split("/")[-1][:-len("Turbo")]
 
     return args
 

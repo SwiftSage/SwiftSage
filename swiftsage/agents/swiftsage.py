@@ -25,49 +25,54 @@ class SwiftSage:
         # self.executor = PythonExecutor(get_answer_from_stdout=True)
     
     def solve(self, problem, max_iterations=10, reward_threshold=8):
-        logger.info(f"Starting to solve problem: {problem}")
-        current_solution = "No current solution yet." # final answer
-        current_reasoning = "No reasoning steps yet." # reasoning steps
+        messages = []
+        
+        def log_and_append(message):
+            logger.info(message)
+            messages.append(message)
+
+        log_and_append(f"Starting to solve problem: {problem}")
+        current_solution = "No current solution yet."  # final answer
+        current_reasoning = "No reasoning steps yet."  # reasoning steps
         plan = "Initial plan: Take a deep breath and think step by step."
         critical_feedback = "No critical feedback yet."  # Initialize critical_feedback
         solved = False
+
         for i in range(max_iterations):
-            logger.info(f"Iteration {i+1}")
-            
+            log_and_append(f"Iteration {i+1}")
 
             #  Use the Sage Agent 
             if (i == 0 and self.start_with_sage) or self.feedback_model.should_consult_sage():
                 sage_parsed = self.sage.generate_response(problem, current_reasoning, current_solution) 
                 critical_feedback = sage_parsed["critical_feedback"]
-                # plan = "\n - " + "\n - ".join(sage_parsed["revised_plan"])
                 current_reasoning = sage_parsed["reasoning_steps"] 
                 current_code = sage_parsed["code"] 
 
                 solved = sage_parsed["solved"].lower() == "true" if i != 0 else sage_parsed["solved"] 
                 if solved:
-                    return current_reasoning, current_solution
-                logger.info(f"Sage's feedback (iteration {i+1}):\n{critical_feedback}")
-                # logger.info(f"Sage's reasoning steps:\n{current_reasoning}")
+                    return current_reasoning, current_solution, messages
+
+                log_and_append(f"Sage's feedback (iteration {i+1}):\n{critical_feedback}")
+                log_and_append(f"Sage's reasoning steps:\n{current_reasoning}")
                 self.sage.feedbacks[i] = critical_feedback
                 
                 # run the code 
                 executor = PythonExecutor(get_answer_from_stdout=True)
                 code_result, code_report = executor.apply(current_code)
-                logger.info(f"Sage Code execution report: {code_report}")
-                logger.info(f"Sage Code execution result: {code_result}")
+                log_and_append(f"Sage Code execution report: {code_report}")
+                log_and_append(f"Sage Code execution result: {code_result}")
                 current_reasoning = current_reasoning + f"\n\nThe generated code is:\n\n```python\n{current_code}\n```"
                 current_solution = "Answer (from running the code):\n " + code_result
                 
-                # current_solution = sage_parsed["final_answer"]
-                logger.info("Activated Sage, so we should return the reasoning and solution from Sage.")
-                return current_reasoning, current_solution
+                log_and_append("Activated Sage, so we should return the reasoning and solution from Sage.")
+                return current_reasoning, current_solution, messages
             
             if not solved:
                 # Use the Swift Agent 
                 swift_parsed = self.swift.generate_response(problem, current_reasoning, current_solution, plan, critical_feedback)
                 
                 if "code" not in swift_parsed and "final_answer" not in swift_parsed: 
-                    logger.info("Swift's response does not contain the 'final_answer' or 'code' field. Returning raw response.")
+                    log_and_append("Swift's response does not contain the 'final_answer' or 'code' field. Returning raw response.")
                     self.feedback_model.scores.append(0)
                     self.feedback_model.feedbacks.append("No feedback")
                     self.feedback_model.stagnant_count += max_iterations # force to use Sage Agent
@@ -80,14 +85,14 @@ class SwiftSage:
                 self.swift.plans[i] = current_plan
                 self.swift.codes[i] = current_code  
 
-                logger.info(f"Swift's plan:\n{current_plan}")
-                logger.info(f"Swift's code:\n{current_code}")
+                log_and_append(f"Swift's plan:\n{current_plan}")
+                log_and_append(f"Swift's code:\n{current_code}")
 
                 # Call sandbox to run the code and get the result
                 executor = PythonExecutor(get_answer_from_stdout=True)
                 code_result, code_report = executor.apply(current_code)
-                logger.info(f"Code execution report: {code_report}")
-                logger.info(f"Code execution result: {code_result}")
+                log_and_append(f"Code execution report: {code_report}")
+                log_and_append(f"Code execution result: {code_result}")
             
                 current_reasoning = current_plan + f"\nThe generated code is:\n```python\n{current_code}\n```"
                 current_solution = "Answer (from running the code):\n " + code_result
@@ -100,29 +105,25 @@ class SwiftSage:
                 self.feedback_model.scores.append(score)
                 self.feedback_model.feedbacks.append(feedback)
 
-                # detect if the score is lower than the previous score
-                logger.info(f"Reward for iteration {i+1}: {score}/10")
-                logger.info(f"Feedback: {feedback}")
+                log_and_append(f"Reward for iteration {i+1}: {score}/10")
+                log_and_append(f"Feedback: {feedback}")
 
                 if False and score < prev_score:
-                    logger.info("Score is lower than the previous score. Stopping the iteration. Reverting to the previous solution and reasoning.")
+                    log_and_append("Score is lower than the previous score. Stopping the iteration. Reverting to the previous solution and reasoning.")
                     # revert to the previous solution and reasoning
                     current_solution = self.swift.codes[i-1]
                     current_reasoning = self.swift.plans[i-1]
                     continue 
 
-                
                 critical_feedback = feedback 
 
-            
             if score >= reward_threshold or solved:
-                logger.info("Perfect solution found!")
-                return current_reasoning, current_solution 
-            
+                log_and_append("Perfect solution found!")
+                return current_reasoning, current_solution, messages 
             
             if self.feedback_model.should_consult_sage():
-                logger.info("Reward model: The solution quality hasn't improved recently. Consulting Sage for the next iteration.")
+                log_and_append("Reward model: The solution quality hasn't improved recently. Consulting Sage for the next iteration.")
         
-        logger.info("Max iterations reached without finding a perfect solution.")
-        logger.info("Problem solving completed")
-        return current_reasoning, current_solution
+        log_and_append("Max iterations reached without finding a perfect solution.")
+        log_and_append("Problem solving completed")
+        return current_reasoning, current_solution, messages

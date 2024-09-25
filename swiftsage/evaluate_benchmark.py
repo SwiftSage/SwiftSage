@@ -38,7 +38,7 @@ def run_benchmark(swiftsage, args, max_iterations=5, reward_threshold=8):
             continue
         question = parse_question(example, args.dataset_name)
         gt_ans = parse_ground_truth(example, args.dataset_name)
-        reasoning, solution = swiftsage.solve(question, max_iterations, reward_threshold)
+        reasoning, solution, messages = swiftsage.solve(question, max_iterations, reward_threshold)
         
         # TODO: extract answer from solution
 

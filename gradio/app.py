@@ -46,7 +46,7 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
         if os.path.exists(path):
             prompt_template_dir = path
             break
-        
+
     dataset = [] 
     embeddings = [] # TODO: for retrieval augmentation (not implemented yet now)
     s2 = SwiftSage(
@@ -60,7 +60,7 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
         start_with_sage=start_with_sage,
     )
 
-    reasoning, solution = s2.solve(problem, max_iterations, reward_threshold)
+    reasoning, solution, messages = s2.solve(problem, max_iterations, reward_threshold)
     solution = solution.replace("Answer (from running the code):\n ", " ")
     return reasoning, solution
 
