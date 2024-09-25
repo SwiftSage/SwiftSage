@@ -50,9 +50,10 @@ class SwiftSage:
                 current_code = sage_parsed["code"] 
 
                 solved = sage_parsed["solved"].lower() == "true" if i != 0 else sage_parsed["solved"] 
+                log_and_append(f"Sage's decision: solved={solved}")
                 if solved:
+                    log_and_append("Sage has found a perfect solution. Returning the reasoning and solution.")
                     return current_reasoning, current_solution, messages
-
                 log_and_append(f"Sage's feedback (iteration {i+1}):\n{critical_feedback}")
                 log_and_append(f"Sage's reasoning steps:\n{current_reasoning}")
                 self.sage.feedbacks[i] = critical_feedback
