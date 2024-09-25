@@ -5,9 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "swiftsage"
 version = "0.0.1"
-description = "SwiftSage: Fast and Slow Thinking for Complex Reasoning Tasks"
+description = "SwiftSage: A General Reasoning Framework with Fast and Slow Thinking"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: Apache Software License",
