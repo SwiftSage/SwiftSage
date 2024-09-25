@@ -39,10 +39,10 @@ The key motivation of SwiftSage is to provide a general reasoning framework that
 ### SwiftSage Components
 
 The main components in SwiftSage v2: 
-- **Swift Reasoning Agent**: A smaller LM that generates python code snippets based on the prompt.
+- **Swift Agent**: A smaller LM that generates python code snippets based on the prompt.
 - **Feedback Agent**: A larger LM that generates feedbacks based on the prompt and the generated code snippet.
-- **Sage Reasoning Agent**: A reasoning agent that uses the feedbacks to update the reasoning strategies.
-- **Retrieval Agent** (soon to be added): A retrieval agent that retrieves the most relevant feedbacks for the current prompt.
+- **Sage Agent**: A reasoning agent that uses the feedbacks to update the reasoning strategies.
+- **Retriever** (soon to be added): A retrieval module that retrieves the most relevant feedbacks for the current prompt.
 - **Executor**: A python executor that executes the generated code snippets.
 
 
