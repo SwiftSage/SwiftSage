@@ -92,7 +92,8 @@ def solve_problem(problem, max_iterations, reward_threshold, swift_model_id, sag
 with gr.Blocks(theme=gr.themes.Soft()) as demo:
     # gr.Markdown("## SwiftSage: A Multi-Agent Framework for Reasoning")
     # use the html and center the title 
-    gr.HTML("<h1 style='text-align: center;'>SwiftSage: A General Reasoning Framework with Fast and Slow Thinking</h1> (v2-beta)")
+    gr.HTML("<h1 style='text-align: center;'>SwiftSage: A General Reasoning Framework with Fast and Slow Thinking </h1> ")
+    gr.HTML("<span>SwiftSage is a multi-agent reasoning framework that combines the strengths of different models for solving complex problems. It uses a Swift model for fast thinking, a Sage model for slow thinking, and a Feedback model for providing feedback and reward. More info is on our Github: <a style='color: gray' href='https://github.com/SwiftSage/SwiftSage'> https://github.com/SwiftSage/SwiftSage </a>. Contact: <a href='https://yuchenlin.xyz/'>Bill Yuchen Lin</a> </span>")
 
     with gr.Row(): 
         swift_model_id = gr.Textbox(label="😄 Swift Model ID", value=SWIFT_MODEL_ID)
