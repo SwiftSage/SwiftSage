@@ -28,6 +28,7 @@ export TOGETHER_API_KEY="your-api-key" # get your key from https://www.together.
 swiftsage --problem "How many letter r are there in 'My strawberry is red.'?"
 ```
 
+Check more configurations in the code: [swiftsage/cli.py](swiftsage/cli.py).
 
 ## Design of SwiftSage V2 
 
