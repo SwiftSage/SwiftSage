@@ -15,9 +15,10 @@
 ## Installation
 
 ```bash
-git clone https://github.com/SwiftSage/SwiftSage.git
-pip install -e .
-# pip install git+https://github.com/SwiftSage/SwiftSage.git # for the latest version
+pip install git+https://github.com/SwiftSage/SwiftSage.git  
+# alternatively, you can clone the repo and install it locally
+# git clone https://github.com/SwiftSage/SwiftSage.git
+# pip install -e .
 ```
 
 ## Usage
