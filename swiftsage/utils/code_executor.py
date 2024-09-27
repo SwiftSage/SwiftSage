@@ -44,7 +44,7 @@ class PythonExecutor:
         get_answer_symbol=None,
         get_answer_expr=None,
         get_answer_from_stdout=False,
-        timeout_length=5,
+        timeout_length=15,
     ):
         self.runtime = runtime if runtime else GenericRuntime()
         self.answer_symbol = get_answer_symbol
