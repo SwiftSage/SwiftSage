@@ -10,6 +10,7 @@ import numpy as np
 import openai
 from fuzzywuzzy import process
 from sklearn.metrics.pairwise import cosine_similarity
+from groq import Groq
 
 api_configs = {
     "SambaNova": {
@@ -20,6 +21,11 @@ api_configs = {
     "Together": {
         "api_key": os.environ.get("TOGETHER_API_KEY"),
         "url_base": "https://api.together.xyz/v1",
+        "support_prefill": True
+    },
+    "Groq":{
+        "api_key": os.environ.get("GROQ_API_KEY"),
+        "url_base": "GROQ",
         "support_prefill": True
     }
     # You can add more API configurations here for other providers
@@ -103,10 +109,14 @@ class PromptTemplate:
 
 class LLMClient:
     def __init__(self, model_id, api_config, temperature=0.3, top_p=1.0, max_tokens=2048, logger=None):
-        self.client = openai.OpenAI(
-            api_key=api_config['api_key'],
-            base_url=api_config['url_base']
-        )
+        if api_config['url_base'] == "GROQ":
+            self.client = Groq(api_key=api_config['api_key'])
+        else:
+            # openai api
+            self.client = openai.OpenAI(
+                api_key=api_config['api_key'],
+                base_url=api_config['url_base']
+            )
         self.model_id = model_id
         self.temperature = temperature
         self.top_p = top_p

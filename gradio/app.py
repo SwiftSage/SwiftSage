@@ -10,10 +10,18 @@ from swiftsage.utils.commons import PromptTemplate, api_configs, setup_logging
 from pkg_resources import resource_filename
 
 ENGINE = "Together"
-# SWIFT_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
 SWIFT_MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct-Reference"
 FEEDBACK_MODEL_ID = "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
 SAGE_MODEL_ID = "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
+
+SWIFT_MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct-Turbo"
+FEEDBACK_MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct-Reference"
+SAGE_MODEL_ID = "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
+
+# ENGINE = "Groq"
+# SWIFT_MODEL_ID = "llama-3.1-8b-instant"
+# FEEDBACK_MODEL_ID = "llama-3.1-8b-instant"
+# SAGE_MODEL_ID = "llama-3.1-70b-versatile"
 
 # ENGINE = "SambaNova"
 # SWIFT_MODEL_ID = "Meta-Llama-3.1-8B-Instruct"

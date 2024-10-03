@@ -27,7 +27,8 @@ dependencies = [
     "scikit-learn>=1.4.2",
     "sympy>=1.12.1",
     "tqdm",
-    "word2number==1.1"
+    "word2number==1.1",
+    "groq"
 ]
 
 [project.scripts]
