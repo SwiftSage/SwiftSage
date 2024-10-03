@@ -14,6 +14,7 @@ SWIFT_MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct-Reference"
 FEEDBACK_MODEL_ID = "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
 SAGE_MODEL_ID = "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
 
+ENGINE = "Together"
 SWIFT_MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct-Turbo"
 FEEDBACK_MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct-Reference"
 SAGE_MODEL_ID = "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
