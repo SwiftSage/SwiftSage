@@ -40,7 +40,7 @@ class Feedback:
         
         try:
             parsed_response = extract_and_parse_markup(feedback_response)
-            score = int(parsed_response["score"])
+            score = int(parsed_response.get("score", -1)) # -1 means no score was found
             
             # Update stagnant_count based on score comparison
             if len(self.scores) > 0 and score <= self.scores[-1]:

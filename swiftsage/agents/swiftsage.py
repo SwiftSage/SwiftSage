@@ -97,6 +97,7 @@ class SwiftSage:
                     # retry generate_response for swift 
                     log_and_append(f"Code execution report: {code_report}")
                     log_and_append("Code execution failed. Retrying the Swift agent.")
+                    critical_feedback = f"Code execution failed. The error message is: \n{code_report}"
                     continue
                 log_and_append(f"Code execution report: {code_report}")
                 log_and_append(f"Code execution result: {code_result}")
@@ -107,13 +108,13 @@ class SwiftSage:
                 # Calling the reward model to provide feedback and score 
                 reward_parsed = self.feedback_model.calculate_reward(problem, current_reasoning, current_solution)
                 score = int(reward_parsed["score"])
-                feedback = reward_parsed["feedback"] 
+                critical_feedback = reward_parsed["feedback"] 
                 prev_score = self.feedback_model.scores[-1] if len(self.feedback_model.scores) > 0 else 0
                 self.feedback_model.scores.append(score)
-                self.feedback_model.feedbacks.append(feedback)
+                self.feedback_model.feedbacks.append(critical_feedback)
 
                 log_and_append(f"Reward for iteration {i+1}: {score}/10")
-                log_and_append(f"Feedback: {feedback}")
+                log_and_append(f"Feedback: {critical_feedback}")
 
                 if False and score < prev_score:
                     log_and_append("Score is lower than the previous score. Stopping the iteration. Reverting to the previous solution and reasoning.")
@@ -122,7 +123,7 @@ class SwiftSage:
                     current_reasoning = self.swift.plans[i-1]
                     continue 
 
-                critical_feedback = feedback 
+                # critical_feedback = feedback 
 
             if score >= reward_threshold or solved:
                 log_and_append("Perfect solution found!")

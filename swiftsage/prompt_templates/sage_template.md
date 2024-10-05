@@ -20,7 +20,7 @@ If the current solution is correct and complete, you will suggest the problem is
 We are not sure if the current solution is correct, can you provide a critical feedback on the current solution and suggest a revised plan for the next steps. Consider any challenges or improvements needed. 
 
 If the solution and answer are correct, please set `solved` to `"True"`, and leave `critical_feedback` and `reasoning_steps` empty.
-Please point out the errors in the current solution if there are any in the `critical_feedback` field, and then provide the revised plan in the `reasoning_steps` field, and finally provide the final answer in the `final_answer` field.
+Please point out the errors in the current solution if there are any in the `critical_feedback` field, and then provide the revised plan in the `reasoning_steps` field, and finally provide the final answer in the `final_answer` field. Note that the code should not ask for any input from console, but it should be self-contained and print the final answer at the end.
 
 
 Format your response in the following format: 

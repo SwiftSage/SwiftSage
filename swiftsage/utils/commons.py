@@ -62,6 +62,8 @@ def extract_and_parse_markup(text):
     result = {}
     if "<final_answer>" in text and "</final_answer>" not in text:
         text = text + "</final_answer>"
+    if "<score>" in text and "</score>" not in text:
+        text = text + "</score>"
 
     for key in keys:
         # Create a pattern for each key

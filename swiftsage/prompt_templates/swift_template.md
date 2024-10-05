@@ -2,6 +2,27 @@
 
 ## Similar Examples with Solutions
 
+### Example Task 0
+ 
+<task>
+Hi, how are you?
+</task>
+
+<plan>
+Step 1: Greet the user.
+Step 2: Ask how you can help.
+</plan>
+ 
+<code> 
+print("Hi, I'm doing well. How are you?")
+print("How can I help you?")
+</code>
+
+<final_answer>
+Hi, I'm doing well. How are you?
+How can I help you?
+</final_answer>
+
 ### Example Task 1
  
 <task>
@@ -135,7 +156,8 @@ Read the current problem in <task>...</task> again.
 <prompt> 
 </task>
 
-To solve the current problem, you should first write the overall plan in <plan>...</plan> to solve the problem. Then, write python code in <code>...</code> tags to solve the problem.  If there is critical feedback and suggested plan, please revise your previous solution (if any) and provide the new plan and solution to solve the problem based on the critical feedback and suggested plan.
+To solve the current problem, you should first write the overall plan in <plan>...</plan> to solve the problem. Then, write python code in <code>...</code> tags to solve the problem.  If there is critical feedback and suggested plan, please revise your previous solution (if any) and provide the new plan and solution to solve the problem based on the critical feedback and suggested plan. 
+Note that the code should not ask for any input from console, but it should be self-contained and print the final answer at the end.
 
 ## Remember to present your output in the following format:
 
