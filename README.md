@@ -58,8 +58,8 @@ swiftsage --problem "9.9 or 9.11 --  which is bigger?" \
           --sage_model_id ${SAGE_MODEL_ID} 
 
  -->
-
-Check more configurations in the code: [swiftsage/cli.py](swiftsage/cli.py).
+> [!Tip]
+> Check more configurations in the code: [swiftsage/cli.py](swiftsage/cli.py).
 
 ## Design of SwiftSage V2 
 
