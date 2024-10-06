@@ -122,7 +122,7 @@ def main():
         "Solve the equation: 6y + 5 = 29", # 2
         "Who lives longer, Lowell Sherman or Jonathan Kaplan?", # 3
         "9.9 or 9.11 --  which is bigger?", # 4
-        "How can you solve the quadratic equation 3x^2 + 7x + 4 = 0 using the quadratic formula?", # 5
+        "How can you solve the quadratic equation 3x^2 + 7.15x + 4 = 0 using the quadratic formula?", # 5
         "Explain why sound waves cannot travel in a vacuum?", # 6
         "How many grams of hydrogen (H) are present in 23.5 grams of water (H2O)?", # 7
         "What is the distance between the points (2, 3) and (5, 8)?", # 8

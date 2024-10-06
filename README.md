@@ -26,11 +26,14 @@ pip install git+https://github.com/SwiftSage/SwiftSage.git
 ```bash
 # export TOGETHER_API_KEY="your-api-key" # get your key from https://www.together.ai
 export ENGINE="Together"
-export SWIFT_MODEL_ID="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
-export FEEDBACK_MODEL_ID="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
-export SAGE_MODEL_ID="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
-
-swiftsage --problem "How many letter r are there in 'My strawberry is red.'?" \
+export SWIFT_MODEL_ID="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo" # can be 70B for more complex reasoning
+export FEEDBACK_MODEL_ID="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo" 
+export SAGE_MODEL_ID="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo" # can be 405B for more complex reasoning
+QUERY="How many letter r are there in 'My strawberry is red.'?"
+# QUERY="9.9 or 9.11 --  which is bigger?"
+# QUERY="How can you solve the quadratic equation 3x^2 + 7.15x + 4 = 0 using the quadratic formula?"
+# QUERY="What is the capital of Australia?"
+swiftsage --problem $QUERY \
           --api_provider ${ENGINE} \
           --swift_model_id ${SWIFT_MODEL_ID} \
           --feedback_model_id ${FEEDBACK_MODEL_ID} \

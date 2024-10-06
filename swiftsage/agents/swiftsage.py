@@ -88,7 +88,7 @@ class SwiftSage:
                 self.swift.codes[i] = current_code  
 
                 log_and_append(f"Swift's plan:\n{current_plan}")
-                log_and_append(f"Swift's code:\n{current_code}")
+                log_and_append(f"Swift's code:\n```python\n{current_code}\n```")
 
                 # Call sandbox to run the code and get the result
                 executor = PythonExecutor(get_answer_from_stdout=True)

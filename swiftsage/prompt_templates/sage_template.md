@@ -11,8 +11,6 @@ If the current solution is correct and complete, you will suggest the problem is
 ### Reasoning Steps
 <reasoning>
 
-### Final Answer
-<current_solution>
 
  
 ## Critical Feedback
@@ -41,5 +39,9 @@ Format your response in the following format:
 <code>
 [Put your updated code here to solve the problem.]
 </code>
+
+<final_answer>
+[Put the final answer you expect from the code snippet for the problem.]
+</final_answer>
  
 

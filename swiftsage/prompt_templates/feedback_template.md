@@ -20,13 +20,13 @@ We are not sure if the current solution is correct. Please evaluate the current 
 1. Correctness
 2. Completeness
 
-- Provide a score from 1 to 10 and a brief explanation. 
-- If you are not sure about the final answer, provide a score between 1 to 7 and explain why you are not sure about the final answer.
-- Take care and do not give false information in the critical feedback. 
-- If the solution (code snippet) is correct, but the explanation is not comprehensive, you can still give a high score. 
+- You should review the original problem to analyze the solution step by step, and provide feedback by pointing out any mistakes or missing parts in the solution.
+- Take care and do not give false information in the critical feedback.
+- The final answer is the output of the code snippet provided in the solution, so if the code snippet is correct, the final answer should be correct as well.
 - Note that you should not ask for any input from the console in the code. The code should be self-contained and print the final answer at the end.
-- For some problems, the solution may not be unique. 
-- You should review the original problem to verify the solution.
+- Provide a score from 1 to 10 and a brief explanation. 
+- If you are not sure about the reasoning, provide a score between 1 to 7 and explain why you are not sure about the final answer.
+- If the solution (code snippet) is correct, but the explanation is not comprehensive, you can still give a high score. 
 
 
 ## Output Format
