@@ -8,7 +8,7 @@
 <!-- Github Readme Important Callout box note -->
 ## 🔗 Links:
 - Gradio Demo on HuggingFace: https://hf.co/spaces/swiftsage-ai/SwiftSage
-- Get your API key: [Together AI](https://www.together.ai), [SambaNova](https://www.sambanova.ai), etc.
+- Get your API key: [Together AI](https://www.together.ai), [Groq](https://groq.com/), [SambaNova](https://www.sambanova.ai), etc.
 - Previous paper (NeurIPS 2023 Spotlight): https://arxiv.org/abs/2305.17390 
 - Core contributors for v2: [Bill Yuchen Lin](https://yuchenlin.xyz/), [Yifan Song](https://scholar.google.com/citations?user=b_HfZhQAAAAJ&hl=en), .... 
 
