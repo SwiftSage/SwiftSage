@@ -2,7 +2,7 @@
 
 <!-- add a banner img for s2_banner.png -->
 <!-- add a banner img for s2_banner.png with a black border -->
-<img src="s2_banner.png" alt="SwiftSage Banner" style="border: 2px solid black;" />
+<img src="s2_banner_v2.png" alt="SwiftSage Banner" style="border: 2px solid black;" />
 
 > [!IMPORTANT]
 > - This is the beta version of SwiftSage V2, which is still under development. The current version may not be stable and is subject to change. Any comments and suggestions are welcome! 
