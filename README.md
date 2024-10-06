@@ -45,6 +45,19 @@ swiftsage --problem $QUERY \
           --sage_model_id ${SAGE_MODEL_ID}
 ```
 
+
+
+<!-- ```bash
+pip install git+https://github.com/SwiftSage/SwiftSage.git 
+# export TOGETHER_API_KEY="your-api-key" # get your key from https://www.together.ai
+swiftsage --problem "How many letter r are there in 'My strawberry is red.'?" \
+          --api_provider "Together" \
+          --swift_model_id "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo" \
+          --feedback_model_id "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo" \
+          --sage_model_id "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
+```
+ -->
+
 <!--  
 
 export SWIFT_MODEL_ID="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
