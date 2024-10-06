@@ -1,4 +1,4 @@
-# 🤖 SwiftSage: A LLM-based Reasoning Agent with In-context Reinforcement Learning
+# 🤖 SwiftSage: An Agent System  for Reasoning with LLMs via In-context Reinforcement Learning 
 
 <!-- add a banner img for s2_banner.png -->
 <!-- add a banner img for s2_banner.png with a black border -->
