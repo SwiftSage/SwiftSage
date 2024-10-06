@@ -90,8 +90,8 @@ The main components in SwiftSage v2:
     - Case 3.3. If the new solution is still inadequate after several iterations, proceed to Step 4.
 - Step 4. If the Swift Agent cannot solve the task, the Sage Agent is used to address the problem in a more analytical manner, and the final answer is then provided to the user.
 
-
-TODO: Soon, we'll add retrieval augmentation step to further improve the reasoning process of Swift Agent in Step 1.
+![WARNING]
+> The Retriever is not yet implemented yet. Soon, we'll add retrieval augmentation step to further improve the reasoning process of Swift Agent in Step 1.
 
 
 ## Misc.
