@@ -27,7 +27,7 @@ pip install git+https://github.com/SwiftSage/SwiftSage.git
 # export TOGETHER_API_KEY="your-api-key" # get your key from https://www.together.ai
 export ENGINE="Together"
 export SWIFT_MODEL_ID="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
-export FEEDBACK_MODEL_ID="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
+export FEEDBACK_MODEL_ID="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
 export SAGE_MODEL_ID="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
 
 swiftsage --problem "How many letter r are there in 'My strawberry is red.'?" \
@@ -39,13 +39,15 @@ swiftsage --problem "How many letter r are there in 'My strawberry is red.'?" \
 
 <!--  
 
-swiftsage --problem "hi what's your name?" \
+export SWIFT_MODEL_ID="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
+export FEEDBACK_MODEL_ID="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
+export SAGE_MODEL_ID="meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
+
+swiftsage --problem "9.9 or 9.11 --  which is bigger?" \
           --api_provider ${ENGINE} \
           --swift_model_id ${SWIFT_MODEL_ID} \
           --feedback_model_id ${FEEDBACK_MODEL_ID} \
-          --sage_model_id ${SAGE_MODEL_ID}
-
-
+          --sage_model_id ${SAGE_MODEL_ID} 
 
  -->
 
@@ -65,8 +67,9 @@ The main components in SwiftSage v2:
 - **Swift Agent**: A smaller LM that generates python code snippets based on the prompt.
 - **Feedback Agent**: A larger LM that generates feedbacks based on the prompt and the generated code snippet.
 - **Sage Agent**: A reasoning agent that uses the feedbacks to update the reasoning strategies.
-- **Retriever** (soon to be added): A retrieval module that retrieves the most relevant feedbacks for the current prompt.
-- **Executor**: A python executor that executes the generated code snippets.
+- **Executor**: A Python executor that executes the generated code snippets.
+- **Retriever** (soon to be added): A retrieval module that retrieves the most relevant tasks for the current prompt.
+
 
 
 ### SwiftSage Workflow
@@ -79,7 +82,11 @@ The main components in SwiftSage v2:
     - Case 3.3 If the new solution is still not good enough after a few iterations, go to Step 4.
 - Step 4. If smaller models cannot solve the task, we can then use the Sage Agent to solve the problem in a more analytical way, and then provide the final answer to the user.
 
-TODO: Soon, we'll add retrieval augmentation step to further improve the reasoning process of Swift Agent.  
+
+TODO: Soon, we'll add retrieval augmentation step to further improve the reasoning process of Swift Agent in Step 1.
+
+
+
 
 
 

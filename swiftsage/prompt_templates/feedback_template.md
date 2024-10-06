@@ -10,8 +10,7 @@ You are a reward model. You will be given a problem, a solution. You will then e
 ### Reasoning Steps
 <reasoning>
 
-### Final Answer
-<current_solution>
+
 
 
 ## Your Evaluation

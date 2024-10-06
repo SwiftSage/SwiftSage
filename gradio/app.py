@@ -115,13 +115,13 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
             # TODO: add top-p and temperature for each module for controlling 
             with gr.Column():
                 top_p_swift = gr.Textbox(label="Top-p for Swift", value="0.9")
-                temperature_swift = gr.Textbox(label="Temperature for Swift", value="0.7")
+                temperature_swift = gr.Textbox(label="Temperature for Swift", value="0.5")
             with gr.Column():
                 top_p_sage = gr.Textbox(label="Top-p for Sage", value="0.9")
-                temperature_sage = gr.Textbox(label="Temperature for Sage", value="0.7")
+                temperature_sage = gr.Textbox(label="Temperature for Sage", value="0.5")
             with gr.Column():
                 top_p_feedback = gr.Textbox(label="Top-p for Feedback", value="0.9")
-                temperature_feedback = gr.Textbox(label="Temperature for Feedback", value="0.7")
+                temperature_feedback = gr.Textbox(label="Temperature for Feedback", value="0.5")
 
             use_retrieval = gr.Checkbox(label="Use Retrieval Augmentation", value=False, visible=False)
             start_with_sage = gr.Checkbox(label="Start with Sage", value=False, visible=False)

@@ -36,6 +36,13 @@ def parse_args():
     parser.add_argument("--max_iterations", default=5, type=int)
     parser.add_argument("--reward_threshold", default=8, type=int)
 
+    parser.add_argument("--swift_temperature", default=0.5, type=float, help="Temperature for the Swift model")
+    parser.add_argument("--swift_top_p", default=0.9, type=float, help="Top-p sampling for the Swift model")
+    parser.add_argument("--feedback_temperature", default=0.5, type=float, help="Temperature for the Feedback model")
+    parser.add_argument("--feedback_top_p", default=0.9, type=float, help="Top-p sampling for the Feedback model")
+    parser.add_argument("--sage_temperature", default=0.5, type=float, help="Temperature for the Sage model")
+    parser.add_argument("--sage_top_p", default=0.9, type=float, help="Top-p sampling for the Sage model")
+    
     args = parser.parse_args()
 
     # if args.api_provider == "SambaNova":
@@ -60,7 +67,7 @@ def main():
     #     "api_config": api_configs['SambaNova']
     # }
 
-    # reward_config = {
+    # feedback_config = {
     #     "model_id": "Meta-Llama-3.1-70B-Instruct",
     #     "api_config": api_configs['SambaNova']
     # }
@@ -72,17 +79,26 @@ def main():
 
     swift_config = {
         "model_id": args.swift_model_id,
-        "api_config": api_configs[args.api_provider]
+        "api_config": api_configs[args.api_provider],
+        "temperature": args.swift_temperature,
+        "top_p": args.swift_top_p,
+        "max_tokens": 2048,
     }
 
-    reward_config = {
+    feedback_config = {
         "model_id": args.feedback_model_id,
-        "api_config": api_configs[args.api_provider]
+        "api_config": api_configs[args.api_provider],
+        "temperature": args.feedback_temperature,
+        "top_p": args.feedback_top_p,
+        "max_tokens": 2048,
     }
 
     sage_config = {
         "model_id": args.sage_model_id,
-        "api_config": api_configs[args.api_provider]
+        "api_config": api_configs[args.api_provider],
+        "temperature": args.sage_temperature,
+        "top_p": args.sage_top_p,
+        "max_tokens": 2048,
     }
 
     # specify the path to the prompt templates
@@ -95,7 +111,7 @@ def main():
         prompt_template_dir,
         swift_config,
         sage_config,
-        reward_config,
+        feedback_config,
         use_retrieval=args.use_retrieval,
         start_with_sage=args.start_with_sage,
     )

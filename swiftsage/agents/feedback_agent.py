@@ -8,7 +8,7 @@ logger = logging.getLogger("SwiftSage")
 
 
 class Feedback:
-    def __init__(self, prompt_template, llm_client, K=3):
+    def __init__(self, prompt_template, llm_client, K=2):
         self.prompt_template = prompt_template
         self.llm_client = llm_client 
         self.scores = [] 
@@ -55,4 +55,4 @@ class Feedback:
 
     def should_consult_sage(self):
         # This method remains unchanged
-        return self.stagnant_count >= self.K or (len(self.scores) > 0 and self.scores[-1] < 5)
+        return self.stagnant_count >= self.K # or (len(self.scores) > 0 and self.scores[-1] < 5)
