@@ -45,17 +45,31 @@ def load_data(
                 'high_school_physics', 'high_school_statistics', 'machine_learning']
             dataset = dataset.rename_column("subject", "type")
             dataset = dataset.filter(lambda x: x['type'] in stem_subjects)
+            examples = list(dataset)
+            examples = [lower_keys(example) for example in examples]
         elif data_name == "mathvista":
             raise NotImplementedError(data_name)
         elif data_name == "gpqa":
             dataset = load_dataset("Idavidrein/gpqa", "gpqa_diamond", split="train")
+            tmp_examples = list(dataset)
+            examples = []
+            for example in tmp_examples:
+                list_choices = [example['Incorrect Answer 1'], example['Incorrect Answer 2'], example['Incorrect Answer 3'], example['Correct Answer']]
+                random.shuffle(list_choices)
+                choices = list_choices
+                answer = choices.index(example['Correct Answer'])
+                examples.append({
+                    "question": example['Question'],
+                    "high-level domain": example['High-level domain'],
+                    "subdomain": example['Subdomain'],
+                    "choices": choices,
+                    "answer": answer,
+                })
         elif data_name == "codeforces":
             raise NotImplementedError(data_name)
         else:
             raise NotImplementedError(data_name)
 
-        examples = list(dataset)
-        examples = [lower_keys(example) for example in examples]
         dataset = Dataset.from_list(examples)
         os.makedirs(f"{data_dir}/{data_name}", exist_ok=True)
         dataset.to_json(data_file)
