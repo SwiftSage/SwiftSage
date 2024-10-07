@@ -28,7 +28,7 @@ def evaluate(samples: list=None, file_path: str=None):
     params = [(idx, sample['pred'], sample['gt']) for idx, sample in enumerate(samples)]
 
     scores = []
-    timeout_cnt = 0 
+    timeout_cnt = 0
 
     with ProcessPool() as pool:
         future = pool.map(math_equal_process, params, timeout=3)
@@ -54,7 +54,7 @@ def evaluate(samples: list=None, file_path: str=None):
     for i in range(len(samples)):
         samples[i]['score'] = scores[i]
 
-    mean_score = np.round(np.mean([score for score in scores if score is not False]), decimals=2)
+    mean_score = float(np.round(np.mean(scores), decimals=4))
 
     result_json = {
         "num_samples": len(samples),

@@ -4,13 +4,14 @@ import json
 import logging
 import multiprocessing
 import os
+from time import sleep
 
 from tqdm import tqdm
 
 from swiftsage.agents import SwiftSage
 from swiftsage.benchmark.data_loader import load_data
 from swiftsage.utils.commons import api_configs, setup_logging
-from swiftsage.benchmark.data_utils import parse_question, parse_ground_truth
+from swiftsage.benchmark.data_utils import parse_question, parse_ground_truth, extract_answer
 from swiftsage.benchmark.evaluate import evaluate
 
 
@@ -38,28 +39,34 @@ def run_benchmark(swiftsage, args, max_iterations=5, reward_threshold=8):
             continue
         question = parse_question(example, args.dataset_name)
         gt_ans = parse_ground_truth(example, args.dataset_name)
-        reasoning, solution, messages = swiftsage.solve(question, max_iterations, reward_threshold)
+        reasoning, raw_solution, messages = swiftsage.solve(question, max_iterations, reward_threshold)
         
-        # TODO: extract answer from solution
+        if raw_solution == "No current solution yet.":
+            solution = raw_solution
+        else:
+            solution = raw_solution[len("Answer (from running the code):\n "):]
 
         cur_res = {
             "idx": example["idx"],
             "question": question,
             "gt": gt_ans,
             "pred": solution,
+            "raw_pred": raw_solution,
             "reasoning": reasoning,
         }
         res.append(cur_res)
 
         with open(output_path, "a") as fw:
             fw.write(json.dumps(res[-1]) + "\n")
+
+        sleep(30)
     
     # Evaluate the results
     res, result_metric = evaluate(res)
-    with open(args.output_path, f"{args.dataset_name}_score.jsonl", "w") as fw:
+    with open(os.path.join(args.output_path, f"{args.dataset_name}_score.jsonl"), "w") as fw:
         for item in res:
             fw.write(json.dumps(item) + "\n")
-    with open(args.output_path, f"{args.dataset_name}_metric.jsonl", "w") as fw:
+    with open(os.path.join(args.output_path, f"{args.dataset_name}_metric.jsonl"), "w") as fw:
         fw.write(json.dumps(result_metric) + "\n")
 
 
@@ -109,7 +116,7 @@ if __name__ == '__main__':
     parser.add_argument("--feedback_model_id", default="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo", type=str)
     parser.add_argument("--sage_model_id", default="meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo", type=str)
 
-    parser.add_argument("--prompt_template_dir", default='./prompt_templates', type=str)
+    parser.add_argument("--prompt_template_dir", default='./swiftsage/prompt_templates', type=str)
     parser.add_argument("--use_retrieval", action="store_true")
     parser.add_argument("--start_with_sage", action="store_true")
 
@@ -126,6 +133,9 @@ if __name__ == '__main__':
         args.swift_model_id = args.swift_model_id.split("/")[-1][:-len("Turbo")]
         args.feedback_model_id = args.feedback_model_id.split("/")[-1][:-len("Turbo")]
         args.sage_model_id = args.sage_model_id.split("/")[-1][:-len("Turbo")]
+
+    if not os.path.exists(args.output_path):
+        os.makedirs(args.output_path)
 
     multiprocessing.set_start_method('spawn')
     main(args)
