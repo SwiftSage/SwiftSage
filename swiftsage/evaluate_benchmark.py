@@ -11,8 +11,8 @@ from tqdm import tqdm
 from swiftsage.agents import SwiftSage
 from swiftsage.benchmark.data_loader import load_data
 from swiftsage.utils.commons import api_configs, setup_logging
-from swiftsage.benchmark.data_utils import parse_question, parse_ground_truth, extract_answer
-from swiftsage.benchmark.evaluate import evaluate
+from swiftsage.benchmark.data_utils import parse_question, parse_ground_truth
+from swiftsage.benchmark.evaluate import evaluate_math, evaluate_multiple_choice
 
 
 logger = setup_logging()
@@ -62,7 +62,10 @@ def run_benchmark(swiftsage, args, max_iterations=5, reward_threshold=8):
         sleep(30)
     
     # Evaluate the results
-    res, result_metric = evaluate(res)
+    if args.dataset_name in ["MATH"]:
+        res, result_metric = evaluate_math(res)
+    elif args.dataset_name in ["gpqa"]:
+        res, result_metric = evaluate_multiple_choice(res)
     with open(os.path.join(args.output_path, f"{args.dataset_name}_score.jsonl"), "w") as fw:
         for item in res:
             fw.write(json.dumps(item) + "\n")

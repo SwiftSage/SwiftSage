@@ -231,7 +231,6 @@ def strip_string(string):
 
 
 def extract_multi_choice_answer(pred_str):
-    # TODO: SFT models
     if 'Problem:' in pred_str:
         pred_str = pred_str.split("Problem:", 1)[0]
     pred_str = pred_str.replace("choice is", "answer is")
@@ -242,7 +241,7 @@ def extract_multi_choice_answer(pred_str):
 
 
 def extract_answer(pred_str, data_name):
-    if data_name in ["mmlu_stem", "sat_math", "mathqa"]:
+    if data_name in ["mmlu_stem", "sat_math", "mathqa", "gpqa"]:
         return extract_multi_choice_answer(pred_str)
 
     if 'final answer is $' in pred_str and '$. I hope' in pred_str:
@@ -306,7 +305,8 @@ def parse_ground_truth(example: Dict[str, Any], data_name):
         abcd = 'ABCD'
         gt_ans = abcd[example['answer']]
     elif data_name == "gpqa":
-        gt_ans = example['correct answer']
+        abcd = 'ABCD'
+        gt_ans = abcd[example['answer']]
     else:
         raise NotImplementedError(f"`{data_name}`")
     # post process
@@ -323,6 +323,13 @@ def parse_question(example, data_name):
             options[i] = f"({label}) {str(option).strip()}"
         options = ", ".join(options)
         question = f"{example['question'].strip()}\nWhat of the following is the right choice? Explain your answer.\n{options}"
+    elif data_name == "gpqa":
+        options = example['choices']
+        assert len(options) == 4
+        for i, (label, option) in enumerate(zip('ABCD', options)):
+            options[i] = f"({label}) {str(option).strip()}"
+        options = ", ".join(options)
+        question = f"{example['question'].strip()}\nWhat of the following is the right choice?\n{options}"
     else:
         for key in ['question', 'problem', 'Question', 'input']:
             if key in example:

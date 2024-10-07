@@ -10,9 +10,53 @@ from pebble import ProcessPool
 from tqdm import tqdm
 
 from swiftsage.benchmark.grader import math_equal_process
+from swiftsage.benchmark.data_utils import extract_multi_choice_answer
 
 
-def evaluate(samples: list=None, file_path: str=None):
+def evaluate_multiple_choice(samples: list=None, file_path: str=None):
+    assert samples or file_path, "samples or file_path must be provided"
+    if not samples:
+        with open(file_path, 'r') as f:
+            samples = [json.loads(line) for line in f]
+
+    # dedup by idx
+    if 'idx' in samples[0]:
+        samples = {sample['idx']: sample for sample in samples}.values()
+        samples = sorted(samples, key=lambda x: x['idx']) 
+    else:
+        samples = [dict(idx=idx, **sample) for idx, sample in enumerate(samples)]
+
+    params = []
+    for idx, sample in enumerate(samples):
+        pred = extract_multi_choice_answer(sample['pred'])
+        params.append((
+            idx,
+            pred,
+            sample['gt']
+        ))
+
+    scores = []
+
+    for idx, pred, gt in params:
+        score = pred == gt
+        scores.append(score)
+
+    assert len(samples) == len(scores)
+
+    for i in range(len(samples)):
+        samples[i]['score'] = scores[i]
+
+    mean_score = float(np.round(np.mean(scores), decimals=4))
+
+    result_json = {
+        "num_samples": len(samples),
+        "acc": mean_score
+    }
+
+    return samples, result_json
+
+
+def evaluate_math(samples: list=None, file_path: str=None):
     assert samples or file_path, "samples or file_path must be provided"
     if not samples:
         with open(file_path, 'r') as f:
@@ -67,5 +111,5 @@ def evaluate(samples: list=None, file_path: str=None):
 
 
 if __name__ == "__main__":
-    samples, results_json = evaluate(file_path="output/MATH.jsonl")
+    samples, results_json = evaluate_math(file_path="output/MATH.jsonl")
     print('test')
