@@ -8,6 +8,8 @@ import io
 import pickle
 import traceback
 from concurrent.futures import ProcessPoolExecutor, TimeoutError
+import multiprocessing
+import time
 from contextlib import redirect_stdout
 
 
@@ -44,15 +46,15 @@ class PythonExecutor:
         get_answer_symbol=None,
         get_answer_expr=None,
         get_answer_from_stdout=False,
-        timeout_length=15,
+        timeout=10,
     ):
         self.runtime = runtime if runtime else GenericRuntime()
         self.answer_symbol = get_answer_symbol
         self.get_answer_expr = get_answer_expr
         self.get_answer_from_stdout = get_answer_from_stdout
-        self.timeout_length = timeout_length
+        self.timeout = timeout
 
-    def execute(self, code):
+    def _run_code(self, code, result_queue):
         try:
             if self.get_answer_from_stdout:
                 program_io = io.StringIO()
@@ -72,39 +74,41 @@ class PythonExecutor:
 
             report = "Done"
             pickle.dumps(result)  # Serialization check
+            result_queue.put((result, report))  # Send result and report back to main process
+
+        except Exception as e:
+            result_queue.put(('', str(e)))
+
+    def apply(self, code):
+        code_snippet = code.split('\n')
+        # code_snippet = code
+        try:
+            # Start a separate process to run the code
+            result_queue = multiprocessing.Queue()
+            process = multiprocessing.Process(target=self._run_code, args=(code_snippet, result_queue))
+            process.start()
+            process.join(timeout=self.timeout)
+
+            if process.is_alive():
+                process.terminate()  # Terminate the process if it's still running
+                result = ''
+                report = "Timeout Error"
+            else:
+                result, report = result_queue.get()
+                result = result.strip()
+
         except Exception as e:
             result = ''
             report = str(e)
 
         return result, report
 
-    def apply(self, code):
-        code_snippet = code.split('\n')
-
-        # Use ProcessPoolExecutor to enforce timeout
-        with ProcessPoolExecutor() as executor:
-            future = executor.submit(self.execute, code_snippet)
-            try:
-                result, report = future.result(timeout=self.timeout_length)
-            except TimeoutError:
-                result, report = "", "Timeout Error"
-
-        return result.strip(), report.strip()
-
 
 # Example usage
 if __name__ == "__main__":
     executor = PythonExecutor(get_answer_from_stdout=True)
     code = """
-from sympy import Matrix
-
-def null_space_basis():
-    A = Matrix([[3, 3, -1, -6], [9, -1, -8, -1], [7, 4, -2, -9]])
-    basis = A.nullspace()
-    return [v.evalf(3) for v in basis]
-
-result = null_space_basis()
-print(result)
+import math\n\n# Define the reduced Planck constant\nh_bar = 6.582 * (10**-16)  # eV sec\n\n# Define the lifetimes of the quantum states\nlifetime1 = 10**-9  # sec\nlifetime2 = 10**-8  # sec\n\n# Calculate the minimum energy difference using the Heisenberg uncertainty principle\nmin_energy_diff = h_bar / max(lifetime1, lifetime2)\n\n# Print the minimum energy difference\nprint(\"The minimum energy difference required to clearly distinguish the two energy levels is:\", min_energy_diff, \"eV\")\n\n# Check which option is the right choice\nif min_energy_diff >= 10**-4:\n    print(\"The right choice is (C) 10^-4 eV\")\nelif min_energy_diff >= 10**-11:\n    print(\"The right choice is (D) 10^-11 eV\")\nelse:\n    print(\"The right choice is (A) 10^-9 eV or (B) 10^-8 eV\")
 """
     result, report = executor.apply(code)
     print("Result:", result)

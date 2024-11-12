@@ -3,7 +3,7 @@
 ## Similar Examples with Solutions
 
 ### Example Task 0
- 
+
 <task>
 Hi, how are you?
 </task>
@@ -17,11 +17,6 @@ Step 2: Ask how you can help.
 print("Hi, I'm doing well. How are you?")
 print("How can I help you?")
 </code>
-
-<final_answer>
-Hi, I'm doing well. How are you?
-How can I help you?
-</final_answer>
 
 ### Example Task 1
  
@@ -65,11 +60,6 @@ spherical_coordinates = rectangular_to_spherical()
 print(spherical_coordinates)  
 </code>
 
-
-<final_answer>
-(6, -pi/2, pi/3)
-</final_answer>
-
 ### Example Task 2 
 
 <task>
@@ -106,10 +96,6 @@ result = compare_lifespans()
 print(f"{result} lived longer.")
 </code>
 
-<final_answer>
-Jonathan Kaplan lived longer. 
-</final_answer>
-
 
 ---
 
@@ -136,15 +122,10 @@ Note that the above are some example tasks and output formats. You need to solve
 <current_solution>
 </final_answer>
 
-
-
 --- 
 
 ## Critical Feedback 
 <critical_feedback>
-
-### Suggested Plan
-<revised_plan>
 
 --- 
 
@@ -166,7 +147,7 @@ Note that the code should not ask for any input from console, but it should be s
 </plan>
 
 <code>
-[Your python code to solve the current problem (instead of the example problems). Please print the final answer at the end of the code.]
+[Your python code to solve the current problem (instead of the example problems). Please print the final answer at the end of the code. Do not add any prefix like "The answer is" before the final answer]
 </code> 
  
 You must follow the format strictly, do not miss any field.  

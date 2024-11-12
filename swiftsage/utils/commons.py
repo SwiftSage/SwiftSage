@@ -4,33 +4,47 @@ import logging
 import os
 import re
 
-import dirtyjson
-import hjson
-import numpy as np
 import openai
-from fuzzywuzzy import process
 from sklearn.metrics.pairwise import cosine_similarity
 from groq import Groq
 
+
 api_configs = {
+    "OpenAI": {
+        "provider": "OpenAI",
+        "api_key": os.environ.get("OPENAI_API_KEY"),
+        "url_base": os.environ.get("OPENAI_API_URL", "https://api.openai.com/v1"),
+        "support_prefill": False
+    },
     "SambaNova": {
+        "provider": "SambaNova",
         "api_key": os.environ.get("SAMBANOVA_API_KEY"),
         "url_base": "https://api.sambanova.ai/v1",
         "support_prefill": False
     },
     "Together": {
+        "provider": "Together",
         "api_key": os.environ.get("TOGETHER_API_KEY"),
         "url_base": "https://api.together.xyz/v1",
-        "support_prefill": True
+        "support_prefill": True,
+        "prefix_in_response": False,
     },
     "Groq":{
+        "provider": "Groq",
         "api_key": os.environ.get("GROQ_API_KEY"),
         "url_base": "GROQ",
-        "support_prefill": True
-    }
+        "support_prefill": True,
+        "prefix_in_response": False,
+    },
+    "vLLM": {
+        "provider": "vLLM",
+        "api_key": "token-abc123",
+        "url_base": "http://localhost:8000/v1",
+        "support_prefill": True,
+        "prefix_in_response": True,
+    },
     # You can add more API configurations here for other providers
 }
-
 
 
 def setup_logging():
@@ -55,7 +69,6 @@ def setup_logging():
 
     return logging.getLogger('SwiftSage')
 
- 
 
 def extract_and_parse_markup(text):
     keys = ["reasoning_steps", "final_answer", "feedback", "score", "critical_feedback", "revised_plan", "solved", "plan", "code"]
@@ -97,9 +110,9 @@ class PromptTemplate:
         self.load_templates()
 
     def load_templates(self):
-        for filename in ['swift_template.md', 'sage_template.md', 'feedback_template.md']:
+        for filename in ['swift_template.md', 'sage_template.md', 'feedback_template.md', 'multiple_choice_template.md']:
             with open(os.path.join(self.template_dir, filename), 'r') as f:
-                key = filename.split('_')[0]
+                key = filename[:-len("_template.md")]
                 self.templates[key] = f.read()
 
     def format(self, key, **kwargs):
@@ -119,58 +132,52 @@ class LLMClient:
                 api_key=api_config['api_key'],
                 base_url=api_config['url_base']
             )
+        self.api_provider = api_config['provider']
         self.model_id = model_id
         self.temperature = temperature
         self.top_p = top_p
         self.max_tokens = max_tokens
         self.logger = logger
         self.support_prefill = api_config.get("support_prefill", False)
+        self.prefix_in_response = api_config.get("prefix_in_response", False)
 
-    def generate_response(self, messages):
-        self.logger.info(f"Sending request to {self.model_id}")
-        self.logger.info(f"Messages: {messages}")
-        print(f"Sending request to {self.model_id}")
-        print(f"Messages: {messages}")
+    def generate_response(self, messages, n=1):
+        self.logger.debug(f"Sending request to {self.model_id}")
+        self.logger.debug(f"Messages: {messages}")
 
-        response = self.client.chat.completions.create(
-            model=self.model_id,
-            messages=messages,
-            temperature=self.temperature,
-            top_p=self.top_p,
-            max_tokens=self.max_tokens
-        )
-        # debug print
-        print(f"model_id: {self.model_id}")
-        print(f"max_tokens: {self.max_tokens}")
-        content = response.choices[0].message.content
-        self.logger.info(f"Response from {self.model_id}:\n{content}")
+        if self.api_provider == "vLLM" and self.support_prefill:
+            response = self.client.chat.completions.create(
+                model=self.model_id,
+                messages=messages,
+                temperature=self.temperature,
+                top_p=self.top_p,
+                max_tokens=self.max_tokens,
+                n=n,
+                extra_body={
+                    "add_generation_prompt": False,
+                    "continue_final_message": True,
+                }
+            )
+        else:
+            response = self.client.chat.completions.create(
+                model=self.model_id,
+                messages=messages,
+                temperature=self.temperature,
+                top_p=self.top_p,
+                max_tokens=self.max_tokens,
+                n=n,
+            )
+            
+        content = [response.choices[i].message.content for i in range(n)]
+        self.logger.debug(f"Response from {self.model_id}:\n{content}")
         return content
-
-
-
 
 
 if __name__ == "__main__":
     test_text = """
-<code>
-```python
-num1 = 9.11
-num2 = 9.8
-
-if num1 > num2:
-    print("9.11 is larger.")
-elif num2 > num1:
-    print("9.8 is larger.")
-else:
-    print("Both numbers are equal.")
-```
-Alternatively, a more concise version:
-```python
-print("9.11 is larger" if 9.11 > 9.8 else "9.8 is larger")
-```
-</code>
+<plan> \nTo solve this problem, we need to find all possible values of $n$ given that the roots of the polynomial $x^2 - mx + n$ are positive prime integers (not necessarily distinct) and $m < 20.$\n\nWe can use Vieta's formulas, which state that for a quadratic polynomial $ax^2 + bx + c = 0$ with roots $r_1$ and $r_2,$ we have $r_1 + r_2 = -\\frac{b}{a}$ and $r_1r_2 = \\frac{c}{a}.$\n\nIn our case, we have $a = 1,$ $b = -m,$ and $c = n.$ Therefore, we have $r_1 + r_2 = m$ and $r_1r_2 = n.$\n\nSince $r_1$ and $r_2$ are positive prime integers, we know that $r_1 + r_2$ must be even, since the sum of two odd numbers is even, and the sum of an odd number and an even number is odd.\n\nSince $m < 20,$ we can list out all possible values of $m$ that are even and less than 20, which are $2, 4, 6, 8, 10, 12, 14, 16, 18.$\n\nFor each value of $m,$ we can find the corresponding values of $r_1$ and $r_2$ by finding two positive prime integers that add up to $m.$ We can then calculate the corresponding value of $n$ by multiplying $r_1$ and $r_2$ together.\n\nWe can then count the number of distinct values of $n$ that we find.\n\n</plan>\n\n<code>\nimport math\n\ndef is_prime(n):\n    if n <= 1:\n        return False\n    if n == 2:\n        return True\n    if n % 2 == 0:\n        return False\n    sqrt_n = math.isqrt(n)\n    for i in range(3, sqrt_n + 1, 2):\n        if n % i == 0:\n            return False\n    return True\n\ndef find_n_values():\n    n_values = set()\n    for m in range(2, 20, 2):\n        for r1 in range(2, m):\n            r2 = m - r1\n            if is_prime(r1) and is_prime(r2):\n                n = r1 * r2\n                n_values.add(n)\n    return len(n_values)\n\nresult = find_n_values()\nprint(result)\n</code>
     """
      
-    print(extract_and_parse_markup(test_text))
-
+    res = extract_and_parse_markup(test_text)
+    print('test')
  
